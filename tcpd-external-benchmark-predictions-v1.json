@@ -1,0 +1,2054 @@
+{
+  "external_replay_contract": {
+    "default_mode": "default uses one prediction list per dataset for both F-measure and covering",
+    "metrics_code": "TCPDBench analysis/scripts/metrics.py",
+    "oracle_mode": "oracle upper-bound is metric-specific: oracle_f_measure and oracle_covering publish separate prediction lists",
+    "procedure": "Use each published cplocations array as the prediction list for its dataset; run metrics.py f_measure and covering against TCPDBench annotations; aggregate under the named rank frame.",
+    "source_data": "download pinned TCPD and TCPDBench repositories"
+  },
+  "indexing": "zero_based_integer_positions",
+  "license_boundary": "Published values are detected change-point positions only. They do not redistribute raw TCPD series or pointwise restricted-series charts.",
+  "method_id": "saa_change_point_adapter_v1",
+  "modes": {
+    "default": [
+      {
+        "cplocations": [
+          48,
+          88,
+          131,
+          182,
+          203,
+          215,
+          228,
+          245,
+          291,
+          319,
+          349,
+          366
+        ],
+        "dataset": "apple",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 622,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          316,
+          369
+        ],
+        "dataset": "bank",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 581,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          41,
+          92,
+          125,
+          181,
+          218,
+          257,
+          292,
+          336,
+          369,
+          413,
+          488,
+          523
+        ],
+        "dataset": "bee_waggle_6",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 609,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          529,
+          548,
+          575,
+          607,
+          617,
+          641,
+          659,
+          703,
+          743
+        ],
+        "dataset": "bitcoin",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 774,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          225,
+          379
+        ],
+        "dataset": "brent_spot",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 500,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "businv",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 330,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "centralia",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 15,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          182
+        ],
+        "dataset": "children_per_woman",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 301,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "co2_canada",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 215,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          180,
+          190,
+          200
+        ],
+        "dataset": "construction",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 319,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "debt_ireland",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 21,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "gdp_argentina",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 59,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "gdp_croatia",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 24,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "gdp_iran",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 58,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "gdp_japan",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 58,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          73
+        ],
+        "dataset": "global_co2",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 104,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "homeruns",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 118,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          137,
+          148,
+          160
+        ],
+        "dataset": "iceland_tourism",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 199,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "jfk_passengers",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 468,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "lga_passengers",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 468,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          182,
+          250,
+          285,
+          364,
+          398,
+          469,
+          502,
+          603,
+          675,
+          708,
+          776,
+          812
+        ],
+        "dataset": "measles",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 991,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          30
+        ],
+        "dataset": "nile",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 100,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          57,
+          93,
+          148,
+          184,
+          238,
+          271,
+          369,
+          422,
+          460
+        ],
+        "dataset": "occupancy",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 509,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "ozone",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 54,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "quality_control_1",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 313,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": true
+      },
+      {
+        "cplocations": [],
+        "dataset": "quality_control_2",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 283,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": true
+      },
+      {
+        "cplocations": [
+          179
+        ],
+        "dataset": "quality_control_3",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 366,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": true
+      },
+      {
+        "cplocations": [
+          340,
+          468
+        ],
+        "dataset": "quality_control_4",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 500,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": true
+      },
+      {
+        "cplocations": [],
+        "dataset": "quality_control_5",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 325,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": true
+      },
+      {
+        "cplocations": [],
+        "dataset": "rail_lines",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 37,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          193,
+          204,
+          273
+        ],
+        "dataset": "ratner_stock",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 600,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "robocalls",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 52,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          174,
+          205,
+          317
+        ],
+        "dataset": "run_log",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 376,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          86,
+          117,
+          280,
+          292,
+          310,
+          325,
+          339,
+          374,
+          404
+        ],
+        "dataset": "scanline_126007",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 481,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          54,
+          77,
+          185,
+          221,
+          274,
+          333,
+          345,
+          363,
+          375,
+          448
+        ],
+        "dataset": "scanline_42049",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 481,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          60,
+          72
+        ],
+        "dataset": "seatbelts",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 192,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          149,
+          159
+        ],
+        "dataset": "shanghai_license",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 205,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "uk_coal_employ",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 105,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          30,
+          113,
+          143,
+          176
+        ],
+        "dataset": "unemployment_nl",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 214,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "us_population",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 816,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          57,
+          116
+        ],
+        "dataset": "usd_isk",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 247,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          179,
+          251,
+          281,
+          311,
+          343,
+          402,
+          434,
+          452
+        ],
+        "dataset": "well_log",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 675,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      }
+    ],
+    "oracle_covering": [
+      {
+        "cplocations": [
+          48,
+          131,
+          245,
+          319
+        ],
+        "dataset": "apple",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 622,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 20,
+          "threshold": 7.0,
+          "window": 12
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "bank",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 581,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 5.75,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "bee_waggle_6",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 609,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 5.75,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          586,
+          619,
+          703,
+          760
+        ],
+        "dataset": "bitcoin",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 774,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 20,
+          "threshold": 5.75,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          194,
+          225,
+          283,
+          379
+        ],
+        "dataset": "brent_spot",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 500,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 3.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          169,
+          237
+        ],
+        "dataset": "businv",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 330,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.0,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "centralia",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 15,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          177,
+          182
+        ],
+        "dataset": "children_per_woman",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 301,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.0,
+          "window": 20
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          104,
+          141,
+          165
+        ],
+        "dataset": "co2_canada",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 215,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 20,
+          "threshold": 2.0,
+          "window": 45
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          192
+        ],
+        "dataset": "construction",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 319,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.0,
+          "window": 12
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          9
+        ],
+        "dataset": "debt_ireland",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 21,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.0,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "gdp_argentina",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 59,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "gdp_croatia",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 24,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          10
+        ],
+        "dataset": "gdp_iran",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 58,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.75,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "gdp_japan",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 58,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          95
+        ],
+        "dataset": "global_co2",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 104,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 20,
+          "threshold": 2.0,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          60
+        ],
+        "dataset": "homeruns",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 118,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 20,
+          "threshold": 2.0,
+          "window": 45
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "iceland_tourism",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 199,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 4.5,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          326
+        ],
+        "dataset": "jfk_passengers",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 468,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 20,
+          "threshold": 3.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          166,
+          296,
+          316
+        ],
+        "dataset": "lga_passengers",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 468,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.75,
+          "window": 20
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          683
+        ],
+        "dataset": "measles",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 991,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 7.0,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          28
+        ],
+        "dataset": "nile",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 100,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.0,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          8,
+          56,
+          92,
+          147,
+          183,
+          241,
+          420,
+          454
+        ],
+        "dataset": "occupancy",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 509,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 20,
+          "threshold": 2.75,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          33
+        ],
+        "dataset": "ozone",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 54,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.0,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          144
+        ],
+        "dataset": "quality_control_1",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 313,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.0,
+          "window": 12
+        },
+        "synthetic_quality_control": true
+      },
+      {
+        "cplocations": [
+          97
+        ],
+        "dataset": "quality_control_2",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 283,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.75,
+          "window": 8
+        },
+        "synthetic_quality_control": true
+      },
+      {
+        "cplocations": [
+          179
+        ],
+        "dataset": "quality_control_3",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 366,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": true
+      },
+      {
+        "cplocations": [
+          342
+        ],
+        "dataset": "quality_control_4",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 500,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.75,
+          "window": 20
+        },
+        "synthetic_quality_control": true
+      },
+      {
+        "cplocations": [],
+        "dataset": "quality_control_5",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 325,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": true
+      },
+      {
+        "cplocations": [
+          26
+        ],
+        "dataset": "rail_lines",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 37,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.0,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          205,
+          272
+        ],
+        "dataset": "ratner_stock",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 600,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 5.75,
+          "window": 45
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          8,
+          36
+        ],
+        "dataset": "robocalls",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 52,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.0,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          60,
+          96,
+          114,
+          177,
+          204,
+          240,
+          258,
+          317
+        ],
+        "dataset": "run_log",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 376,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.0,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          257,
+          262,
+          280,
+          325,
+          370,
+          409
+        ],
+        "dataset": "scanline_126007",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 481,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 7.0,
+          "window": 45
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          55,
+          61,
+          77,
+          185,
+          274,
+          350,
+          363,
+          466
+        ],
+        "dataset": "scanline_42049",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 481,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 7.0,
+          "window": 12
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          58,
+          169
+        ],
+        "dataset": "seatbelts",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 192,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.0,
+          "window": 12
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          144
+        ],
+        "dataset": "shanghai_license",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 205,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 3.5,
+          "window": 60
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          37,
+          54
+        ],
+        "dataset": "uk_coal_employ",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 105,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.0,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          131,
+          141,
+          181
+        ],
+        "dataset": "unemployment_nl",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 214,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 3.5,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "us_population",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 816,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          117
+        ],
+        "dataset": "usd_isk",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 247,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 5.75,
+          "window": 60
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          179,
+          255,
+          281,
+          312,
+          342,
+          402,
+          432,
+          462
+        ],
+        "dataset": "well_log",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 675,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 20,
+          "threshold": 3.5,
+          "window": 20
+        },
+        "synthetic_quality_control": false
+      }
+    ],
+    "oracle_f_measure": [
+      {
+        "cplocations": [
+          48,
+          132,
+          241,
+          319,
+          530
+        ],
+        "dataset": "apple",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 622,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 20,
+          "threshold": 5.75,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "bank",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 581,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 5.75,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "bee_waggle_6",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 609,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 5.75,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          569,
+          575,
+          586,
+          600,
+          619,
+          632,
+          703,
+          760
+        ],
+        "dataset": "bitcoin",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 774,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 5.75,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          225,
+          283,
+          377
+        ],
+        "dataset": "brent_spot",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 500,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 20,
+          "threshold": 2.0,
+          "window": 12
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "businv",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 330,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "centralia",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 15,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          182
+        ],
+        "dataset": "children_per_woman",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 301,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          104,
+          129,
+          141,
+          165
+        ],
+        "dataset": "co2_canada",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 215,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.0,
+          "window": 45
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          136,
+          191
+        ],
+        "dataset": "construction",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 319,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 20,
+          "threshold": 2.75,
+          "window": 20
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          9
+        ],
+        "dataset": "debt_ireland",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 21,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.0,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          37,
+          46
+        ],
+        "dataset": "gdp_argentina",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 59,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.0,
+          "window": 12
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "gdp_croatia",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 24,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          10
+        ],
+        "dataset": "gdp_iran",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 58,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.75,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "gdp_japan",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 58,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          95
+        ],
+        "dataset": "global_co2",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 104,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 20,
+          "threshold": 2.0,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          60,
+          72
+        ],
+        "dataset": "homeruns",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 118,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.0,
+          "window": 45
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "iceland_tourism",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 199,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 4.5,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          326
+        ],
+        "dataset": "jfk_passengers",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 468,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 20,
+          "threshold": 3.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          166,
+          296,
+          316
+        ],
+        "dataset": "lga_passengers",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 468,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.75,
+          "window": 20
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          683
+        ],
+        "dataset": "measles",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 991,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 7.0,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          30
+        ],
+        "dataset": "nile",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 100,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          8,
+          56,
+          92,
+          147,
+          183,
+          241,
+          341,
+          420,
+          454
+        ],
+        "dataset": "occupancy",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 509,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 20,
+          "threshold": 2.0,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          33
+        ],
+        "dataset": "ozone",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 54,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.0,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          144
+        ],
+        "dataset": "quality_control_1",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 313,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.0,
+          "window": 12
+        },
+        "synthetic_quality_control": true
+      },
+      {
+        "cplocations": [
+          97
+        ],
+        "dataset": "quality_control_2",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 283,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.75,
+          "window": 8
+        },
+        "synthetic_quality_control": true
+      },
+      {
+        "cplocations": [
+          179
+        ],
+        "dataset": "quality_control_3",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 366,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": true
+      },
+      {
+        "cplocations": [
+          340,
+          468
+        ],
+        "dataset": "quality_control_4",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 500,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": true
+      },
+      {
+        "cplocations": [],
+        "dataset": "quality_control_5",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 325,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": true
+      },
+      {
+        "cplocations": [
+          26
+        ],
+        "dataset": "rail_lines",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 37,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.0,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          193,
+          204,
+          273,
+          281
+        ],
+        "dataset": "ratner_stock",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 600,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          8,
+          36
+        ],
+        "dataset": "robocalls",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 52,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.0,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          60,
+          96,
+          114,
+          177,
+          204,
+          240,
+          258,
+          317
+        ],
+        "dataset": "run_log",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 376,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.0,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          106,
+          118,
+          253,
+          265,
+          292,
+          305,
+          316,
+          325,
+          376,
+          390,
+          405
+        ],
+        "dataset": "scanline_126007",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 481,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 4.5,
+          "window": 12
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          55,
+          77,
+          185,
+          274,
+          362,
+          467
+        ],
+        "dataset": "scanline_42049",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 481,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 20,
+          "threshold": 7.0,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          58,
+          169
+        ],
+        "dataset": "seatbelts",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 192,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.0,
+          "window": 12
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          144
+        ],
+        "dataset": "shanghai_license",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 205,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 3.5,
+          "window": 60
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          51
+        ],
+        "dataset": "uk_coal_employ",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 105,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.0,
+          "window": 45
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          131,
+          141,
+          181
+        ],
+        "dataset": "unemployment_nl",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 214,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 3.5,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [],
+        "dataset": "us_population",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 816,
+        "params": {
+          "max_cps": 12,
+          "min_gap": 10,
+          "threshold": 4.5,
+          "window": 30
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          116
+        ],
+        "dataset": "usd_isk",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 247,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 2.0,
+          "window": 8
+        },
+        "synthetic_quality_control": false
+      },
+      {
+        "cplocations": [
+          179,
+          250,
+          281,
+          312,
+          341,
+          402,
+          413,
+          432,
+          462,
+          653,
+          661
+        ],
+        "dataset": "well_log",
+        "indexing": "zero_based_integer_positions",
+        "n_obs": 675,
+        "params": {
+          "max_cps": 20,
+          "min_gap": 5,
+          "threshold": 3.5,
+          "window": 12
+        },
+        "synthetic_quality_control": false
+      }
+    ]
+  },
+  "pointwise_charts_exported": false,
+  "raw_series_exported": false,
+  "schema_version": "saa.risk_analyzer.tcpd_predictions.v1",
+  "series_total": 42,
+  "sha256": "sha256:10d8a913c9bcfc5a0a00a82fbc736013d712c066ceecbba4e39ea9318a7658b2"
+}

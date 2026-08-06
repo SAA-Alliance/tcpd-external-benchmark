@@ -1,0 +1,22 @@
+{
+  "schema_version": "saa.tcpd_external_benchmark.github_manifest.v1",
+  "published_at_utc": "2026-08-06T00:00:00Z",
+  "method_id": "saa_change_point_adapter_v1",
+  "claim_boundary": "research-only external change-point adapter evidence; not a production Risk Analyzer regime-detector claim; no production-detector superiority claim; no Decision Grade; no raw TCPD data redistribution",
+  "upstream_pins": {
+    "tcpd_repo_commit": "e8f19a3635e3b7f1a8aff59ce7f4d9bea17525c0",
+    "tcpdbench_repo_commit": "167210005c09d2c44f9b2083b95f989a64be4b6b"
+  },
+  "canonical_hashes": {
+    "result": "sha256:74a3cb1c150ed3a0c06177f1dec2fef69f9385d0c95b7c9345dcd78c85934222",
+    "predictions": "sha256:10d8a913c9bcfc5a0a00a82fbc736013d712c066ceecbba4e39ea9318a7658b2"
+  },
+  "published_prediction_counts": {
+    "default": 42,
+    "oracle_f_measure": 42,
+    "oracle_covering": 42
+  },
+  "raw_tcpd_data_redistributed": false,
+  "pointwise_restricted_series_charts_redistributed": false,
+  "external_replay": "Use published 0-indexed cplocations with TCPDBench analysis/scripts/metrics.py against pinned upstream TCPD/TCPDBench data."
+}
