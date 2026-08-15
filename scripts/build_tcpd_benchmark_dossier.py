@@ -30,6 +30,7 @@ SAA_LABEL = "SAA"
 PREVIOUS_AUDIT_DOSSIER_SHA_PREFIX = "sha256:91b38e1f"
 PREVIOUS_DISCIPLINE_DOSSIER_SHA256 = "sha256:bdf16c21688b9c9e661b2b94f7e928a1aa568847139a5e155517ff22883bca08"
 PREVIOUS_SURFACED_DOSSIER_SHA256 = "sha256:b19ff223b7e7cf42def70dd5d9bedb70a01f9ce01411c55093bceb3fa1e2410a"
+PREVIOUS_RANK_SCALE_DOSSIER_SHA256 = "sha256:5f9f2fb45c8a03f90720e1dd9abd7c313397add955a23532f28bbc8a35d11e32"
 QC_DATASETS = {f"quality_control_{i}" for i in range(1, 6)}
 ANALYSES = [
     ("default_f_measure", "default", "f1", "default_f_measure"),
@@ -224,11 +225,25 @@ def summarize_analysis(datasets: List[str], matrix: Dict[str, Dict[str, float]],
     q_alpha = studentized_range.ppf(0.95, k, math.inf) / math.sqrt(2.0)
     critical_difference = q_alpha * math.sqrt(k * (k + 1) / (6.0 * n))
     saa_avg_rank = average_ranks[SAA_METHOD_ID]
+    leader_method = ordered_by_avg_rank[0]
+    leader_average_rank = average_ranks[leader_method]
+    leader_cd_band_cutoff = leader_average_rank + critical_difference
+    leader_cd_band_methods = [
+        m for m in ordered_by_avg_rank
+        if average_ranks[m] <= leader_cd_band_cutoff + TIE_EPS
+    ]
     nemenyi = {
         "alpha": 0.05,
         "q_alpha_studentized_range_over_sqrt2": q_alpha,
         "critical_difference": critical_difference,
         "saa_average_rank": saa_avg_rank,
+        "leader_method": leader_method,
+        "leader_average_rank": leader_average_rank,
+        "leader_cd_band_cutoff": leader_cd_band_cutoff,
+        "leader_cd_band_method_count": len(leader_cd_band_methods),
+        "leader_cd_band_methods": leader_cd_band_methods,
+        "field_mean_average_rank": statistics.mean(average_ranks.values()),
+        "saa_inside_leader_cd_band": SAA_METHOD_ID in leader_cd_band_methods,
         "not_separated_from_saa": [m for m in ordered_by_avg_rank if abs(average_ranks[m] - saa_avg_rank) <= critical_difference],
         "significantly_better_than_saa_by_cd": [m for m in ordered_by_avg_rank if average_ranks[m] + critical_difference < saa_avg_rank],
         "significantly_worse_than_saa_by_cd": [m for m in ordered_by_avg_rank if average_ranks[m] - critical_difference > saa_avg_rank],
@@ -403,6 +418,17 @@ def write_markdown(out_dir: Path, dossier: Dict[str, Any], svg_names: List[str])
                 f"SAA CD group {', '.join(not_sep)}; "
                 f"interpretation {result.get('interpretation', '')}."
             )
+            if headline.get("leader_cd_band_read"):
+                lines.append(f"- Leader CD band: {headline.get('leader_cd_band_read', '')}")
+        if headline.get("implementation_boundary"):
+            impl = headline["implementation_boundary"]
+            lines.append(
+                "- Implementation boundary: "
+                f"benchmarked `{impl.get('benchmarked_implementation', '')}` "
+                f"({impl.get('benchmark_implementation_type', '')}); "
+                f"production detector `{impl.get('production_detector', '')}` "
+                f"benchmarked={str(impl.get('production_detector_benchmarked', '')).lower()}."
+            )
         lines.append(f"- Real-world stability: {headline.get('real_world_stability', '')}")
         for entry in headline.get("change_log", []):
             lines.append(
@@ -522,6 +548,11 @@ def build_dossier_ref(dossier: Dict[str, Any], evidence_url: str) -> Dict[str, A
                 "saa_average_rank": saa_average_rank,
                 "delta_saa_minus_best_average_rank": avg_rank_delta,
                 "within_cd_with_best": within_cd,
+                "leader_cd_band_cutoff": nem["leader_cd_band_cutoff"],
+                "leader_cd_band_method_count": nem["leader_cd_band_method_count"],
+                "leader_cd_band_methods": nem["leader_cd_band_methods"],
+                "field_mean_average_rank": nem["field_mean_average_rank"],
+                "saa_inside_leader_cd_band": nem["saa_inside_leader_cd_band"],
                 "saa_vs_top_method": pair_top or {},
             })
     return {
@@ -537,6 +568,7 @@ def build_dossier_ref(dossier: Dict[str, Any], evidence_url: str) -> Dict[str, A
         "nemenyi_caveat": "INCONCLUSIVE_NOT_EQUIVALENCE",
         "headline_claim": dossier.get("headline_claim", {}),
         "claim_boundary": dossier["claim_boundary"],
+        "benchmarked_implementation": dossier.get("benchmarked_implementation", {}),
         "summaries": summaries,
     }
 
@@ -581,6 +613,21 @@ def build_headline_claim(dossier: Dict[str, Any]) -> Dict[str, Any]:
     saa_avg_rank = float(all_default_f["nemenyi"]["saa_average_rank"])
     avg_rank_delta = saa_avg_rank - best_avg_rank
     cd95 = float(all_default_f["nemenyi"]["critical_difference"])
+    leader_cd_band_cutoff = float(all_default_f["nemenyi"]["leader_cd_band_cutoff"])
+    leader_cd_band_methods = all_default_f["nemenyi"]["leader_cd_band_methods"]
+    leader_cd_band_count = int(all_default_f["nemenyi"]["leader_cd_band_method_count"])
+    field_mean_rank = float(all_default_f["nemenyi"]["field_mean_average_rank"])
+    implementation_boundary = {
+        "schema_id": "saa.risk_analyzer.tcpd_benchmark_implementation_boundary.v1",
+        "benchmarked_implementation": SAA_METHOD_ID,
+        "benchmark_implementation_type": "research_adapter",
+        "production_detector": "go_regime_heuristic_v1",
+        "production_detector_benchmarked": False,
+        "boundary": (
+            "TCPD benchmark covers the research adapter only. It is not evidence that the "
+            "production Risk Analyzer regime detector clears TCPD/TCPDBench or outperforms peers."
+        ),
+    }
     return {
         "schema_id": "saa.risk_analyzer.tcpd_headline_claim_discipline.v1",
         "headline_basis": "mean-score ranking for default_f_measure on all_42 paired common-dataset frame",
@@ -609,8 +656,15 @@ def build_headline_claim(dossier: Dict[str, Any]) -> Dict[str, Any]:
             f"Friedman p={all_default_f['friedman']['p_value']:.4g}; "
             f"Nemenyi mean-rank basis: SAA mean rank={saa_avg_rank:.4f}, "
             f"best {best_row['method']}={best_avg_rank:.4f}, delta={avg_rank_delta:.4f} "
-            f"< CD95={cd95:.4f}; "
+            f"< CD95={cd95:.4f}; leader CD band contains {leader_cd_band_count} of "
+            f"{all_default_f['friedman']['method_count']} methods at cutoff {leader_cd_band_cutoff:.4f}; "
             "non-separation is INCONCLUSIVE_NOT_EQUIVALENCE, not equality or superiority."
+        ),
+        "leader_cd_band_read": (
+            f"Leader CD band contains {leader_cd_band_count} of {all_default_f['friedman']['method_count']} "
+            f"methods (cutoff mean rank {leader_cd_band_cutoff:.4f} = best {best_row['method']} "
+            f"{best_avg_rank:.4f} + CD95 {cd95:.4f}); SAA mean rank {saa_avg_rank:.4f} "
+            f"is one of them; field mean rank is {field_mean_rank:.4f} by construction."
         ),
         "friedman_nemenyi_result": {
             "statistic": all_default_f["friedman"]["statistic"],
@@ -625,11 +679,17 @@ def build_headline_claim(dossier: Dict[str, Any]) -> Dict[str, Any]:
             "delta_saa_minus_best_average_rank": avg_rank_delta,
             "within_cd_with_best": avg_rank_delta <= cd95,
             "same_cd_band_as_best": avg_rank_delta <= cd95,
+            "leader_cd_band_cutoff": leader_cd_band_cutoff,
+            "leader_cd_band_method_count": leader_cd_band_count,
+            "leader_cd_band_methods": leader_cd_band_methods,
+            "field_mean_average_rank": field_mean_rank,
+            "saa_inside_leader_cd_band": SAA_METHOD_ID in leader_cd_band_methods,
             "not_separated_from_saa": not_separated,
             "significantly_better_than_saa_by_cd": all_default_f["nemenyi"]["significantly_better_than_saa_by_cd"],
             "significantly_worse_than_saa_by_cd": all_default_f["nemenyi"]["significantly_worse_than_saa_by_cd"],
             "interpretation": "INCONCLUSIVE_NOT_EQUIVALENCE",
         },
+        "implementation_boundary": implementation_boundary,
         "real_world_stability": (
             f"real-world 37 stability: default F rank {rw_default_f['saa_bootstrap']['rank_by_average_dataset_rank']}/15 "
             f"on {rw_default_f['meta']['common_dataset_count']} of 37; "
@@ -648,6 +708,8 @@ def build_headline_claim(dossier: Dict[str, Any]) -> Dict[str, Any]:
             "score must be printed with bootstrap score CI",
             "pairwise SAA-minus-top-method CI and W/T/L must be printed near the headline",
             "Friedman/Nemenyi must be printed with INCONCLUSIVE_NOT_EQUIVALENCE caveat",
+            "leader CD band method count and cutoff must be printed near any indistinguishable-from-leader language",
+            "benchmarked implementation must be named as research adapter unless production detector provenance is attached",
             "default and oracle frames must not be compared directly because their common-set denominators differ",
             "real-world 37 subset must be printed as a stability check, not as a cherry-picked replacement frame",
         ],
@@ -655,6 +717,7 @@ def build_headline_claim(dossier: Dict[str, Any]) -> Dict[str, Any]:
             "oracle_covering rank 3/15",
             "statistically equal to leaders",
             "production detector superiority",
+            "TCPD benchmark proves production go_regime_heuristic_v1 performance",
         ],
         "change_log": [
             {
@@ -673,10 +736,73 @@ def build_headline_claim(dossier: Dict[str, Any]) -> Dict[str, Any]:
             },
             {
                 "from_sha256": PREVIOUS_SURFACED_DOSSIER_SHA256,
-                "to_sha256": "sha256:this_artifact_declared_in_dossier_root",
+                "to_sha256": PREVIOUS_RANK_SCALE_DOSSIER_SHA256,
                 "change_scope": "rank-scale disclosure and explicit Nemenyi mean-rank delta surfaced",
                 "numeric_fields_changed": False,
                 "note": "Score 0.6941, mean-score rank 4/15, rank CI [1,7], pairwise W/T/L 14/6/15 and Friedman p-value remained unchanged. The current artifact sha256 is the root sha256 field and is not embedded here to avoid self-referential hashing.",
+            },
+            {
+                "from_sha256": PREVIOUS_RANK_SCALE_DOSSIER_SHA256,
+                "to_sha256": "sha256:this_artifact_declared_in_dossier_root",
+                "change_scope": "leader CD-band count, implementation boundary and superseded-claim register added",
+                "numeric_fields_changed": False,
+                "note": "Score 0.6941, mean-score rank 4/15, rank CI [1,7], pairwise W/T/L 14/6/15, Friedman p-value and Nemenyi delta remained unchanged. The current artifact sha256 is the root sha256 field and is not embedded here to avoid self-referential hashing.",
+            },
+        ],
+    }
+
+
+def build_superseded_claim_register(root: Path, dossier: Dict[str, Any]) -> Dict[str, Any]:
+    def file_ref(rel: str) -> Dict[str, Any]:
+        path = root / rel
+        if not path.is_file():
+            return {"path": rel, "exists": False}
+        data = path.read_bytes()
+        return {
+            "path": rel,
+            "exists": True,
+            "byte_length": len(data),
+            "sha256": "sha256:" + hashlib.sha256(data).hexdigest(),
+        }
+
+    current = dossier.get("headline_claim", {})
+    display_rule = (
+        "Already sealed artifacts are not rewritten. If an artifact displays the earlier "
+        "successful_rows_only TCPD frame rank 6/15, demos and decks must accompany it with "
+        "the current governing statistical dossier: mean-score rank 4/15 (CI95 1-7) on the "
+        "paired common-set frame; legacy 6/15 lies within CI [1,7]."
+    )
+    return {
+        "schema_id": "saa.risk_analyzer.tcpd_superseded_claim_register.v1",
+        "status": "PUBLISHED_RESEARCH_ONLY_GOVERNANCE_REGISTER",
+        "current_governing_dossier_sha256": dossier["sha256"],
+        "current_governing_headline": current.get("published_headline", ""),
+        "current_governing_boundary": current.get("implementation_boundary", {}),
+        "display_rule": display_rule,
+        "entries": [
+            {
+                "artifact_id": "run_OUxEg1Q24jOUtxG3B2dSSg",
+                "artifact_type": "fabric_export_freeze",
+                "sealed_prior_frame": "successful_rows_only adapter metric rank 6/15 by F-measure",
+                "governing_current_frame": "paired common-set mean-score rank 4/15 (CI95 1-7)",
+                "rewrite_allowed": False,
+                "display_accompaniment_required": True,
+                "local_artifact_refs": [
+                    file_ref("outputs/fabric_export_freeze/run_OUxEg1Q24jOUtxG3B2dSSg.html"),
+                    file_ref("outputs/fabric_export_freeze/run_OUxEg1Q24jOUtxG3B2dSSg.json"),
+                    file_ref("outputs/fabric_export_freeze/run_OUxEg1Q24jOUtxG3B2dSSg.pdf"),
+                    file_ref("outputs/fabric_export_freeze/run_OUxEg1Q24jOUtxG3B2dSSg.xlsx"),
+                    file_ref("outputs/fabric_export_freeze/run_OUxEg1Q24jOUtxG3B2dSSg.txt"),
+                ],
+            },
+            {
+                "artifact_id": "rpt_3372d6",
+                "artifact_type": "auditor_observed_fabric_pdf_render",
+                "sealed_prior_frame": "TCPD lollipop visually observed as rank 6/15, F 0.6698",
+                "governing_current_frame": "paired common-set mean-score rank 4/15 (CI95 1-7)",
+                "rewrite_allowed": False,
+                "display_accompaniment_required": True,
+                "evidence_basis": "auditor visual-audit reference; exact sealed file is not present in the local export-freeze directory",
             },
         ],
     }
@@ -715,7 +841,23 @@ def main() -> int:
         "bootstrap_iterations": args.bootstrap_iters,
         "seed": args.seed,
         "raw_series_exported": False,
-        "claim_boundary": "research-only external benchmark dossier; no production superiority claim; no raw TCPD series redistribution; Nemenyi non-separation is inconclusive",
+        "benchmarked_implementation": {
+            "schema_id": "saa.risk_analyzer.tcpd_benchmark_implementation_boundary.v1",
+            "benchmarked_implementation": SAA_METHOD_ID,
+            "benchmark_implementation_type": "research_adapter",
+            "production_detector": "go_regime_heuristic_v1",
+            "production_detector_benchmarked": False,
+            "boundary": (
+                "TCPD benchmark covers the research adapter only. It is not evidence that the "
+                "production Risk Analyzer regime detector clears TCPD/TCPDBench or outperforms peers."
+            ),
+        },
+        "claim_boundary": (
+            "research-only external benchmark dossier; benchmarked implementation = "
+            "saa_change_point_adapter_v1 research adapter; production detector "
+            "go_regime_heuristic_v1 not benchmarked; no claim transfers from research adapter to production detector; "
+            "no raw TCPD series redistribution; Nemenyi non-separation is inconclusive"
+        ),
         "scopes": {},
     }
 
@@ -730,6 +872,7 @@ def main() -> int:
     write_json(out_dir / "TCPD_BENCHMARK_DOSSIER_V1.json", dossier)
     evidence_url = "https://analyzer.saa-alliance.com/tcpd-benchmark-dossier-v1/TCPD_BENCHMARK_DOSSIER_V1.json"
     write_json(out_dir / "TCPD_BENCHMARK_DOSSIER_REF_V1.json", build_dossier_ref(dossier, evidence_url))
+    write_json(out_dir / "TCPD_SUPERSEDED_CLAIM_REGISTER_V1.json", build_superseded_claim_register(root, dossier))
     write_pairwise_csv(out_dir, dossier)
     write_ranking_csv(out_dir, dossier)
     svg_names = []

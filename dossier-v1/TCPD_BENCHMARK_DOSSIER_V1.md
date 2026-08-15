@@ -1,6 +1,6 @@
 # TCPD Benchmark Dossier V1
 
-Generated: `2026-08-15T14:44:08Z`
+Generated: `2026-08-15T15:29:24Z`
 Canonical source result: `sha256:74a3cb1c150ed3a0c06177f1dec2fef69f9385d0c95b7c9345dcd78c85934222`
 
 ## Boundary
@@ -15,15 +15,20 @@ Research-only external adapter evidence. No raw TCPD series are exported. Non-se
 - Frame reconciliation: earlier successful-rows frame rank 6 lies within the paired-frame rank CI [1,7]; the frames are consistent and the paired frame removes missing-row selection effects.
 - Pairwise read: SAA-minus-binseg mean difference -0.0503 CI95 [-0.1264, 0.0210], W/T/L 14/6/15.
 - Friedman/Nemenyi result: statistic 217.8456; p 1.217e-38; SAA mean rank 5.6143; best binseg 4.5000; delta 1.1143; CD95 3.6254; within CD with best True; SAA CD group binseg, pelt, bocpd, SAA, segneigh, amoc, zero, cpnp, ecp; interpretation INCONCLUSIVE_NOT_EQUIVALENCE.
+- Leader CD band: Leader CD band contains 9 of 15 methods (cutoff mean rank 8.1254 = best binseg 4.5000 + CD95 3.6254); SAA mean rank 5.6143 is one of them; field mean rank is 8.0000 by construction.
+- Implementation boundary: benchmarked `saa_change_point_adapter_v1` (research_adapter); production detector `go_regime_heuristic_v1` benchmarked=false.
 - Real-world stability: real-world 37 stability: default F rank 4/15 on 30 of 37; default covering rank 5/15 on 30 of 37; all_42 covering rank 5/15.
 - Change log: sha256:91b38e1f -> sha256:bdf16c21688b9c9e661b2b94f7e928a1aa568847139a5e155517ff22883bca08; headline discipline wrapper added; numeric_fields_changed=false.
 - Change log: sha256:bdf16c21688b9c9e661b2b94f7e928a1aa568847139a5e155517ff22883bca08 -> sha256:b19ff223b7e7cf42def70dd5d9bedb70a01f9ce01411c55093bceb3fa1e2410a; headline field made self-contained; full pairwise table, frame reconciliation and Friedman/Nemenyi result surfaced; numeric_fields_changed=false.
-- Change log: sha256:b19ff223b7e7cf42def70dd5d9bedb70a01f9ce01411c55093bceb3fa1e2410a -> sha256:this_artifact_declared_in_dossier_root; rank-scale disclosure and explicit Nemenyi mean-rank delta surfaced; numeric_fields_changed=false.
+- Change log: sha256:b19ff223b7e7cf42def70dd5d9bedb70a01f9ce01411c55093bceb3fa1e2410a -> sha256:5f9f2fb45c8a03f90720e1dd9abd7c313397add955a23532f28bbc8a35d11e32; rank-scale disclosure and explicit Nemenyi mean-rank delta surfaced; numeric_fields_changed=false.
+- Change log: sha256:5f9f2fb45c8a03f90720e1dd9abd7c313397add955a23532f28bbc8a35d11e32 -> sha256:this_artifact_declared_in_dossier_root; leader CD-band count, implementation boundary and superseded-claim register added; numeric_fields_changed=false.
 - Rule: headline may cite default ranks only, never oracle ranks
 - Rule: rank must be printed with bootstrap rank CI
 - Rule: score must be printed with bootstrap score CI
 - Rule: pairwise SAA-minus-top-method CI and W/T/L must be printed near the headline
 - Rule: Friedman/Nemenyi must be printed with INCONCLUSIVE_NOT_EQUIVALENCE caveat
+- Rule: leader CD band method count and cutoff must be printed near any indistinguishable-from-leader language
+- Rule: benchmarked implementation must be named as research adapter unless production detector provenance is attached
 - Rule: default and oracle frames must not be compared directly because their common-set denominators differ
 - Rule: real-world 37 subset must be printed as a stability check, not as a cherry-picked replacement frame
 

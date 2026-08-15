@@ -1,0 +1,66 @@
+{
+  "current_governing_boundary": {
+    "benchmark_implementation_type": "research_adapter",
+    "benchmarked_implementation": "saa_change_point_adapter_v1",
+    "boundary": "TCPD benchmark covers the research adapter only. It is not evidence that the production Risk Analyzer regime detector clears TCPD/TCPDBench or outperforms peers.",
+    "production_detector": "go_regime_heuristic_v1",
+    "production_detector_benchmarked": false,
+    "schema_id": "saa.risk_analyzer.tcpd_benchmark_implementation_boundary.v1"
+  },
+  "current_governing_dossier_sha256": "sha256:222a1ba33ae20214efaa407de98d824031cf04b980d25c43cbdd76008bc9d43b",
+  "current_governing_headline": "default F-measure paired common-set mean-score rank 4/15 (CI95 1-7) on 35 of 42 paired datasets",
+  "display_rule": "Already sealed artifacts are not rewritten. If an artifact displays the earlier successful_rows_only TCPD frame rank 6/15, demos and decks must accompany it with the current governing statistical dossier: mean-score rank 4/15 (CI95 1-7) on the paired common-set frame; legacy 6/15 lies within CI [1,7].",
+  "entries": [
+    {
+      "artifact_id": "run_OUxEg1Q24jOUtxG3B2dSSg",
+      "artifact_type": "fabric_export_freeze",
+      "display_accompaniment_required": true,
+      "governing_current_frame": "paired common-set mean-score rank 4/15 (CI95 1-7)",
+      "local_artifact_refs": [
+        {
+          "byte_length": 66398,
+          "exists": true,
+          "path": "outputs/fabric_export_freeze/run_OUxEg1Q24jOUtxG3B2dSSg.html",
+          "sha256": "sha256:1b4c5d4379f946dd392629a007b3f4c4d1267ff023be9eb5a2253703b18054fa"
+        },
+        {
+          "byte_length": 154640,
+          "exists": true,
+          "path": "outputs/fabric_export_freeze/run_OUxEg1Q24jOUtxG3B2dSSg.json",
+          "sha256": "sha256:a1b388222fdb90870d8f7760f1b15670b508c2fc5d15a05f73a9647e9196ce54"
+        },
+        {
+          "byte_length": 64677,
+          "exists": true,
+          "path": "outputs/fabric_export_freeze/run_OUxEg1Q24jOUtxG3B2dSSg.pdf",
+          "sha256": "sha256:225e157a39ad73791425739775702e6867b53785fee4c01710fb57031b7d8220"
+        },
+        {
+          "byte_length": 11098,
+          "exists": true,
+          "path": "outputs/fabric_export_freeze/run_OUxEg1Q24jOUtxG3B2dSSg.xlsx",
+          "sha256": "sha256:40b7eddedc82b42f2764a9a206fc34c87d2487d971cac2e41238fcaf32cbdbd7"
+        },
+        {
+          "byte_length": 13810,
+          "exists": true,
+          "path": "outputs/fabric_export_freeze/run_OUxEg1Q24jOUtxG3B2dSSg.txt",
+          "sha256": "sha256:57f2720841e56315bc467fc0c09914e6f44b1f69e69412eeef7bd8354bae8014"
+        }
+      ],
+      "rewrite_allowed": false,
+      "sealed_prior_frame": "successful_rows_only adapter metric rank 6/15 by F-measure"
+    },
+    {
+      "artifact_id": "rpt_3372d6",
+      "artifact_type": "auditor_observed_fabric_pdf_render",
+      "display_accompaniment_required": true,
+      "evidence_basis": "auditor visual-audit reference; exact sealed file is not present in the local export-freeze directory",
+      "governing_current_frame": "paired common-set mean-score rank 4/15 (CI95 1-7)",
+      "rewrite_allowed": false,
+      "sealed_prior_frame": "TCPD lollipop visually observed as rank 6/15, F 0.6698"
+    }
+  ],
+  "schema_id": "saa.risk_analyzer.tcpd_superseded_claim_register.v1",
+  "status": "PUBLISHED_RESEARCH_ONLY_GOVERNANCE_REGISTER"
+}

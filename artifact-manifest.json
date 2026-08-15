@@ -1,22 +1,27 @@
 {
-  "schema_version": "saa.tcpd_external_benchmark.github_manifest.v1",
-  "published_at_utc": "2026-08-06T00:00:00Z",
-  "method_id": "saa_change_point_adapter_v1",
-  "claim_boundary": "research-only external change-point adapter evidence; not a production Risk Analyzer regime-detector claim; no production-detector superiority claim; no Decision Grade; no raw TCPD data redistribution",
-  "upstream_pins": {
-    "tcpd_repo_commit": "e8f19a3635e3b7f1a8aff59ce7f4d9bea17525c0",
-    "tcpdbench_repo_commit": "167210005c09d2c44f9b2083b95f989a64be4b6b"
+  "files": {
+    "LICENSE": "sha256:6a4d9f3adacf2a12a2e7afa518ed3bfc089b00de5ef9b00bb829860973a31100",
+    "README.md": "sha256:181b00a06f8c4d1d61bb767001ca3e401a8c67a597c28acfd2b91f800d23a133",
+    "SHA256SUMS": "sha256:f27882d8756f695aafb7f4fa2f3e39566048135d00de7907da8f574e92535323",
+    "dossier-v1/SHA256SUMS.json": "sha256:bf3e54c2ff8344617120c3250470c8cb40b4315b0c911df18c538435f0fa3649",
+    "dossier-v1/TCPD_BENCHMARK_DOSSIER_REF_V1.json": "sha256:3f29a38ccc2bf89c1cb7ccdc51cb59ca5615e1f291f331d0742d97f8097c2b0b",
+    "dossier-v1/TCPD_BENCHMARK_DOSSIER_V1.json": "sha256:6fbd614f4ac7369f60a54c3ab5188d0bda47dbeddb2b2cc0a0f4cdb01e0ef210",
+    "dossier-v1/TCPD_BENCHMARK_DOSSIER_V1.md": "sha256:e8806c8ca9f47cd246e01fa68da22998cdec829d8cc1c9122793c87b46754c65",
+    "dossier-v1/TCPD_SUPERSEDED_CLAIM_REGISTER_V1.json": "sha256:387e7a2f429cd575a25d2ef7434c4c31663275dedc0de90d47ea441e9cd73696",
+    "dossier-v1/cd_all_42_default_covering.svg": "sha256:25602f10681b801442656c4cce33c5e976189c9ced3f14ae453ca59418cf4f4c",
+    "dossier-v1/cd_all_42_default_f_measure.svg": "sha256:586e418fbec524a5ad2476ef0e834a30604ad6bf19e1d7c2cd5b6877386e1c0f",
+    "dossier-v1/cd_all_42_oracle_covering.svg": "sha256:85f3bddf8f90941358f1b5e8bf0f5ef11788dc25c3d12fac5382b7e82f8d0126",
+    "dossier-v1/cd_all_42_oracle_f_measure.svg": "sha256:d7cda1462f01a36bf7622388224f9411a9626d5bee2b83b78dbfdf575620d746",
+    "dossier-v1/cd_real_world_37_default_covering.svg": "sha256:72c43008a70c90cd05e49451a1283c3f2bd07039e41fd6767f1573a213ba5df1",
+    "dossier-v1/cd_real_world_37_default_f_measure.svg": "sha256:92f8c2056effe3dceaf32814d60a258d3710edcae2ce15bca58233faff22e02b",
+    "dossier-v1/cd_real_world_37_oracle_covering.svg": "sha256:2881ab0053e979f74feece055140690350448807e5a4046be93c86af76ce2977",
+    "dossier-v1/cd_real_world_37_oracle_f_measure.svg": "sha256:72e0f6f8de161b56e0765da60033d6c7b5e978d29d2dcf48039580f32c8c4f2c",
+    "dossier-v1/paired_common_dataset_rankings.csv": "sha256:ac5f551f93c30689a9ea2577347a08aad00f600e6298814b02a811a623dbb709",
+    "dossier-v1/pairwise_score_differences.csv": "sha256:114e9e30a68b0dd49d2fd68db270e24296b3bb65d17b622af158408dd209d2cf",
+    "run_tcpd_external_benchmark.py": "sha256:326b6d421d33ae00a25776a78a8406d886379001fefb7fe3a64cb42ef63522f0",
+    "scripts/build_tcpd_benchmark_dossier.py": "sha256:110eeb14dcf56eb3506390ee2b0e3022b8f08389d0b4b7370dbd565a0fba154c",
+    "tcpd-external-benchmark-predictions-v1.json": "sha256:fb067d3d4024c656ff530aca29ea0f5f7e8afb9c4fd7e7f730bef269c9e8e356",
+    "tcpd-external-benchmark-result-v1.json": "sha256:d2306a9d4c965619806f0fe6e7c46cf2309ac6293fb7d6feb37dcc16249afdf4"
   },
-  "canonical_hashes": {
-    "result": "sha256:74a3cb1c150ed3a0c06177f1dec2fef69f9385d0c95b7c9345dcd78c85934222",
-    "predictions": "sha256:10d8a913c9bcfc5a0a00a82fbc736013d712c066ceecbba4e39ea9318a7658b2"
-  },
-  "published_prediction_counts": {
-    "default": 42,
-    "oracle_f_measure": 42,
-    "oracle_covering": 42
-  },
-  "raw_tcpd_data_redistributed": false,
-  "pointwise_restricted_series_charts_redistributed": false,
-  "external_replay": "Use published 0-indexed cplocations with TCPDBench analysis/scripts/metrics.py against pinned upstream TCPD/TCPDBench data."
+  "schema_id": "saa.risk_analyzer.tcpd_external_benchmark.github_artifact_manifest.v1"
 }

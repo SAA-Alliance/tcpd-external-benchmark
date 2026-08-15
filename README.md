@@ -6,7 +6,7 @@ This repository publishes the hash-bound statistical dossier for the SAA Risk An
 
 `PUBLISHED_RESEARCH_ONLY_STATISTICAL_DOSSIER`
 
-This is a research-only benchmark dossier. It is not a production detector superiority claim, not investment advice, and not an execution or allocation instruction.
+This is a research-only benchmark dossier. It is not evidence of production-detector performance, not investment advice, and not an execution or allocation instruction.
 
 ## What Is Included
 
@@ -16,6 +16,7 @@ This is a research-only benchmark dossier. It is not a production detector super
 - Friedman/Nemenyi multi-method comparison.
 - Separate all-series and real-world-only TCPD scopes.
 - Critical-difference SVG diagrams.
+- Superseded-claim register for already sealed Fabric packs carrying the old successful_rows_only frame.
 - Hash-bound JSON and CSV evidence artifacts.
 
 ## Canonical Evidence
@@ -26,7 +27,7 @@ https://analyzer.saa-alliance.com/tcpd-benchmark-dossier-v1/TCPD_BENCHMARK_DOSSI
 
 Dossier SHA-256:
 
-`sha256:5f9f2fb45c8a03f90720e1dd9abd7c313397add955a23532f28bbc8a35d11e32`
+`sha256:222a1ba33ae20214efaa407de98d824031cf04b980d25c43cbdd76008bc9d43b`
 
 Source result canonical SHA-256:
 
@@ -36,6 +37,8 @@ Source result canonical SHA-256:
 
 - No raw TCPD time series are redistributed here.
 - No claim is made that non-separation under Nemenyi means equality or superiority.
+- Benchmarked implementation is `saa_change_point_adapter_v1` research adapter.
+- Production detector `go_regime_heuristic_v1` was not benchmarked; claims do not transfer from the research adapter to the production detector.
 - `INCONCLUSIVE_NOT_EQUIVALENCE` is the required interpretation of non-separated groups.
 - The dossier is an evidence artifact for audit and reproducibility, not a live trading signal.
 
@@ -53,6 +56,7 @@ That headline must be printed with:
 - pairwise SAA-minus-binseg difference `-0.0503 CI95 [-0.1264, 0.0210]`, W/T/L `14/6/15`;
 - full pairwise table covers all 14 opponents;
 - Friedman/Nemenyi result on mean-rank basis: SAA mean rank `5.6143`, best `binseg` mean rank `4.5000`, delta `1.1143 < CD95 3.6254`, interpretation `INCONCLUSIVE_NOT_EQUIVALENCE`;
+- leader CD band contains `9 of 15` methods at cutoff mean rank `8.1254`; SAA is inside that band;
 - real-world 37 stability check: default F rank `4/15` on `30 of 37`, default covering rank `5/15` on `30 of 37`;
 - oracle ranks as secondary only. `oracle_covering rank 3/15` is explicitly forbidden as a headline.
 
@@ -61,6 +65,7 @@ That headline must be printed with:
 - `sha256:91b38e1f` -> `sha256:bdf16c21688b9c9e661b2b94f7e928a1aa568847139a5e155517ff22883bca08`: headline discipline wrapper added; numeric fields unchanged.
 - `sha256:bdf16c21688b9c9e661b2b94f7e928a1aa568847139a5e155517ff22883bca08` -> `sha256:b19ff223b7e7cf42def70dd5d9bedb70a01f9ce01411c55093bceb3fa1e2410a`: self-contained headline, pairwise table, frame reconciliation and Friedman/Nemenyi result surfaced; score `0.6941`, rank `4/15` and rank CI `[1,7]` unchanged.
 - `sha256:b19ff223b7e7cf42def70dd5d9bedb70a01f9ce01411c55093bceb3fa1e2410a` -> `sha256:5f9f2fb45c8a03f90720e1dd9abd7c313397add955a23532f28bbc8a35d11e32`: rank-scale disclosure and explicit Nemenyi mean-rank delta surfaced; score `0.6941`, mean-score rank `4/15`, rank CI `[1,7]`, W/T/L `14/6/15` and Friedman p-value unchanged.
+- `sha256:5f9f2fb45c8a03f90720e1dd9abd7c313397add955a23532f28bbc8a35d11e32` -> `sha256:222a1ba33ae20214efaa407de98d824031cf04b980d25c43cbdd76008bc9d43b`: leader CD-band count, implementation boundary and superseded-claim register added; score `0.6941`, mean-score rank `4/15`, rank CI `[1,7]`, W/T/L `14/6/15`, Friedman p-value and Nemenyi delta unchanged.
 
 ## Source Pins
 
@@ -71,11 +76,12 @@ The dossier was generated from pinned upstream sources recorded inside the JSON 
 
 ## Main Files
 
-- `artifacts/TCPD_BENCHMARK_DOSSIER_V1.json` - canonical statistical dossier object.
-- `artifacts/TCPD_BENCHMARK_DOSSIER_REF_V1.json` - compact reference embedded by Risk Analyzer/Fabric.
-- `artifacts/TCPD_BENCHMARK_DOSSIER_V1.md` - human-readable dossier.
-- `artifacts/paired_common_dataset_rankings.csv` - method rankings by scope/metric.
-- `artifacts/pairwise_score_differences.csv` - pairwise deltas and W/T/L rows.
-- `artifacts/cd_*.svg` - critical-difference diagrams.
-- `artifacts/SHA256SUMS.json` - artifact checksums.
+- `dossier-v1/TCPD_BENCHMARK_DOSSIER_V1.json` - canonical statistical dossier object.
+- `dossier-v1/TCPD_BENCHMARK_DOSSIER_REF_V1.json` - compact reference embedded by Risk Analyzer/Fabric.
+- `dossier-v1/TCPD_BENCHMARK_DOSSIER_V1.md` - human-readable dossier.
+- `dossier-v1/TCPD_SUPERSEDED_CLAIM_REGISTER_V1.json` - governance register for already sealed Fabric packs that carry the prior `6/15` successful_rows_only frame.
+- `dossier-v1/paired_common_dataset_rankings.csv` - method rankings by scope/metric.
+- `dossier-v1/pairwise_score_differences.csv` - pairwise deltas and W/T/L rows.
+- `dossier-v1/cd_*.svg` - critical-difference diagrams.
+- `dossier-v1/SHA256SUMS.json` - artifact checksums.
 - `scripts/build_tcpd_benchmark_dossier.py` - generator used to produce the dossier.
