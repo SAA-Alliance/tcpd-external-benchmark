@@ -21,9 +21,13 @@ This is a research-only benchmark dossier. It is not evidence of production-dete
 
 ## Canonical Evidence
 
-Prod evidence URL:
+GitHub artifact path:
 
-https://analyzer.saa-alliance.com/tcpd-benchmark-dossier-v1/TCPD_BENCHMARK_DOSSIER_V1.json
+`dossier-v1/TCPD_BENCHMARK_DOSSIER_V1.json` in the GitHub publication package `SAA-Alliance/tcpd-external-benchmark`.
+
+Machine readback URL:
+
+`https://raw.githubusercontent.com/SAA-Alliance/tcpd-external-benchmark/main/dossier-v1/TCPD_BENCHMARK_DOSSIER_V1.json`
 
 Dossier SHA-256:
 

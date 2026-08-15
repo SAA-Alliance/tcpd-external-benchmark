@@ -870,7 +870,7 @@ def main() -> int:
     dossier["headline_claim"] = build_headline_claim(dossier)
     dossier["sha256"] = sha256_obj({k: v for k, v in dossier.items() if k != "sha256"})
     write_json(out_dir / "TCPD_BENCHMARK_DOSSIER_V1.json", dossier)
-    evidence_url = "https://analyzer.saa-alliance.com/tcpd-benchmark-dossier-v1/TCPD_BENCHMARK_DOSSIER_V1.json"
+    evidence_url = "https://raw.githubusercontent.com/SAA-Alliance/tcpd-external-benchmark/main/dossier-v1/TCPD_BENCHMARK_DOSSIER_V1.json"
     write_json(out_dir / "TCPD_BENCHMARK_DOSSIER_REF_V1.json", build_dossier_ref(dossier, evidence_url))
     write_json(out_dir / "TCPD_SUPERSEDED_CLAIM_REGISTER_V1.json", build_superseded_claim_register(root, dossier))
     write_pairwise_csv(out_dir, dossier)

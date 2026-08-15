@@ -1,10 +1,12 @@
 {
   "files": {
     "LICENSE": "sha256:6a4d9f3adacf2a12a2e7afa518ed3bfc089b00de5ef9b00bb829860973a31100",
-    "README.md": "sha256:181b00a06f8c4d1d61bb767001ca3e401a8c67a597c28acfd2b91f800d23a133",
-    "SHA256SUMS": "sha256:f27882d8756f695aafb7f4fa2f3e39566048135d00de7907da8f574e92535323",
-    "dossier-v1/SHA256SUMS.json": "sha256:bf3e54c2ff8344617120c3250470c8cb40b4315b0c911df18c538435f0fa3649",
-    "dossier-v1/TCPD_BENCHMARK_DOSSIER_REF_V1.json": "sha256:3f29a38ccc2bf89c1cb7ccdc51cb59ca5615e1f291f331d0742d97f8097c2b0b",
+    "README.md": "sha256:c54599277bab9eb1fb6617910af3445697d3683864f76de66c2ea55752613b94",
+    "SHA256SUMS": "sha256:0c92df4738ec79fd79af3a4881d0473f8e9f7b1e1af4f4063753f9b63457cbfc",
+    "dossier-v1/ARTIFACT_MANIFEST.md": "sha256:29ab731fc52d4efc7ebd1a45355691000f24c5af8a1f21cbb8a9daf0c2f37ffd",
+    "dossier-v1/REPRODUCIBILITY.md": "sha256:976444e8e12b4ae0d3136c127fad47836355a6f37059aab7998f280dde30ebb9",
+    "dossier-v1/SHA256SUMS.json": "sha256:0ed3ae3a6a0566dfa819bba8d8ed2bcac6a19b7a652f63ff2c7d9f18f52b7e4f",
+    "dossier-v1/TCPD_BENCHMARK_DOSSIER_REF_V1.json": "sha256:ecf2feaae9c1dd4085f041ef7d46c99cbede46952e46f453dedc816fc2fbb187",
     "dossier-v1/TCPD_BENCHMARK_DOSSIER_V1.json": "sha256:6fbd614f4ac7369f60a54c3ab5188d0bda47dbeddb2b2cc0a0f4cdb01e0ef210",
     "dossier-v1/TCPD_BENCHMARK_DOSSIER_V1.md": "sha256:e8806c8ca9f47cd246e01fa68da22998cdec829d8cc1c9122793c87b46754c65",
     "dossier-v1/TCPD_SUPERSEDED_CLAIM_REGISTER_V1.json": "sha256:387e7a2f429cd575a25d2ef7434c4c31663275dedc0de90d47ea441e9cd73696",
@@ -19,7 +21,7 @@
     "dossier-v1/paired_common_dataset_rankings.csv": "sha256:ac5f551f93c30689a9ea2577347a08aad00f600e6298814b02a811a623dbb709",
     "dossier-v1/pairwise_score_differences.csv": "sha256:114e9e30a68b0dd49d2fd68db270e24296b3bb65d17b622af158408dd209d2cf",
     "run_tcpd_external_benchmark.py": "sha256:326b6d421d33ae00a25776a78a8406d886379001fefb7fe3a64cb42ef63522f0",
-    "scripts/build_tcpd_benchmark_dossier.py": "sha256:110eeb14dcf56eb3506390ee2b0e3022b8f08389d0b4b7370dbd565a0fba154c",
+    "scripts/build_tcpd_benchmark_dossier.py": "sha256:e928e5877ae40807f7c181601a32a894ebad950bfeaa09576876630abcbbd351",
     "tcpd-external-benchmark-predictions-v1.json": "sha256:fb067d3d4024c656ff530aca29ea0f5f7e8afb9c4fd7e7f730bef269c9e8e356",
     "tcpd-external-benchmark-result-v1.json": "sha256:d2306a9d4c965619806f0fe6e7c46cf2309ac6293fb7d6feb37dcc16249afdf4"
   },

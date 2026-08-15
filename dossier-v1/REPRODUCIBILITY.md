@@ -8,10 +8,10 @@ python3 scripts/build_tcpd_benchmark_dossier.py \
   --bootstrap-iters 10000
 ```
 
-The canonical published artifact is available on the SAA Analyzer prod host:
+The canonical published artifact is the GitHub package object; the command below reads the raw GitHub artifact, not the Analyzer service host:
 
 ```bash
-curl -sS https://analyzer.saa-alliance.com/tcpd-benchmark-dossier-v1/TCPD_BENCHMARK_DOSSIER_V1.json \
+curl -sS https://raw.githubusercontent.com/SAA-Alliance/tcpd-external-benchmark/main/dossier-v1/TCPD_BENCHMARK_DOSSIER_V1.json \
   | jq '{schema_id,status,sha256,raw_series_exported,bootstrap_iterations,headline:.headline_claim.published_headline,rank_ci:.headline_claim.required_uncertainty,pairwise:.headline_claim.pairwise_read,leader:.headline_claim.leader_cd_band_read,implementation:.benchmarked_implementation,oracle_allowed:.headline_claim.oracle_handling.headline_allowed}'
 ```
 
