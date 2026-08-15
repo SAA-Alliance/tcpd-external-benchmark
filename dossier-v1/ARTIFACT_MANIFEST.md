@@ -30,5 +30,6 @@ Publication boundary:
 - raw TCPD time series are not included;
 - Nemenyi non-separation is marked `INCONCLUSIVE_NOT_EQUIVALENCE`;
 - this package is research-only and does not publish a production detector superiority claim.
-- default headline rank `4/15` is valid only with rank CI, score CI, pairwise W/T/L and Friedman/Nemenyi caveat;
+- default headline rank `4/15` is a mean-score ranking and is valid only with rank CI, score CI, pairwise W/T/L and explicit separation from Friedman/Nemenyi's mean-rank basis;
+- Friedman/Nemenyi mean-rank result for the headline frame: SAA `5.6143`, best `binseg` `4.5000`, delta `1.1143 < CD95 3.6254`, interpretation `INCONCLUSIVE_NOT_EQUIVALENCE`;
 - oracle ranks are secondary only; `oracle_covering rank 3/15` is forbidden as a headline.

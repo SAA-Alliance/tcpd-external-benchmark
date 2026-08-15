@@ -27,6 +27,9 @@ BASELINE_METHODS = [
 ]
 SAA_METHOD_ID = "saa_change_point_adapter_v1"
 SAA_LABEL = "SAA"
+PREVIOUS_AUDIT_DOSSIER_SHA_PREFIX = "sha256:91b38e1f"
+PREVIOUS_DISCIPLINE_DOSSIER_SHA256 = "sha256:bdf16c21688b9c9e661b2b94f7e928a1aa568847139a5e155517ff22883bca08"
+PREVIOUS_SURFACED_DOSSIER_SHA256 = "sha256:b19ff223b7e7cf42def70dd5d9bedb70a01f9ce01411c55093bceb3fa1e2410a"
 QC_DATASETS = {f"quality_control_{i}" for i in range(1, 6)}
 ANALYSES = [
     ("default_f_measure", "default", "f1", "default_f_measure"),
@@ -381,9 +384,31 @@ def write_markdown(out_dir: Path, dossier: Dict[str, Any], svg_names: List[str])
         lines.append("## Claim Discipline")
         lines.append("")
         lines.append(f"- Published headline: {headline.get('published_headline', '')}")
+        lines.append(f"- Rank scale disclosure: {headline.get('rank_scale_disclosure', '')}")
         lines.append(f"- Required uncertainty: {headline.get('required_uncertainty', '')}")
+        lines.append(f"- Frame reconciliation: {headline.get('frame_reconciliation', '')}")
         lines.append(f"- Pairwise read: {headline.get('pairwise_read', '')}")
+        if headline.get("friedman_nemenyi_result"):
+            result = headline["friedman_nemenyi_result"]
+            not_sep = [SAA_LABEL if m == SAA_METHOD_ID else m for m in result.get("not_separated_from_saa", [])]
+            lines.append(
+                "- Friedman/Nemenyi result: "
+                f"statistic {result.get('statistic', 0):.4f}; "
+                f"p {result.get('p_value', 0):.4g}; "
+                f"SAA mean rank {result.get('saa_average_rank', 0):.4f}; "
+                f"best {result.get('best_method', '')} {result.get('best_average_rank', 0):.4f}; "
+                f"delta {result.get('delta_saa_minus_best_average_rank', 0):.4f}; "
+                f"CD95 {result.get('critical_difference_95', 0):.4f}; "
+                f"within CD with best {result.get('within_cd_with_best', False)}; "
+                f"SAA CD group {', '.join(not_sep)}; "
+                f"interpretation {result.get('interpretation', '')}."
+            )
         lines.append(f"- Real-world stability: {headline.get('real_world_stability', '')}")
+        for entry in headline.get("change_log", []):
+            lines.append(
+                f"- Change log: {entry.get('from_sha256', '')} -> {entry.get('to_sha256', '')}; "
+                f"{entry.get('change_scope', '')}; numeric_fields_changed={str(entry.get('numeric_fields_changed', '')).lower()}."
+            )
         for rule in headline.get("publication_rules", []):
             lines.append(f"- Rule: {rule}")
         lines.append("")
@@ -415,7 +440,18 @@ def write_markdown(out_dir: Path, dossier: Dict[str, Any], svg_names: List[str])
             lines.append("")
     lines.append("## Pairwise Tables")
     lines.append("")
-    lines.append("See `pairwise_score_differences.csv` for full SAA-minus-opponent bootstrap intervals and win/tie/loss counts.")
+    lines.append("Default F-measure headline pairwise table; SAA-minus-opponent over the same 35 paired datasets:")
+    lines.append("")
+    lines.append("| opponent | mean diff | CI95 low | CI95 high | W/T/L | sign |")
+    lines.append("|---|---:|---:|---:|---:|---|")
+    for row in headline.get("pairwise_table", []):
+        lines.append(
+            f"| {row['opponent']} | {row['mean_score_difference_saa_minus_opponent']:.4f} | "
+            f"{row['bootstrap_ci95_low']:.4f} | {row['bootstrap_ci95_high']:.4f} | "
+            f"{row['win']}/{row['tie']}/{row['loss']} | {row['sign']} |"
+        )
+    lines.append("")
+    lines.append("See `pairwise_score_differences.csv` for every scope and metric.")
     lines.append("")
     lines.append("## Critical-Difference SVGs")
     lines.append("")
@@ -441,6 +477,10 @@ def build_dossier_ref(dossier: Dict[str, Any], evidence_url: str) -> Dict[str, A
             fried = analysis["friedman"]
             top = analysis["ranking"][0] if analysis.get("ranking") else {}
             top_method = top.get("method", "")
+            top_average_rank = float(top.get("average_dataset_rank", nem["saa_average_rank"]))
+            saa_average_rank = float(nem["saa_average_rank"])
+            avg_rank_delta = saa_average_rank - top_average_rank
+            within_cd = bool(avg_rank_delta <= float(nem["critical_difference"]))
             pair_top = next(
                 (row for row in analysis.get("pairwise_score_differences", []) if row.get("opponent") == top_method),
                 None,
@@ -467,6 +507,9 @@ def build_dossier_ref(dossier: Dict[str, Any], evidence_url: str) -> Dict[str, A
                 "saa_score_mean": boot["score_mean"],
                 "saa_score_ci95_low": boot["score_ci95_low"],
                 "saa_score_ci95_high": boot["score_ci95_high"],
+                "saa_mean_score_rank": int(boot["rank_by_mean_score"]),
+                "saa_mean_score_rank_ci95_low": boot["rank_by_mean_score_ci95_low"],
+                "saa_mean_score_rank_ci95_high": boot["rank_by_mean_score_ci95_high"],
                 "saa_paired_avg_rank_position": boot["rank_by_average_dataset_rank"],
                 "saa_paired_avg_rank_ci95_low": boot["rank_by_average_dataset_rank_ci95_low"],
                 "saa_paired_avg_rank_ci95_high": boot["rank_by_average_dataset_rank_ci95_high"],
@@ -474,6 +517,11 @@ def build_dossier_ref(dossier: Dict[str, Any], evidence_url: str) -> Dict[str, A
                 "nemenyi_critical_difference_95": nem["critical_difference"],
                 "nemenyi_interpretation": "INCONCLUSIVE_NOT_EQUIVALENCE",
                 "top_paired_method": top_method,
+                "best_average_rank_method": top_method,
+                "best_average_rank": top_average_rank,
+                "saa_average_rank": saa_average_rank,
+                "delta_saa_minus_best_average_rank": avg_rank_delta,
+                "within_cd_with_best": within_cd,
                 "saa_vs_top_method": pair_top or {},
             })
     return {
@@ -500,6 +548,7 @@ def build_headline_claim(dossier: Dict[str, Any]) -> Dict[str, Any]:
     rw_default_c = dossier["scopes"]["real_world_37"]["analyses"]["default_covering"]
     boot = all_default_f["saa_bootstrap"]
     meta = all_default_f["meta"]
+    headline_rank = int(boot["rank_by_mean_score"])
     top_method = all_default_f["ranking"][0]["method"]
     top_pairwise = next(
         (row for row in all_default_f["pairwise_score_differences"] if row.get("opponent") == top_method),
@@ -512,24 +561,75 @@ def build_headline_claim(dossier: Dict[str, Any]) -> Dict[str, Any]:
             f"CI95 [{top_pairwise['bootstrap_ci95_low']:.4f}, {top_pairwise['bootstrap_ci95_high']:.4f}], "
             f"W/T/L {top_pairwise['win']}/{top_pairwise['tie']}/{top_pairwise['loss']}."
         )
+    pairwise_table = [
+        {
+            "opponent": row["opponent"],
+            "mean_score_difference_saa_minus_opponent": row["mean_score_difference_saa_minus_opponent"],
+            "bootstrap_ci95_low": row["bootstrap_ci95_low"],
+            "bootstrap_ci95_high": row["bootstrap_ci95_high"],
+            "win": row["win"],
+            "tie": row["tie"],
+            "loss": row["loss"],
+            "common_dataset_count": meta["common_dataset_count"],
+            "sign": row["sign"],
+        }
+        for row in all_default_f["pairwise_score_differences"]
+    ]
+    not_separated = all_default_f["nemenyi"]["not_separated_from_saa"]
+    best_row = all_default_f["ranking"][0]
+    best_avg_rank = float(best_row["average_dataset_rank"])
+    saa_avg_rank = float(all_default_f["nemenyi"]["saa_average_rank"])
+    avg_rank_delta = saa_avg_rank - best_avg_rank
+    cd95 = float(all_default_f["nemenyi"]["critical_difference"])
     return {
         "schema_id": "saa.risk_analyzer.tcpd_headline_claim_discipline.v1",
-        "headline_basis": "default_f_measure on all_42 paired common-dataset frame",
+        "headline_basis": "mean-score ranking for default_f_measure on all_42 paired common-dataset frame",
+        "rank_scale_disclosure": (
+            "headline rank 4/15 is mean-score ranking; Friedman/Nemenyi uses mean-rank basis "
+            "over per-dataset ranks and must not be described as proving the headline rank."
+        ),
         "published_headline": (
-            f"default F-measure paired common-set rank {boot['rank_by_average_dataset_rank']}/15 "
-            f"on {meta['common_dataset_count']} of {meta['declared_scope_total']} datasets"
+            f"default F-measure paired common-set mean-score rank {headline_rank}/15 "
+            f"(CI95 {boot['rank_by_mean_score_ci95_low']:.0f}-"
+            f"{boot['rank_by_mean_score_ci95_high']:.0f}) "
+            f"on {meta['common_dataset_count']} of {meta['declared_scope_total']} paired datasets"
         ),
         "required_uncertainty": (
-            f"rank CI95 [{boot['rank_by_average_dataset_rank_ci95_low']:.1f}, "
-            f"{boot['rank_by_average_dataset_rank_ci95_high']:.1f}], score {boot['score_mean']:.4f} "
+            f"mean-score rank CI95 [{boot['rank_by_mean_score_ci95_low']:.1f}, "
+            f"{boot['rank_by_mean_score_ci95_high']:.1f}], score {boot['score_mean']:.4f} "
             f"CI95 [{boot['score_ci95_low']:.4f}, {boot['score_ci95_high']:.4f}]"
         ),
+        "frame_reconciliation": (
+            "earlier successful-rows frame rank 6 lies within the paired-frame rank CI [1,7]; "
+            "the frames are consistent and the paired frame removes missing-row selection effects."
+        ),
         "pairwise_read": pairwise_read,
+        "pairwise_table": pairwise_table,
         "friedman_nemenyi_read": (
             f"Friedman p={all_default_f['friedman']['p_value']:.4g}; "
-            f"Nemenyi CD95={all_default_f['nemenyi']['critical_difference']:.3f}; "
+            f"Nemenyi mean-rank basis: SAA mean rank={saa_avg_rank:.4f}, "
+            f"best {best_row['method']}={best_avg_rank:.4f}, delta={avg_rank_delta:.4f} "
+            f"< CD95={cd95:.4f}; "
             "non-separation is INCONCLUSIVE_NOT_EQUIVALENCE, not equality or superiority."
         ),
+        "friedman_nemenyi_result": {
+            "statistic": all_default_f["friedman"]["statistic"],
+            "p_value": all_default_f["friedman"]["p_value"],
+            "method_count": all_default_f["friedman"]["method_count"],
+            "dataset_count": all_default_f["friedman"]["dataset_count"],
+            "basis": "mean-rank over per-dataset ranks; separate from headline mean-score rank",
+            "critical_difference_95": cd95,
+            "saa_average_rank": saa_avg_rank,
+            "best_method": best_row["method"],
+            "best_average_rank": best_avg_rank,
+            "delta_saa_minus_best_average_rank": avg_rank_delta,
+            "within_cd_with_best": avg_rank_delta <= cd95,
+            "same_cd_band_as_best": avg_rank_delta <= cd95,
+            "not_separated_from_saa": not_separated,
+            "significantly_better_than_saa_by_cd": all_default_f["nemenyi"]["significantly_better_than_saa_by_cd"],
+            "significantly_worse_than_saa_by_cd": all_default_f["nemenyi"]["significantly_worse_than_saa_by_cd"],
+            "interpretation": "INCONCLUSIVE_NOT_EQUIVALENCE",
+        },
         "real_world_stability": (
             f"real-world 37 stability: default F rank {rw_default_f['saa_bootstrap']['rank_by_average_dataset_rank']}/15 "
             f"on {rw_default_f['meta']['common_dataset_count']} of 37; "
@@ -555,6 +655,29 @@ def build_headline_claim(dossier: Dict[str, Any]) -> Dict[str, Any]:
             "oracle_covering rank 3/15",
             "statistically equal to leaders",
             "production detector superiority",
+        ],
+        "change_log": [
+            {
+                "from_sha256": PREVIOUS_AUDIT_DOSSIER_SHA_PREFIX,
+                "to_sha256": PREVIOUS_DISCIPLINE_DOSSIER_SHA256,
+                "change_scope": "headline discipline wrapper added",
+                "numeric_fields_changed": False,
+                "note": "Rank, score, confidence intervals and pairwise arithmetic remained stable; only claim discipline was made explicit.",
+            },
+            {
+                "from_sha256": PREVIOUS_DISCIPLINE_DOSSIER_SHA256,
+                "to_sha256": PREVIOUS_SURFACED_DOSSIER_SHA256,
+                "change_scope": "headline field made self-contained; full pairwise table, frame reconciliation and Friedman/Nemenyi result surfaced",
+                "numeric_fields_changed": False,
+                "note": "Rank 4/15, score 0.6941 and rank CI [1,7] remained unchanged; only claim discipline and renderer-facing fields changed.",
+            },
+            {
+                "from_sha256": PREVIOUS_SURFACED_DOSSIER_SHA256,
+                "to_sha256": "sha256:this_artifact_declared_in_dossier_root",
+                "change_scope": "rank-scale disclosure and explicit Nemenyi mean-rank delta surfaced",
+                "numeric_fields_changed": False,
+                "note": "Score 0.6941, mean-score rank 4/15, rank CI [1,7], pairwise W/T/L 14/6/15 and Friedman p-value remained unchanged. The current artifact sha256 is the root sha256 field and is not embedded here to avoid self-referential hashing.",
+            },
         ],
     }
 

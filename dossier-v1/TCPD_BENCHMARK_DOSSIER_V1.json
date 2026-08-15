@@ -1,7 +1,7 @@
 {
   "bootstrap_iterations": 10000,
   "claim_boundary": "research-only external benchmark dossier; no production superiority claim; no raw TCPD series redistribution; Nemenyi non-separation is inconclusive",
-  "generated_at_utc": "2026-08-15T13:11:19Z",
+  "generated_at_utc": "2026-08-15T14:44:08Z",
   "headline_claim": {
     "change_log": [
       {
@@ -14,7 +14,14 @@
       {
         "change_scope": "headline field made self-contained; full pairwise table, frame reconciliation and Friedman/Nemenyi result surfaced",
         "from_sha256": "sha256:bdf16c21688b9c9e661b2b94f7e928a1aa568847139a5e155517ff22883bca08",
-        "note": "The current artifact sha256 is the root sha256 field; it is not embedded here to avoid self-referential hashing.",
+        "note": "Rank 4/15, score 0.6941 and rank CI [1,7] remained unchanged; only claim discipline and renderer-facing fields changed.",
+        "numeric_fields_changed": false,
+        "to_sha256": "sha256:b19ff223b7e7cf42def70dd5d9bedb70a01f9ce01411c55093bceb3fa1e2410a"
+      },
+      {
+        "change_scope": "rank-scale disclosure and explicit Nemenyi mean-rank delta surfaced",
+        "from_sha256": "sha256:b19ff223b7e7cf42def70dd5d9bedb70a01f9ce01411c55093bceb3fa1e2410a",
+        "note": "Score 0.6941, mean-score rank 4/15, rank CI [1,7], pairwise W/T/L 14/6/15 and Friedman p-value remained unchanged. The current artifact sha256 is the root sha256 field and is not embedded here to avoid self-referential hashing.",
         "numeric_fields_changed": false,
         "to_sha256": "sha256:this_artifact_declared_in_dossier_root"
       }
@@ -25,10 +32,14 @@
       "production detector superiority"
     ],
     "frame_reconciliation": "earlier successful-rows frame rank 6 lies within the paired-frame rank CI [1,7]; the frames are consistent and the paired frame removes missing-row selection effects.",
-    "friedman_nemenyi_read": "Friedman p=1.217e-38; Nemenyi CD95=3.625; non-separation is INCONCLUSIVE_NOT_EQUIVALENCE, not equality or superiority.",
+    "friedman_nemenyi_read": "Friedman p=1.217e-38; Nemenyi mean-rank basis: SAA mean rank=5.6143, best binseg=4.5000, delta=1.1143 < CD95=3.6254; non-separation is INCONCLUSIVE_NOT_EQUIVALENCE, not equality or superiority.",
     "friedman_nemenyi_result": {
+      "basis": "mean-rank over per-dataset ranks; separate from headline mean-score rank",
+      "best_average_rank": 4.5,
+      "best_method": "binseg",
       "critical_difference_95": 3.6253776690005037,
       "dataset_count": 35,
+      "delta_saa_minus_best_average_rank": 1.1142857142857139,
       "interpretation": "INCONCLUSIVE_NOT_EQUIVALENCE",
       "method_count": 15,
       "not_separated_from_saa": [
@@ -44,6 +55,7 @@
       ],
       "p_value": 1.2166500619634147e-38,
       "saa_average_rank": 5.614285714285714,
+      "same_cd_band_as_best": true,
       "significantly_better_than_saa_by_cd": [],
       "significantly_worse_than_saa_by_cd": [
         "bocpdms",
@@ -53,9 +65,10 @@
         "rbocpdms",
         "kcpa"
       ],
-      "statistic": 217.84564771869267
+      "statistic": 217.84564771869267,
+      "within_cd_with_best": true
     },
-    "headline_basis": "default_f_measure on all_42 paired common-dataset frame",
+    "headline_basis": "mean-score ranking for default_f_measure on all_42 paired common-dataset frame",
     "oracle_handling": {
       "common_set_warning": "Default and oracle common sets differ; 35 default common datasets versus 37 oracle common datasets, so ranks are not directly comparable across modes.",
       "headline_allowed": false,
@@ -227,9 +240,10 @@
       "default and oracle frames must not be compared directly because their common-set denominators differ",
       "real-world 37 subset must be printed as a stability check, not as a cherry-picked replacement frame"
     ],
-    "published_headline": "default F-measure paired common-set rank 4/15 (CI95 1-7) on 35 of 42 paired datasets",
+    "published_headline": "default F-measure paired common-set mean-score rank 4/15 (CI95 1-7) on 35 of 42 paired datasets",
+    "rank_scale_disclosure": "headline rank 4/15 is mean-score ranking; Friedman/Nemenyi uses mean-rank basis over per-dataset ranks and must not be described as proving the headline rank.",
     "real_world_stability": "real-world 37 stability: default F rank 4/15 on 30 of 37; default covering rank 5/15 on 30 of 37; all_42 covering rank 5/15.",
-    "required_uncertainty": "rank CI95 [1.0, 7.0], score 0.6941 CI95 [0.6310, 0.7542]",
+    "required_uncertainty": "mean-score rank CI95 [1.0, 7.0], score 0.6941 CI95 [0.6310, 0.7542]",
     "schema_id": "saa.risk_analyzer.tcpd_headline_claim_discipline.v1"
   },
   "method_count": 15,
@@ -4290,7 +4304,7 @@
     }
   },
   "seed": 20260815,
-  "sha256": "sha256:b19ff223b7e7cf42def70dd5d9bedb70a01f9ce01411c55093bceb3fa1e2410a",
+  "sha256": "sha256:5f9f2fb45c8a03f90720e1dd9abd7c313397add955a23532f28bbc8a35d11e32",
   "source_result_canonical_sha256": "sha256:74a3cb1c150ed3a0c06177f1dec2fef69f9385d0c95b7c9345dcd78c85934222",
   "source_result_path": "server-sync/frontend-dist/tcpd-external-benchmark-result-v1.json",
   "status": "PUBLISHED_RESEARCH_ONLY_STATISTICAL_DOSSIER",
