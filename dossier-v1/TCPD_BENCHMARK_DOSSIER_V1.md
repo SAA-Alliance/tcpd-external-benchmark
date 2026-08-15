@@ -1,6 +1,6 @@
 # TCPD Benchmark Dossier V1
 
-Generated: `2026-08-15T12:54:24Z`
+Generated: `2026-08-15T13:11:19Z`
 Canonical source result: `sha256:74a3cb1c150ed3a0c06177f1dec2fef69f9385d0c95b7c9345dcd78c85934222`
 
 ## Boundary
@@ -9,10 +9,14 @@ Research-only external adapter evidence. No raw TCPD series are exported. Non-se
 
 ## Claim Discipline
 
-- Published headline: default F-measure paired common-set rank 4/15 on 35 of 42 datasets
+- Published headline: default F-measure paired common-set rank 4/15 (CI95 1-7) on 35 of 42 paired datasets
 - Required uncertainty: rank CI95 [1.0, 7.0], score 0.6941 CI95 [0.6310, 0.7542]
+- Frame reconciliation: earlier successful-rows frame rank 6 lies within the paired-frame rank CI [1,7]; the frames are consistent and the paired frame removes missing-row selection effects.
 - Pairwise read: SAA-minus-binseg mean difference -0.0503 CI95 [-0.1264, 0.0210], W/T/L 14/6/15.
+- Friedman/Nemenyi result: statistic 217.8456; p 1.217e-38; CD95 3.625; SAA CD group binseg, pelt, bocpd, SAA, segneigh, amoc, zero, cpnp, ecp; interpretation INCONCLUSIVE_NOT_EQUIVALENCE.
 - Real-world stability: real-world 37 stability: default F rank 4/15 on 30 of 37; default covering rank 5/15 on 30 of 37; all_42 covering rank 5/15.
+- Change log: sha256:91b38e1f -> sha256:bdf16c21688b9c9e661b2b94f7e928a1aa568847139a5e155517ff22883bca08; headline discipline wrapper added; numeric_fields_changed=false.
+- Change log: sha256:bdf16c21688b9c9e661b2b94f7e928a1aa568847139a5e155517ff22883bca08 -> sha256:this_artifact_declared_in_dossier_root; headline field made self-contained; full pairwise table, frame reconciliation and Friedman/Nemenyi result surfaced; numeric_fields_changed=false.
 - Rule: headline may cite default ranks only, never oracle ranks
 - Rule: rank must be printed with bootstrap rank CI
 - Rule: score must be printed with bootstrap score CI
@@ -153,7 +157,26 @@ Research-only external adapter evidence. No raw TCPD series are exported. Non-se
 
 ## Pairwise Tables
 
-See `pairwise_score_differences.csv` for full SAA-minus-opponent bootstrap intervals and win/tie/loss counts.
+Default F-measure headline pairwise table; SAA-minus-opponent over the same 35 paired datasets:
+
+| opponent | mean diff | CI95 low | CI95 high | W/T/L | sign |
+|---|---:|---:|---:|---:|---|
+| kcpa | 0.5831 | 0.4992 | 0.6644 | 34/0/1 | SAA higher |
+| wbs | 0.2824 | 0.1931 | 0.3749 | 29/3/3 | SAA higher |
+| rbocpdms | 0.2492 | 0.1817 | 0.3153 | 30/1/4 | SAA higher |
+| prophet | 0.2064 | 0.1317 | 0.2828 | 24/8/3 | SAA higher |
+| rfpop | 0.1946 | 0.1000 | 0.2916 | 23/4/8 | SAA higher |
+| bocpdms | 0.1862 | 0.1271 | 0.2461 | 27/2/6 | SAA higher |
+| ecp | 0.0964 | 0.0233 | 0.1744 | 15/14/6 | SAA higher |
+| cpnp | 0.0874 | 0.0085 | 0.1672 | 21/4/10 | SAA higher |
+| zero | 0.0251 | -0.0623 | 0.1050 | 13/18/4 | CI crosses 0 |
+| segneigh | 0.0186 | -0.0534 | 0.0919 | 16/5/14 | CI crosses 0 |
+| bocpd | 0.0045 | -0.0648 | 0.0778 | 15/4/16 | CI crosses 0 |
+| amoc | -0.0096 | -0.0929 | 0.0705 | 14/6/15 | CI crosses 0 |
+| pelt | -0.0159 | -0.0803 | 0.0485 | 13/6/16 | CI crosses 0 |
+| binseg | -0.0503 | -0.1264 | 0.0210 | 14/6/15 | CI crosses 0 |
+
+See `pairwise_score_differences.csv` for every scope and metric.
 
 ## Critical-Difference SVGs
 

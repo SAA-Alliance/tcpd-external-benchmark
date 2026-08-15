@@ -41,15 +41,18 @@ A governed statistical dossier is published under `dossier-v1/`.
 Primary dossier artifact:
 
 - `dossier-v1/TCPD_BENCHMARK_DOSSIER_V1.json`
-- dossier SHA-256: `sha256:bdf16c21688b9c9e661b2b94f7e928a1aa568847139a5e155517ff22883bca08`
+- dossier SHA-256: `sha256:b19ff223b7e7cf42def70dd5d9bedb70a01f9ce01411c55093bceb3fa1e2410a`
 - source result canonical SHA-256: `sha256:74a3cb1c150ed3a0c06177f1dec2fef69f9385d0c95b7c9345dcd78c85934222`
 
 Headline claim discipline:
 
-- permitted headline: `default F-measure paired common-set rank 4/15 on 35 of 42 datasets`;
-- must be printed with rank CI95 `[1.0, 7.0]` and score `0.6941 CI95 [0.6310, 0.7542]`;
-- must include pairwise SAA-minus-binseg difference `-0.0503 CI95 [-0.1264, 0.0210]`, W/T/L `14/6/15`;
-- Friedman/Nemenyi non-separation is `INCONCLUSIVE_NOT_EQUIVALENCE`, not equality or superiority;
+- permitted headline: `default F-measure paired common-set rank 4/15 (CI95 1-7) on 35 of 42 paired datasets`;
+- score must be printed as `0.6941 CI95 [0.6310, 0.7542]`;
+- earlier successful-rows frame rank `6/15` lies inside the paired-frame rank CI `[1,7]`, so the frames are consistent;
+- pairwise binseg row stays adjacent to the rank: SAA-minus-binseg `-0.0503 CI95 [-0.1264, 0.0210]`, W/T/L `14/6/15`;
+- full pairwise table covers all 14 opponents;
+- Friedman/Nemenyi result: statistic `217.8456`, p `1.2167e-38`, CD95 `3.625`, non-separation is `INCONCLUSIVE_NOT_EQUIVALENCE`;
+- SAA CD group: `binseg`, `pelt`, `bocpd`, `saa_change_point_adapter_v1`, `segneigh`, `amoc`, `zero`, `cpnp`, `ecp`;
 - real-world 37 is a stability check: default F rank `4/15` on `30 of 37`, default covering rank `5/15` on `30 of 37`;
 - oracle ranks are secondary only. `oracle_covering rank 3/15` is forbidden as a headline.
 

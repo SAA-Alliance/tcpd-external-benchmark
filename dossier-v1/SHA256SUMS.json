@@ -1,10 +1,10 @@
 {
-  "dossier_sha256": "sha256:bdf16c21688b9c9e661b2b94f7e928a1aa568847139a5e155517ff22883bca08",
+  "dossier_sha256": "sha256:b19ff223b7e7cf42def70dd5d9bedb70a01f9ce01411c55093bceb3fa1e2410a",
   "files": {
-    "SHA256SUMS.json": "sha256:160a626cb787bf90b53d0a1c40fb02faa168217a751db9d0d53235dc37d2f26e",
-    "TCPD_BENCHMARK_DOSSIER_REF_V1.json": "sha256:b438d238ac854c80d312c9f9ff740a213858476134eef921c05563fdc7dab8ab",
-    "TCPD_BENCHMARK_DOSSIER_V1.json": "sha256:b912b96aca0a39c6d275195be4566ab804cff00d76a36adb5fca1dd674c0cdc1",
-    "TCPD_BENCHMARK_DOSSIER_V1.md": "sha256:c0d583f44538f4e18af62d4fbe8a5eb2011e983e7dd691afc07e1c8435d322c4",
+    "SHA256SUMS.json": "sha256:4d4c387f6c6cf8cab08954755704d739927c8f86433bb2e6cf94670045d7ba88",
+    "TCPD_BENCHMARK_DOSSIER_REF_V1.json": "sha256:01e9c02c267cd9cded49c073466106ebe8c68c4059d9dadb4c9ae9c46ae0cabc",
+    "TCPD_BENCHMARK_DOSSIER_V1.json": "sha256:19a3f8100e0cb61e1724ff760dc9ab2bab96bdb6e3d7209e34ca6a89dc2dbd9e",
+    "TCPD_BENCHMARK_DOSSIER_V1.md": "sha256:15f216b5de9771ae06daed82cb787c473a39c937d1eefcb59511e1b184da3358",
     "cd_all_42_default_covering.svg": "sha256:25602f10681b801442656c4cce33c5e976189c9ced3f14ae453ca59418cf4f4c",
     "cd_all_42_default_f_measure.svg": "sha256:586e418fbec524a5ad2476ef0e834a30604ad6bf19e1d7c2cd5b6877386e1c0f",
     "cd_all_42_oracle_covering.svg": "sha256:85f3bddf8f90941358f1b5e8bf0f5ef11788dc25c3d12fac5382b7e82f8d0126",
