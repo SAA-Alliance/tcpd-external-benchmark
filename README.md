@@ -33,6 +33,28 @@ Primary fair-ranking frame: `successful_rows_only`.
 
 Sensitivity frame: `all_series_null_as_zero` is published only as sensitivity. It must not be used as the headline result.
 
+
+## Statistical Dossier V1
+
+A governed statistical dossier is published under `dossier-v1/`.
+
+Primary dossier artifact:
+
+- `dossier-v1/TCPD_BENCHMARK_DOSSIER_V1.json`
+- dossier SHA-256: `sha256:bdf16c21688b9c9e661b2b94f7e928a1aa568847139a5e155517ff22883bca08`
+- source result canonical SHA-256: `sha256:74a3cb1c150ed3a0c06177f1dec2fef69f9385d0c95b7c9345dcd78c85934222`
+
+Headline claim discipline:
+
+- permitted headline: `default F-measure paired common-set rank 4/15 on 35 of 42 datasets`;
+- must be printed with rank CI95 `[1.0, 7.0]` and score `0.6941 CI95 [0.6310, 0.7542]`;
+- must include pairwise SAA-minus-binseg difference `-0.0503 CI95 [-0.1264, 0.0210]`, W/T/L `14/6/15`;
+- Friedman/Nemenyi non-separation is `INCONCLUSIVE_NOT_EQUIVALENCE`, not equality or superiority;
+- real-world 37 is a stability check: default F rank `4/15` on `30 of 37`, default covering rank `5/15` on `30 of 37`;
+- oracle ranks are secondary only. `oracle_covering rank 3/15` is forbidden as a headline.
+
+This paired common-dataset frame is different from the original `successful_rows_only` summary above. The improvement from `6/15` to `4/15` is not a new production claim; it is a statistical dossier result with uncertainty and caveats attached.
+
 ## Dataset Wording
 
 TCPD contains 42 series in this run: 37 real-world series plus 5 synthetic quality-control series.
