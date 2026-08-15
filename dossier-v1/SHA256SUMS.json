@@ -1,0 +1,20 @@
+{
+  "dossier_sha256": "sha256:5f9f2fb45c8a03f90720e1dd9abd7c313397add955a23532f28bbc8a35d11e32",
+  "files": {
+    "SHA256SUMS.json": "sha256:99a2bfd6ebd2cf8107bbe078b64fa1025dd4cfaad0c65c36b584ff45bbf0e2e5",
+    "TCPD_BENCHMARK_DOSSIER_REF_V1.json": "sha256:122a556896155e5864cdb2aee3ce806842b12d90e6ca8a906eb949e57479c4d0",
+    "TCPD_BENCHMARK_DOSSIER_V1.json": "sha256:5e6b0ae935cb6766f2dc448944bf99d69b3a0cbbf59cabd2ad347bc65978c7a6",
+    "TCPD_BENCHMARK_DOSSIER_V1.md": "sha256:c409f18d5c020b41c2f9922da8a4c4090be90dda3d2eebd9f5527d5d0b3a9b61",
+    "cd_all_42_default_covering.svg": "sha256:25602f10681b801442656c4cce33c5e976189c9ced3f14ae453ca59418cf4f4c",
+    "cd_all_42_default_f_measure.svg": "sha256:586e418fbec524a5ad2476ef0e834a30604ad6bf19e1d7c2cd5b6877386e1c0f",
+    "cd_all_42_oracle_covering.svg": "sha256:85f3bddf8f90941358f1b5e8bf0f5ef11788dc25c3d12fac5382b7e82f8d0126",
+    "cd_all_42_oracle_f_measure.svg": "sha256:d7cda1462f01a36bf7622388224f9411a9626d5bee2b83b78dbfdf575620d746",
+    "cd_real_world_37_default_covering.svg": "sha256:72c43008a70c90cd05e49451a1283c3f2bd07039e41fd6767f1573a213ba5df1",
+    "cd_real_world_37_default_f_measure.svg": "sha256:92f8c2056effe3dceaf32814d60a258d3710edcae2ce15bca58233faff22e02b",
+    "cd_real_world_37_oracle_covering.svg": "sha256:2881ab0053e979f74feece055140690350448807e5a4046be93c86af76ce2977",
+    "cd_real_world_37_oracle_f_measure.svg": "sha256:72e0f6f8de161b56e0765da60033d6c7b5e978d29d2dcf48039580f32c8c4f2c",
+    "paired_common_dataset_rankings.csv": "sha256:ac5f551f93c30689a9ea2577347a08aad00f600e6298814b02a811a623dbb709",
+    "pairwise_score_differences.csv": "sha256:114e9e30a68b0dd49d2fd68db270e24296b3bb65d17b622af158408dd209d2cf"
+  },
+  "schema_id": "saa.risk_analyzer.tcpd_benchmark_dossier_manifest.v1"
+}

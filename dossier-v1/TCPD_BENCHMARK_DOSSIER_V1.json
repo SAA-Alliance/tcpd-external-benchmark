@@ -1,0 +1,4312 @@
+{
+  "bootstrap_iterations": 10000,
+  "claim_boundary": "research-only external benchmark dossier; no production superiority claim; no raw TCPD series redistribution; Nemenyi non-separation is inconclusive",
+  "generated_at_utc": "2026-08-15T14:44:08Z",
+  "headline_claim": {
+    "change_log": [
+      {
+        "change_scope": "headline discipline wrapper added",
+        "from_sha256": "sha256:91b38e1f",
+        "note": "Rank, score, confidence intervals and pairwise arithmetic remained stable; only claim discipline was made explicit.",
+        "numeric_fields_changed": false,
+        "to_sha256": "sha256:bdf16c21688b9c9e661b2b94f7e928a1aa568847139a5e155517ff22883bca08"
+      },
+      {
+        "change_scope": "headline field made self-contained; full pairwise table, frame reconciliation and Friedman/Nemenyi result surfaced",
+        "from_sha256": "sha256:bdf16c21688b9c9e661b2b94f7e928a1aa568847139a5e155517ff22883bca08",
+        "note": "Rank 4/15, score 0.6941 and rank CI [1,7] remained unchanged; only claim discipline and renderer-facing fields changed.",
+        "numeric_fields_changed": false,
+        "to_sha256": "sha256:b19ff223b7e7cf42def70dd5d9bedb70a01f9ce01411c55093bceb3fa1e2410a"
+      },
+      {
+        "change_scope": "rank-scale disclosure and explicit Nemenyi mean-rank delta surfaced",
+        "from_sha256": "sha256:b19ff223b7e7cf42def70dd5d9bedb70a01f9ce01411c55093bceb3fa1e2410a",
+        "note": "Score 0.6941, mean-score rank 4/15, rank CI [1,7], pairwise W/T/L 14/6/15 and Friedman p-value remained unchanged. The current artifact sha256 is the root sha256 field and is not embedded here to avoid self-referential hashing.",
+        "numeric_fields_changed": false,
+        "to_sha256": "sha256:this_artifact_declared_in_dossier_root"
+      }
+    ],
+    "forbidden_headlines": [
+      "oracle_covering rank 3/15",
+      "statistically equal to leaders",
+      "production detector superiority"
+    ],
+    "frame_reconciliation": "earlier successful-rows frame rank 6 lies within the paired-frame rank CI [1,7]; the frames are consistent and the paired frame removes missing-row selection effects.",
+    "friedman_nemenyi_read": "Friedman p=1.217e-38; Nemenyi mean-rank basis: SAA mean rank=5.6143, best binseg=4.5000, delta=1.1143 < CD95=3.6254; non-separation is INCONCLUSIVE_NOT_EQUIVALENCE, not equality or superiority.",
+    "friedman_nemenyi_result": {
+      "basis": "mean-rank over per-dataset ranks; separate from headline mean-score rank",
+      "best_average_rank": 4.5,
+      "best_method": "binseg",
+      "critical_difference_95": 3.6253776690005037,
+      "dataset_count": 35,
+      "delta_saa_minus_best_average_rank": 1.1142857142857139,
+      "interpretation": "INCONCLUSIVE_NOT_EQUIVALENCE",
+      "method_count": 15,
+      "not_separated_from_saa": [
+        "binseg",
+        "pelt",
+        "bocpd",
+        "saa_change_point_adapter_v1",
+        "segneigh",
+        "amoc",
+        "zero",
+        "cpnp",
+        "ecp"
+      ],
+      "p_value": 1.2166500619634147e-38,
+      "saa_average_rank": 5.614285714285714,
+      "same_cd_band_as_best": true,
+      "significantly_better_than_saa_by_cd": [],
+      "significantly_worse_than_saa_by_cd": [
+        "bocpdms",
+        "rfpop",
+        "prophet",
+        "wbs",
+        "rbocpdms",
+        "kcpa"
+      ],
+      "statistic": 217.84564771869267,
+      "within_cd_with_best": true
+    },
+    "headline_basis": "mean-score ranking for default_f_measure on all_42 paired common-dataset frame",
+    "oracle_handling": {
+      "common_set_warning": "Default and oracle common sets differ; 35 default common datasets versus 37 oracle common datasets, so ranks are not directly comparable across modes.",
+      "headline_allowed": false,
+      "reason": "Oracle scores use answer-visible upper-bound framing and are secondary only."
+    },
+    "pairwise_read": "SAA-minus-binseg mean difference -0.0503 CI95 [-0.1264, 0.0210], W/T/L 14/6/15.",
+    "pairwise_table": [
+      {
+        "bootstrap_ci95_high": 0.66440483271202,
+        "bootstrap_ci95_low": 0.49924994997826694,
+        "common_dataset_count": 35,
+        "loss": 1,
+        "mean_score_difference_saa_minus_opponent": 0.5830883366975546,
+        "opponent": "kcpa",
+        "sign": "SAA higher",
+        "tie": 0,
+        "win": 34
+      },
+      {
+        "bootstrap_ci95_high": 0.3748748510753686,
+        "bootstrap_ci95_low": 0.19310277357664274,
+        "common_dataset_count": 35,
+        "loss": 3,
+        "mean_score_difference_saa_minus_opponent": 0.2823886280194508,
+        "opponent": "wbs",
+        "sign": "SAA higher",
+        "tie": 3,
+        "win": 29
+      },
+      {
+        "bootstrap_ci95_high": 0.31525800523287295,
+        "bootstrap_ci95_low": 0.18172845817380484,
+        "common_dataset_count": 35,
+        "loss": 4,
+        "mean_score_difference_saa_minus_opponent": 0.2492380651142183,
+        "opponent": "rbocpdms",
+        "sign": "SAA higher",
+        "tie": 1,
+        "win": 30
+      },
+      {
+        "bootstrap_ci95_high": 0.2828048623175268,
+        "bootstrap_ci95_low": 0.1317196070962826,
+        "common_dataset_count": 35,
+        "loss": 3,
+        "mean_score_difference_saa_minus_opponent": 0.20635321134281776,
+        "opponent": "prophet",
+        "sign": "SAA higher",
+        "tie": 8,
+        "win": 24
+      },
+      {
+        "bootstrap_ci95_high": 0.29162064510921404,
+        "bootstrap_ci95_low": 0.09996061283386168,
+        "common_dataset_count": 35,
+        "loss": 8,
+        "mean_score_difference_saa_minus_opponent": 0.19464222208696497,
+        "opponent": "rfpop",
+        "sign": "SAA higher",
+        "tie": 4,
+        "win": 23
+      },
+      {
+        "bootstrap_ci95_high": 0.24608210523639318,
+        "bootstrap_ci95_low": 0.12709794266335175,
+        "common_dataset_count": 35,
+        "loss": 6,
+        "mean_score_difference_saa_minus_opponent": 0.18616185758204926,
+        "opponent": "bocpdms",
+        "sign": "SAA higher",
+        "tie": 2,
+        "win": 27
+      },
+      {
+        "bootstrap_ci95_high": 0.17443138498492453,
+        "bootstrap_ci95_low": 0.023318637494426,
+        "common_dataset_count": 35,
+        "loss": 6,
+        "mean_score_difference_saa_minus_opponent": 0.09638447507197521,
+        "opponent": "ecp",
+        "sign": "SAA higher",
+        "tie": 14,
+        "win": 15
+      },
+      {
+        "bootstrap_ci95_high": 0.1671515682221118,
+        "bootstrap_ci95_low": 0.00853044197839457,
+        "common_dataset_count": 35,
+        "loss": 10,
+        "mean_score_difference_saa_minus_opponent": 0.0874004807552113,
+        "opponent": "cpnp",
+        "sign": "SAA higher",
+        "tie": 4,
+        "win": 21
+      },
+      {
+        "bootstrap_ci95_high": 0.10502397591236506,
+        "bootstrap_ci95_low": -0.06231588081496204,
+        "common_dataset_count": 35,
+        "loss": 4,
+        "mean_score_difference_saa_minus_opponent": 0.025127497318844706,
+        "opponent": "zero",
+        "sign": "CI crosses 0",
+        "tie": 18,
+        "win": 13
+      },
+      {
+        "bootstrap_ci95_high": 0.09193558490288165,
+        "bootstrap_ci95_low": -0.05344167895237375,
+        "common_dataset_count": 35,
+        "loss": 14,
+        "mean_score_difference_saa_minus_opponent": 0.018550169756340062,
+        "opponent": "segneigh",
+        "sign": "CI crosses 0",
+        "tie": 5,
+        "win": 16
+      },
+      {
+        "bootstrap_ci95_high": 0.07775124109720961,
+        "bootstrap_ci95_low": -0.06484449214061036,
+        "common_dataset_count": 35,
+        "loss": 16,
+        "mean_score_difference_saa_minus_opponent": 0.004473086959647348,
+        "opponent": "bocpd",
+        "sign": "CI crosses 0",
+        "tie": 4,
+        "win": 15
+      },
+      {
+        "bootstrap_ci95_high": 0.07047648496495036,
+        "bootstrap_ci95_low": -0.0928634874671806,
+        "common_dataset_count": 35,
+        "loss": 15,
+        "mean_score_difference_saa_minus_opponent": -0.009616288395586635,
+        "opponent": "amoc",
+        "sign": "CI crosses 0",
+        "tie": 6,
+        "win": 14
+      },
+      {
+        "bootstrap_ci95_high": 0.04851679614500441,
+        "bootstrap_ci95_low": -0.08026115522308144,
+        "common_dataset_count": 35,
+        "loss": 16,
+        "mean_score_difference_saa_minus_opponent": -0.01589752344473739,
+        "opponent": "pelt",
+        "sign": "CI crosses 0",
+        "tie": 6,
+        "win": 13
+      },
+      {
+        "bootstrap_ci95_high": 0.02103197880691819,
+        "bootstrap_ci95_low": -0.12639150711426028,
+        "common_dataset_count": 35,
+        "loss": 15,
+        "mean_score_difference_saa_minus_opponent": -0.05030489544469521,
+        "opponent": "binseg",
+        "sign": "CI crosses 0",
+        "tie": 6,
+        "win": 14
+      }
+    ],
+    "publication_rules": [
+      "headline may cite default ranks only, never oracle ranks",
+      "rank must be printed with bootstrap rank CI",
+      "score must be printed with bootstrap score CI",
+      "pairwise SAA-minus-top-method CI and W/T/L must be printed near the headline",
+      "Friedman/Nemenyi must be printed with INCONCLUSIVE_NOT_EQUIVALENCE caveat",
+      "default and oracle frames must not be compared directly because their common-set denominators differ",
+      "real-world 37 subset must be printed as a stability check, not as a cherry-picked replacement frame"
+    ],
+    "published_headline": "default F-measure paired common-set mean-score rank 4/15 (CI95 1-7) on 35 of 42 paired datasets",
+    "rank_scale_disclosure": "headline rank 4/15 is mean-score ranking; Friedman/Nemenyi uses mean-rank basis over per-dataset ranks and must not be described as proving the headline rank.",
+    "real_world_stability": "real-world 37 stability: default F rank 4/15 on 30 of 37; default covering rank 5/15 on 30 of 37; all_42 covering rank 5/15.",
+    "required_uncertainty": "mean-score rank CI95 [1.0, 7.0], score 0.6941 CI95 [0.6310, 0.7542]",
+    "schema_id": "saa.risk_analyzer.tcpd_headline_claim_discipline.v1"
+  },
+  "method_count": 15,
+  "raw_series_exported": false,
+  "repo_pins": {
+    "tcpd_repo_commit": "e8f19a3635e3b7f1a8aff59ce7f4d9bea17525c0",
+    "tcpdbench_repo_commit": "167210005c09d2c44f9b2083b95f989a64be4b6b"
+  },
+  "schema_id": "saa.risk_analyzer.tcpd_benchmark_dossier.v1",
+  "scopes": {
+    "all_42": {
+      "analyses": {
+        "default_covering": {
+          "dataset_ids_sha256": "sha256:876c7c61c0e9b0f4ab4e8362d89a9d4dd7d709321dfa197df66fa62e1f584992",
+          "friedman": {
+            "dataset_count": 35,
+            "method_count": 15,
+            "null_hypothesis": "all methods have equivalent rank distributions over paired datasets",
+            "p_value": 2.358020332919676e-35,
+            "statistic": 201.7975324264473
+          },
+          "meta": {
+            "analysis_id": "default_covering",
+            "candidate_dataset_count": 42,
+            "common_dataset_count": 35,
+            "declared_scope_total": 42,
+            "excluded_dataset_count": 7,
+            "excluded_datasets": [
+              {
+                "dataset": "apple",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "bee_waggle_6",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "bitcoin",
+                "missing_methods": [
+                  "rbocpdms"
+                ]
+              },
+              {
+                "dataset": "occupancy",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "run_log",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "scanline_126007",
+                "missing_methods": [
+                  "rbocpdms"
+                ]
+              },
+              {
+                "dataset": "uk_coal_employ",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "bocpd",
+                  "cpnp",
+                  "pelt",
+                  "rbocpdms",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              }
+            ],
+            "frame": "paired_common_dataset_only",
+            "methods": [
+              "amoc",
+              "binseg",
+              "bocpd",
+              "bocpdms",
+              "cpnp",
+              "ecp",
+              "kcpa",
+              "pelt",
+              "prophet",
+              "rbocpdms",
+              "rfpop",
+              "segneigh",
+              "wbs",
+              "zero",
+              "saa_change_point_adapter_v1"
+            ],
+            "metric": "covering",
+            "mode": "default",
+            "raw_series_exported": false,
+            "scope": "all_42",
+            "score_file": "analysis/output/scores/default_cover_scores.json"
+          },
+          "nemenyi": {
+            "alpha": 0.05,
+            "critical_difference": 3.6253776690005037,
+            "interpretation_caveat": "Nemenyi non-separation is INCONCLUSIVE equivalence, not a superiority or equality claim.",
+            "not_separated_from_saa": [
+              "binseg",
+              "pelt",
+              "amoc",
+              "segneigh",
+              "saa_change_point_adapter_v1",
+              "bocpd",
+              "rbocpdms",
+              "bocpdms",
+              "zero",
+              "prophet",
+              "ecp",
+              "cpnp"
+            ],
+            "q_alpha_studentized_range_over_sqrt2": 3.391230283765257,
+            "saa_average_rank": 6.142857142857143,
+            "significantly_better_than_saa_by_cd": [],
+            "significantly_worse_than_saa_by_cd": [
+              "rfpop",
+              "wbs",
+              "kcpa"
+            ]
+          },
+          "pairwise_score_differences": [
+            {
+              "bootstrap_ci95_high": 0.6648257264154642,
+              "bootstrap_ci95_low": 0.5145603239456485,
+              "loss": 0,
+              "mean_score_difference_saa_minus_opponent": 0.5922804140764117,
+              "opponent": "kcpa",
+              "sign": "SAA higher",
+              "tie": 0,
+              "win": 35
+            },
+            {
+              "bootstrap_ci95_high": 0.41920893089798605,
+              "bootstrap_ci95_low": 0.22516448610269085,
+              "loss": 6,
+              "mean_score_difference_saa_minus_opponent": 0.3240298495619895,
+              "opponent": "wbs",
+              "sign": "SAA higher",
+              "tie": 1,
+              "win": 28
+            },
+            {
+              "bootstrap_ci95_high": 0.35050453983001345,
+              "bootstrap_ci95_low": 0.17177072018397524,
+              "loss": 7,
+              "mean_score_difference_saa_minus_opponent": 0.2618087659692784,
+              "opponent": "rfpop",
+              "sign": "SAA higher",
+              "tie": 2,
+              "win": 26
+            },
+            {
+              "bootstrap_ci95_high": 0.21338867927660252,
+              "bootstrap_ci95_low": 0.05346243747926245,
+              "loss": 5,
+              "mean_score_difference_saa_minus_opponent": 0.13148742806039054,
+              "opponent": "ecp",
+              "sign": "SAA higher",
+              "tie": 12,
+              "win": 18
+            },
+            {
+              "bootstrap_ci95_high": 0.19024294942910838,
+              "bootstrap_ci95_low": 0.04392213536769549,
+              "loss": 10,
+              "mean_score_difference_saa_minus_opponent": 0.11889486114185607,
+              "opponent": "cpnp",
+              "sign": "SAA higher",
+              "tie": 1,
+              "win": 24
+            },
+            {
+              "bootstrap_ci95_high": 0.18803091930261168,
+              "bootstrap_ci95_low": 0.04258412234986708,
+              "loss": 8,
+              "mean_score_difference_saa_minus_opponent": 0.11436616175672353,
+              "opponent": "prophet",
+              "sign": "SAA higher",
+              "tie": 8,
+              "win": 19
+            },
+            {
+              "bootstrap_ci95_high": 0.15575582154994452,
+              "bootstrap_ci95_low": -0.015112783713480214,
+              "loss": 4,
+              "mean_score_difference_saa_minus_opponent": 0.07150883380365426,
+              "opponent": "zero",
+              "sign": "CI crosses 0",
+              "tie": 18,
+              "win": 13
+            },
+            {
+              "bootstrap_ci95_high": 0.07680505883528517,
+              "bootstrap_ci95_low": -0.037452776030589295,
+              "loss": 12,
+              "mean_score_difference_saa_minus_opponent": 0.020565783444686542,
+              "opponent": "bocpdms",
+              "sign": "CI crosses 0",
+              "tie": 0,
+              "win": 23
+            },
+            {
+              "bootstrap_ci95_high": 0.09023376290243507,
+              "bootstrap_ci95_low": -0.05303846249878767,
+              "loss": 15,
+              "mean_score_difference_saa_minus_opponent": 0.018216794847199663,
+              "opponent": "bocpd",
+              "sign": "CI crosses 0",
+              "tie": 2,
+              "win": 18
+            },
+            {
+              "bootstrap_ci95_high": 0.05496219953319047,
+              "bootstrap_ci95_low": -0.04119078407700624,
+              "loss": 12,
+              "mean_score_difference_saa_minus_opponent": 0.00884303091020373,
+              "opponent": "rbocpdms",
+              "sign": "CI crosses 0",
+              "tie": 0,
+              "win": 23
+            },
+            {
+              "bootstrap_ci95_high": 0.04113052647145586,
+              "bootstrap_ci95_low": -0.08647568712876318,
+              "loss": 18,
+              "mean_score_difference_saa_minus_opponent": -0.022174232020822374,
+              "opponent": "segneigh",
+              "sign": "CI crosses 0",
+              "tie": 1,
+              "win": 16
+            },
+            {
+              "bootstrap_ci95_high": 0.02312995900286178,
+              "bootstrap_ci95_low": -0.09519574003545374,
+              "loss": 20,
+              "mean_score_difference_saa_minus_opponent": -0.034562898638178616,
+              "opponent": "pelt",
+              "sign": "CI crosses 0",
+              "tie": 1,
+              "win": 14
+            },
+            {
+              "bootstrap_ci95_high": 0.02477484359513091,
+              "bootstrap_ci95_low": -0.12494751440097825,
+              "loss": 18,
+              "mean_score_difference_saa_minus_opponent": -0.0473692414835428,
+              "opponent": "amoc",
+              "sign": "CI crosses 0",
+              "tie": 3,
+              "win": 14
+            },
+            {
+              "bootstrap_ci95_high": 0.01802715266039604,
+              "bootstrap_ci95_low": -0.12595006676802842,
+              "loss": 20,
+              "mean_score_difference_saa_minus_opponent": -0.05156358633081959,
+              "opponent": "binseg",
+              "sign": "CI crosses 0",
+              "tie": 1,
+              "win": 14
+            }
+          ],
+          "ranking": [
+            {
+              "average_dataset_rank": 4.928571428571429,
+              "label": "binseg",
+              "mean_score": 0.70579896408019,
+              "method": "binseg",
+              "rank_by_average_dataset_rank": 1,
+              "rank_by_mean_score": 1
+            },
+            {
+              "average_dataset_rank": 5.042857142857143,
+              "label": "pelt",
+              "mean_score": 0.6887982763875491,
+              "method": "pelt",
+              "rank_by_average_dataset_rank": 2,
+              "rank_by_mean_score": 3
+            },
+            {
+              "average_dataset_rank": 5.357142857142857,
+              "label": "amoc",
+              "mean_score": 0.7016046192329133,
+              "method": "amoc",
+              "rank_by_average_dataset_rank": 3,
+              "rank_by_mean_score": 2
+            },
+            {
+              "average_dataset_rank": 5.4714285714285715,
+              "label": "segneigh",
+              "mean_score": 0.6764096097701928,
+              "method": "segneigh",
+              "rank_by_average_dataset_rank": 4,
+              "rank_by_mean_score": 4
+            },
+            {
+              "average_dataset_rank": 6.142857142857143,
+              "label": "SAA",
+              "mean_score": 0.6542353777493705,
+              "method": "saa_change_point_adapter_v1",
+              "rank_by_average_dataset_rank": 5,
+              "rank_by_mean_score": 5
+            },
+            {
+              "average_dataset_rank": 6.442857142857143,
+              "label": "bocpd",
+              "mean_score": 0.6360185829021707,
+              "method": "bocpd",
+              "rank_by_average_dataset_rank": 6,
+              "rank_by_mean_score": 7
+            },
+            {
+              "average_dataset_rank": 7.457142857142857,
+              "label": "rbocpdms",
+              "mean_score": 0.6453923468391667,
+              "method": "rbocpdms",
+              "rank_by_average_dataset_rank": 7,
+              "rank_by_mean_score": 6
+            },
+            {
+              "average_dataset_rank": 7.485714285714286,
+              "label": "bocpdms",
+              "mean_score": 0.6336695943046838,
+              "method": "bocpdms",
+              "rank_by_average_dataset_rank": 8,
+              "rank_by_mean_score": 8
+            },
+            {
+              "average_dataset_rank": 7.828571428571428,
+              "label": "zero",
+              "mean_score": 0.5827265439457162,
+              "method": "zero",
+              "rank_by_average_dataset_rank": 9,
+              "rank_by_mean_score": 9
+            },
+            {
+              "average_dataset_rank": 8.414285714285715,
+              "label": "prophet",
+              "mean_score": 0.5398692159926469,
+              "method": "prophet",
+              "rank_by_average_dataset_rank": 10,
+              "rank_by_mean_score": 10
+            },
+            {
+              "average_dataset_rank": 8.585714285714285,
+              "label": "ecp",
+              "mean_score": 0.5227479496889799,
+              "method": "ecp",
+              "rank_by_average_dataset_rank": 11,
+              "rank_by_mean_score": 12
+            },
+            {
+              "average_dataset_rank": 8.942857142857143,
+              "label": "cpnp",
+              "mean_score": 0.5353405166075144,
+              "method": "cpnp",
+              "rank_by_average_dataset_rank": 12,
+              "rank_by_mean_score": 11
+            },
+            {
+              "average_dataset_rank": 11.428571428571429,
+              "label": "rfpop",
+              "mean_score": 0.392426611780092,
+              "method": "rfpop",
+              "rank_by_average_dataset_rank": 13,
+              "rank_by_mean_score": 13
+            },
+            {
+              "average_dataset_rank": 11.571428571428571,
+              "label": "wbs",
+              "mean_score": 0.3302055281873809,
+              "method": "wbs",
+              "rank_by_average_dataset_rank": 14,
+              "rank_by_mean_score": 14
+            },
+            {
+              "average_dataset_rank": 14.9,
+              "label": "kcpa",
+              "mean_score": 0.06195496367295865,
+              "method": "kcpa",
+              "rank_by_average_dataset_rank": 15,
+              "rank_by_mean_score": 15
+            }
+          ],
+          "saa_bootstrap": {
+            "iterations": 10000,
+            "rank_by_average_dataset_rank": 5,
+            "rank_by_average_dataset_rank_ci95_high": 7.0,
+            "rank_by_average_dataset_rank_ci95_low": 1.0,
+            "rank_by_mean_score": 5.0,
+            "rank_by_mean_score_ci95_high": 8.0,
+            "rank_by_mean_score_ci95_low": 1.0,
+            "score_ci95_high": 0.7149933635459602,
+            "score_ci95_low": 0.5914225070916675,
+            "score_mean": 0.6542353777493705,
+            "seed": 20260815
+          },
+          "status": "PUBLISHED_RESEARCH_ONLY_STATISTICAL_DOSSIER",
+          "win_tie_loss": [
+            {
+              "loss": 0,
+              "opponent": "kcpa",
+              "tie": 0,
+              "win": 35
+            },
+            {
+              "loss": 6,
+              "opponent": "wbs",
+              "tie": 1,
+              "win": 28
+            },
+            {
+              "loss": 7,
+              "opponent": "rfpop",
+              "tie": 2,
+              "win": 26
+            },
+            {
+              "loss": 5,
+              "opponent": "ecp",
+              "tie": 12,
+              "win": 18
+            },
+            {
+              "loss": 10,
+              "opponent": "cpnp",
+              "tie": 1,
+              "win": 24
+            },
+            {
+              "loss": 8,
+              "opponent": "prophet",
+              "tie": 8,
+              "win": 19
+            },
+            {
+              "loss": 4,
+              "opponent": "zero",
+              "tie": 18,
+              "win": 13
+            },
+            {
+              "loss": 12,
+              "opponent": "bocpdms",
+              "tie": 0,
+              "win": 23
+            },
+            {
+              "loss": 15,
+              "opponent": "bocpd",
+              "tie": 2,
+              "win": 18
+            },
+            {
+              "loss": 12,
+              "opponent": "rbocpdms",
+              "tie": 0,
+              "win": 23
+            },
+            {
+              "loss": 18,
+              "opponent": "segneigh",
+              "tie": 1,
+              "win": 16
+            },
+            {
+              "loss": 20,
+              "opponent": "pelt",
+              "tie": 1,
+              "win": 14
+            },
+            {
+              "loss": 18,
+              "opponent": "amoc",
+              "tie": 3,
+              "win": 14
+            },
+            {
+              "loss": 20,
+              "opponent": "binseg",
+              "tie": 1,
+              "win": 14
+            }
+          ]
+        },
+        "default_f_measure": {
+          "dataset_ids_sha256": "sha256:876c7c61c0e9b0f4ab4e8362d89a9d4dd7d709321dfa197df66fa62e1f584992",
+          "friedman": {
+            "dataset_count": 35,
+            "method_count": 15,
+            "null_hypothesis": "all methods have equivalent rank distributions over paired datasets",
+            "p_value": 1.2166500619634147e-38,
+            "statistic": 217.84564771869267
+          },
+          "meta": {
+            "analysis_id": "default_f_measure",
+            "candidate_dataset_count": 42,
+            "common_dataset_count": 35,
+            "declared_scope_total": 42,
+            "excluded_dataset_count": 7,
+            "excluded_datasets": [
+              {
+                "dataset": "apple",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "bee_waggle_6",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "bitcoin",
+                "missing_methods": [
+                  "rbocpdms"
+                ]
+              },
+              {
+                "dataset": "occupancy",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "run_log",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "scanline_126007",
+                "missing_methods": [
+                  "rbocpdms"
+                ]
+              },
+              {
+                "dataset": "uk_coal_employ",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "bocpd",
+                  "cpnp",
+                  "pelt",
+                  "rbocpdms",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              }
+            ],
+            "frame": "paired_common_dataset_only",
+            "methods": [
+              "amoc",
+              "binseg",
+              "bocpd",
+              "bocpdms",
+              "cpnp",
+              "ecp",
+              "kcpa",
+              "pelt",
+              "prophet",
+              "rbocpdms",
+              "rfpop",
+              "segneigh",
+              "wbs",
+              "zero",
+              "saa_change_point_adapter_v1"
+            ],
+            "metric": "f_measure",
+            "mode": "default",
+            "raw_series_exported": false,
+            "scope": "all_42",
+            "score_file": "analysis/output/scores/default_f1_scores.json"
+          },
+          "nemenyi": {
+            "alpha": 0.05,
+            "critical_difference": 3.6253776690005037,
+            "interpretation_caveat": "Nemenyi non-separation is INCONCLUSIVE equivalence, not a superiority or equality claim.",
+            "not_separated_from_saa": [
+              "binseg",
+              "pelt",
+              "bocpd",
+              "saa_change_point_adapter_v1",
+              "segneigh",
+              "amoc",
+              "zero",
+              "cpnp",
+              "ecp"
+            ],
+            "q_alpha_studentized_range_over_sqrt2": 3.391230283765257,
+            "saa_average_rank": 5.614285714285714,
+            "significantly_better_than_saa_by_cd": [],
+            "significantly_worse_than_saa_by_cd": [
+              "bocpdms",
+              "rfpop",
+              "prophet",
+              "wbs",
+              "rbocpdms",
+              "kcpa"
+            ]
+          },
+          "pairwise_score_differences": [
+            {
+              "bootstrap_ci95_high": 0.66440483271202,
+              "bootstrap_ci95_low": 0.49924994997826694,
+              "loss": 1,
+              "mean_score_difference_saa_minus_opponent": 0.5830883366975546,
+              "opponent": "kcpa",
+              "sign": "SAA higher",
+              "tie": 0,
+              "win": 34
+            },
+            {
+              "bootstrap_ci95_high": 0.3748748510753686,
+              "bootstrap_ci95_low": 0.19310277357664274,
+              "loss": 3,
+              "mean_score_difference_saa_minus_opponent": 0.2823886280194508,
+              "opponent": "wbs",
+              "sign": "SAA higher",
+              "tie": 3,
+              "win": 29
+            },
+            {
+              "bootstrap_ci95_high": 0.31525800523287295,
+              "bootstrap_ci95_low": 0.18172845817380484,
+              "loss": 4,
+              "mean_score_difference_saa_minus_opponent": 0.2492380651142183,
+              "opponent": "rbocpdms",
+              "sign": "SAA higher",
+              "tie": 1,
+              "win": 30
+            },
+            {
+              "bootstrap_ci95_high": 0.2828048623175268,
+              "bootstrap_ci95_low": 0.1317196070962826,
+              "loss": 3,
+              "mean_score_difference_saa_minus_opponent": 0.20635321134281776,
+              "opponent": "prophet",
+              "sign": "SAA higher",
+              "tie": 8,
+              "win": 24
+            },
+            {
+              "bootstrap_ci95_high": 0.29162064510921404,
+              "bootstrap_ci95_low": 0.09996061283386168,
+              "loss": 8,
+              "mean_score_difference_saa_minus_opponent": 0.19464222208696497,
+              "opponent": "rfpop",
+              "sign": "SAA higher",
+              "tie": 4,
+              "win": 23
+            },
+            {
+              "bootstrap_ci95_high": 0.24608210523639318,
+              "bootstrap_ci95_low": 0.12709794266335175,
+              "loss": 6,
+              "mean_score_difference_saa_minus_opponent": 0.18616185758204926,
+              "opponent": "bocpdms",
+              "sign": "SAA higher",
+              "tie": 2,
+              "win": 27
+            },
+            {
+              "bootstrap_ci95_high": 0.17443138498492453,
+              "bootstrap_ci95_low": 0.023318637494426,
+              "loss": 6,
+              "mean_score_difference_saa_minus_opponent": 0.09638447507197521,
+              "opponent": "ecp",
+              "sign": "SAA higher",
+              "tie": 14,
+              "win": 15
+            },
+            {
+              "bootstrap_ci95_high": 0.1671515682221118,
+              "bootstrap_ci95_low": 0.00853044197839457,
+              "loss": 10,
+              "mean_score_difference_saa_minus_opponent": 0.0874004807552113,
+              "opponent": "cpnp",
+              "sign": "SAA higher",
+              "tie": 4,
+              "win": 21
+            },
+            {
+              "bootstrap_ci95_high": 0.10502397591236506,
+              "bootstrap_ci95_low": -0.06231588081496204,
+              "loss": 4,
+              "mean_score_difference_saa_minus_opponent": 0.025127497318844706,
+              "opponent": "zero",
+              "sign": "CI crosses 0",
+              "tie": 18,
+              "win": 13
+            },
+            {
+              "bootstrap_ci95_high": 0.09193558490288165,
+              "bootstrap_ci95_low": -0.05344167895237375,
+              "loss": 14,
+              "mean_score_difference_saa_minus_opponent": 0.018550169756340062,
+              "opponent": "segneigh",
+              "sign": "CI crosses 0",
+              "tie": 5,
+              "win": 16
+            },
+            {
+              "bootstrap_ci95_high": 0.07775124109720961,
+              "bootstrap_ci95_low": -0.06484449214061036,
+              "loss": 16,
+              "mean_score_difference_saa_minus_opponent": 0.004473086959647348,
+              "opponent": "bocpd",
+              "sign": "CI crosses 0",
+              "tie": 4,
+              "win": 15
+            },
+            {
+              "bootstrap_ci95_high": 0.07047648496495036,
+              "bootstrap_ci95_low": -0.0928634874671806,
+              "loss": 15,
+              "mean_score_difference_saa_minus_opponent": -0.009616288395586635,
+              "opponent": "amoc",
+              "sign": "CI crosses 0",
+              "tie": 6,
+              "win": 14
+            },
+            {
+              "bootstrap_ci95_high": 0.04851679614500441,
+              "bootstrap_ci95_low": -0.08026115522308144,
+              "loss": 16,
+              "mean_score_difference_saa_minus_opponent": -0.01589752344473739,
+              "opponent": "pelt",
+              "sign": "CI crosses 0",
+              "tie": 6,
+              "win": 13
+            },
+            {
+              "bootstrap_ci95_high": 0.02103197880691819,
+              "bootstrap_ci95_low": -0.12639150711426028,
+              "loss": 15,
+              "mean_score_difference_saa_minus_opponent": -0.05030489544469521,
+              "opponent": "binseg",
+              "sign": "CI crosses 0",
+              "tie": 6,
+              "win": 14
+            }
+          ],
+          "ranking": [
+            {
+              "average_dataset_rank": 4.5,
+              "label": "binseg",
+              "mean_score": 0.7443997777983046,
+              "method": "binseg",
+              "rank_by_average_dataset_rank": 1,
+              "rank_by_mean_score": 1
+            },
+            {
+              "average_dataset_rank": 4.8428571428571425,
+              "label": "pelt",
+              "mean_score": 0.7099924057983468,
+              "method": "pelt",
+              "rank_by_average_dataset_rank": 2,
+              "rank_by_mean_score": 2
+            },
+            {
+              "average_dataset_rank": 5.4,
+              "label": "bocpd",
+              "mean_score": 0.689621795393962,
+              "method": "bocpd",
+              "rank_by_average_dataset_rank": 3,
+              "rank_by_mean_score": 5
+            },
+            {
+              "average_dataset_rank": 5.614285714285714,
+              "label": "SAA",
+              "mean_score": 0.6940948823536094,
+              "method": "saa_change_point_adapter_v1",
+              "rank_by_average_dataset_rank": 4,
+              "rank_by_mean_score": 4
+            },
+            {
+              "average_dataset_rank": 5.857142857142857,
+              "label": "segneigh",
+              "mean_score": 0.6755447125972693,
+              "method": "segneigh",
+              "rank_by_average_dataset_rank": 5,
+              "rank_by_mean_score": 6
+            },
+            {
+              "average_dataset_rank": 6.042857142857143,
+              "label": "amoc",
+              "mean_score": 0.703711170749196,
+              "method": "amoc",
+              "rank_by_average_dataset_rank": 6,
+              "rank_by_mean_score": 3
+            },
+            {
+              "average_dataset_rank": 7.071428571428571,
+              "label": "zero",
+              "mean_score": 0.6689673850347646,
+              "method": "zero",
+              "rank_by_average_dataset_rank": 7,
+              "rank_by_mean_score": 7
+            },
+            {
+              "average_dataset_rank": 7.171428571428572,
+              "label": "cpnp",
+              "mean_score": 0.606694401598398,
+              "method": "cpnp",
+              "rank_by_average_dataset_rank": 8,
+              "rank_by_mean_score": 8
+            },
+            {
+              "average_dataset_rank": 7.6,
+              "label": "ecp",
+              "mean_score": 0.5977104072816342,
+              "method": "ecp",
+              "rank_by_average_dataset_rank": 9,
+              "rank_by_mean_score": 9
+            },
+            {
+              "average_dataset_rank": 9.485714285714286,
+              "label": "bocpdms",
+              "mean_score": 0.5079330247715601,
+              "method": "bocpdms",
+              "rank_by_average_dataset_rank": 10,
+              "rank_by_mean_score": 10
+            },
+            {
+              "average_dataset_rank": 9.585714285714285,
+              "label": "rfpop",
+              "mean_score": 0.49945266026664437,
+              "method": "rfpop",
+              "rank_by_average_dataset_rank": 11,
+              "rank_by_mean_score": 11
+            },
+            {
+              "average_dataset_rank": 10.085714285714285,
+              "label": "prophet",
+              "mean_score": 0.4877416710107916,
+              "method": "prophet",
+              "rank_by_average_dataset_rank": 12,
+              "rank_by_mean_score": 12
+            },
+            {
+              "average_dataset_rank": 10.885714285714286,
+              "label": "wbs",
+              "mean_score": 0.41170625433415853,
+              "method": "wbs",
+              "rank_by_average_dataset_rank": 13,
+              "rank_by_mean_score": 14
+            },
+            {
+              "average_dataset_rank": 11.028571428571428,
+              "label": "rbocpdms",
+              "mean_score": 0.444856817239391,
+              "method": "rbocpdms",
+              "rank_by_average_dataset_rank": 14,
+              "rank_by_mean_score": 13
+            },
+            {
+              "average_dataset_rank": 14.82857142857143,
+              "label": "kcpa",
+              "mean_score": 0.11100654565605475,
+              "method": "kcpa",
+              "rank_by_average_dataset_rank": 15,
+              "rank_by_mean_score": 15
+            }
+          ],
+          "saa_bootstrap": {
+            "iterations": 10000,
+            "rank_by_average_dataset_rank": 4,
+            "rank_by_average_dataset_rank_ci95_high": 7.0,
+            "rank_by_average_dataset_rank_ci95_low": 1.0,
+            "rank_by_mean_score": 4.0,
+            "rank_by_mean_score_ci95_high": 7.0,
+            "rank_by_mean_score_ci95_low": 1.0,
+            "score_ci95_high": 0.7542267362450197,
+            "score_ci95_low": 0.631036520714511,
+            "score_mean": 0.6940948823536094,
+            "seed": 20260815
+          },
+          "status": "PUBLISHED_RESEARCH_ONLY_STATISTICAL_DOSSIER",
+          "win_tie_loss": [
+            {
+              "loss": 1,
+              "opponent": "kcpa",
+              "tie": 0,
+              "win": 34
+            },
+            {
+              "loss": 3,
+              "opponent": "wbs",
+              "tie": 3,
+              "win": 29
+            },
+            {
+              "loss": 4,
+              "opponent": "rbocpdms",
+              "tie": 1,
+              "win": 30
+            },
+            {
+              "loss": 3,
+              "opponent": "prophet",
+              "tie": 8,
+              "win": 24
+            },
+            {
+              "loss": 8,
+              "opponent": "rfpop",
+              "tie": 4,
+              "win": 23
+            },
+            {
+              "loss": 6,
+              "opponent": "bocpdms",
+              "tie": 2,
+              "win": 27
+            },
+            {
+              "loss": 6,
+              "opponent": "ecp",
+              "tie": 14,
+              "win": 15
+            },
+            {
+              "loss": 10,
+              "opponent": "cpnp",
+              "tie": 4,
+              "win": 21
+            },
+            {
+              "loss": 4,
+              "opponent": "zero",
+              "tie": 18,
+              "win": 13
+            },
+            {
+              "loss": 14,
+              "opponent": "segneigh",
+              "tie": 5,
+              "win": 16
+            },
+            {
+              "loss": 16,
+              "opponent": "bocpd",
+              "tie": 4,
+              "win": 15
+            },
+            {
+              "loss": 15,
+              "opponent": "amoc",
+              "tie": 6,
+              "win": 14
+            },
+            {
+              "loss": 16,
+              "opponent": "pelt",
+              "tie": 6,
+              "win": 13
+            },
+            {
+              "loss": 15,
+              "opponent": "binseg",
+              "tie": 6,
+              "win": 14
+            }
+          ]
+        },
+        "oracle_covering": {
+          "dataset_ids_sha256": "sha256:932765f0e83ed61834a2abafca352c479c7ff738bad34bf2b92e5e20ddbde62c",
+          "friedman": {
+            "dataset_count": 37,
+            "method_count": 15,
+            "null_hypothesis": "all methods have equivalent rank distributions over paired datasets",
+            "p_value": 1.9737231895970226e-39,
+            "statistic": 221.69117804695057
+          },
+          "meta": {
+            "analysis_id": "oracle_covering",
+            "candidate_dataset_count": 42,
+            "common_dataset_count": 37,
+            "declared_scope_total": 42,
+            "excluded_dataset_count": 5,
+            "excluded_datasets": [
+              {
+                "dataset": "apple",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "bee_waggle_6",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "occupancy",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "run_log",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "uk_coal_employ",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "bocpd",
+                  "cpnp",
+                  "pelt",
+                  "rbocpdms",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              }
+            ],
+            "frame": "paired_common_dataset_only",
+            "methods": [
+              "amoc",
+              "binseg",
+              "bocpd",
+              "bocpdms",
+              "cpnp",
+              "ecp",
+              "kcpa",
+              "pelt",
+              "prophet",
+              "rbocpdms",
+              "rfpop",
+              "segneigh",
+              "wbs",
+              "zero",
+              "saa_change_point_adapter_v1"
+            ],
+            "metric": "covering",
+            "mode": "oracle",
+            "raw_series_exported": false,
+            "scope": "all_42",
+            "score_file": "analysis/output/scores/oracle_cover_scores.json"
+          },
+          "nemenyi": {
+            "alpha": 0.05,
+            "critical_difference": 3.52603334863759,
+            "interpretation_caveat": "Nemenyi non-separation is INCONCLUSIVE equivalence, not a superiority or equality claim.",
+            "not_separated_from_saa": [
+              "bocpd",
+              "rfpop",
+              "saa_change_point_adapter_v1",
+              "segneigh",
+              "binseg",
+              "pelt",
+              "cpnp",
+              "amoc",
+              "ecp"
+            ],
+            "q_alpha_studentized_range_over_sqrt2": 3.391230283765257,
+            "saa_average_rank": 5.418918918918919,
+            "significantly_better_than_saa_by_cd": [],
+            "significantly_worse_than_saa_by_cd": [
+              "bocpdms",
+              "rbocpdms",
+              "kcpa",
+              "zero",
+              "prophet",
+              "wbs"
+            ]
+          },
+          "pairwise_score_differences": [
+            {
+              "bootstrap_ci95_high": 0.4363348054796083,
+              "bootstrap_ci95_low": 0.29028951223538896,
+              "loss": 0,
+              "mean_score_difference_saa_minus_opponent": 0.3625783205423303,
+              "opponent": "wbs",
+              "sign": "SAA higher",
+              "tie": 1,
+              "win": 36
+            },
+            {
+              "bootstrap_ci95_high": 0.2729342685208606,
+              "bootstrap_ci95_low": 0.1611850902140961,
+              "loss": 0,
+              "mean_score_difference_saa_minus_opponent": 0.2147334075003883,
+              "opponent": "prophet",
+              "sign": "SAA higher",
+              "tie": 5,
+              "win": 32
+            },
+            {
+              "bootstrap_ci95_high": 0.2786744364226399,
+              "bootstrap_ci95_low": 0.14659825457944534,
+              "loss": 2,
+              "mean_score_difference_saa_minus_opponent": 0.2118476307058878,
+              "opponent": "zero",
+              "sign": "SAA higher",
+              "tie": 8,
+              "win": 27
+            },
+            {
+              "bootstrap_ci95_high": 0.2086924367274547,
+              "bootstrap_ci95_low": 0.1010717187010552,
+              "loss": 6,
+              "mean_score_difference_saa_minus_opponent": 0.1545182839900703,
+              "opponent": "kcpa",
+              "sign": "SAA higher",
+              "tie": 5,
+              "win": 26
+            },
+            {
+              "bootstrap_ci95_high": 0.1317238650421626,
+              "bootstrap_ci95_low": 0.01998074771410897,
+              "loss": 8,
+              "mean_score_difference_saa_minus_opponent": 0.07050186128332438,
+              "opponent": "ecp",
+              "sign": "SAA higher",
+              "tie": 9,
+              "win": 20
+            },
+            {
+              "bootstrap_ci95_high": 0.08659850311109446,
+              "bootstrap_ci95_low": 0.0143082227081862,
+              "loss": 7,
+              "mean_score_difference_saa_minus_opponent": 0.04677148137765639,
+              "opponent": "rbocpdms",
+              "sign": "SAA higher",
+              "tie": 2,
+              "win": 28
+            },
+            {
+              "bootstrap_ci95_high": 0.08657470142792695,
+              "bootstrap_ci95_low": 0.00580175072951617,
+              "loss": 9,
+              "mean_score_difference_saa_minus_opponent": 0.044626024849868814,
+              "opponent": "amoc",
+              "sign": "SAA higher",
+              "tie": 13,
+              "win": 15
+            },
+            {
+              "bootstrap_ci95_high": 0.048161732743883585,
+              "bootstrap_ci95_low": -0.017601180545164102,
+              "loss": 10,
+              "mean_score_difference_saa_minus_opponent": 0.015737741037189463,
+              "opponent": "bocpdms",
+              "sign": "CI crosses 0",
+              "tie": 0,
+              "win": 27
+            },
+            {
+              "bootstrap_ci95_high": 0.03634293504649117,
+              "bootstrap_ci95_low": -0.018336256248117216,
+              "loss": 9,
+              "mean_score_difference_saa_minus_opponent": 0.01018733242795566,
+              "opponent": "cpnp",
+              "sign": "CI crosses 0",
+              "tie": 7,
+              "win": 21
+            },
+            {
+              "bootstrap_ci95_high": 0.02585154947460859,
+              "bootstrap_ci95_low": -0.0295827825110237,
+              "loss": 12,
+              "mean_score_difference_saa_minus_opponent": -0.0012586774923372844,
+              "opponent": "pelt",
+              "sign": "CI crosses 0",
+              "tie": 8,
+              "win": 17
+            },
+            {
+              "bootstrap_ci95_high": 0.02302999374098051,
+              "bootstrap_ci95_low": -0.032394813064297076,
+              "loss": 12,
+              "mean_score_difference_saa_minus_opponent": -0.0029110382096197472,
+              "opponent": "binseg",
+              "sign": "CI crosses 0",
+              "tie": 9,
+              "win": 16
+            },
+            {
+              "bootstrap_ci95_high": 0.021622068992873732,
+              "bootstrap_ci95_low": -0.03480672161079131,
+              "loss": 13,
+              "mean_score_difference_saa_minus_opponent": -0.0052819213812415325,
+              "opponent": "segneigh",
+              "sign": "CI crosses 0",
+              "tie": 9,
+              "win": 15
+            },
+            {
+              "bootstrap_ci95_high": 0.015814615272709324,
+              "bootstrap_ci95_low": -0.038456842359281644,
+              "loss": 14,
+              "mean_score_difference_saa_minus_opponent": -0.010457238830836874,
+              "opponent": "bocpd",
+              "sign": "CI crosses 0",
+              "tie": 13,
+              "win": 10
+            },
+            {
+              "bootstrap_ci95_high": 0.0113213678978666,
+              "bootstrap_ci95_low": -0.03860882184677866,
+              "loss": 13,
+              "mean_score_difference_saa_minus_opponent": -0.011391193429496103,
+              "opponent": "rfpop",
+              "sign": "CI crosses 0",
+              "tie": 8,
+              "win": 16
+            }
+          ],
+          "ranking": [
+            {
+              "average_dataset_rank": 4.418918918918919,
+              "label": "bocpd",
+              "mean_score": 0.8010718250706466,
+              "method": "bocpd",
+              "rank_by_average_dataset_rank": 1,
+              "rank_by_mean_score": 2
+            },
+            {
+              "average_dataset_rank": 5.324324324324325,
+              "label": "rfpop",
+              "mean_score": 0.8020057796693058,
+              "method": "rfpop",
+              "rank_by_average_dataset_rank": 2,
+              "rank_by_mean_score": 1
+            },
+            {
+              "average_dataset_rank": 5.418918918918919,
+              "label": "SAA",
+              "mean_score": 0.7906145862398096,
+              "method": "saa_change_point_adapter_v1",
+              "rank_by_average_dataset_rank": 3,
+              "rank_by_mean_score": 6
+            },
+            {
+              "average_dataset_rank": 5.5,
+              "label": "segneigh",
+              "mean_score": 0.7958965076210512,
+              "method": "segneigh",
+              "rank_by_average_dataset_rank": 4,
+              "rank_by_mean_score": 3
+            },
+            {
+              "average_dataset_rank": 5.675675675675675,
+              "label": "binseg",
+              "mean_score": 0.7935256244494294,
+              "method": "binseg",
+              "rank_by_average_dataset_rank": 5,
+              "rank_by_mean_score": 4
+            },
+            {
+              "average_dataset_rank": 6.094594594594595,
+              "label": "pelt",
+              "mean_score": 0.791873263732147,
+              "method": "pelt",
+              "rank_by_average_dataset_rank": 6,
+              "rank_by_mean_score": 5
+            },
+            {
+              "average_dataset_rank": 7.121621621621622,
+              "label": "cpnp",
+              "mean_score": 0.780427253811854,
+              "method": "cpnp",
+              "rank_by_average_dataset_rank": 7,
+              "rank_by_mean_score": 7
+            },
+            {
+              "average_dataset_rank": 7.256756756756757,
+              "label": "amoc",
+              "mean_score": 0.7459885613899409,
+              "method": "amoc",
+              "rank_by_average_dataset_rank": 8,
+              "rank_by_mean_score": 9
+            },
+            {
+              "average_dataset_rank": 8.027027027027026,
+              "label": "ecp",
+              "mean_score": 0.7201127249564853,
+              "method": "ecp",
+              "rank_by_average_dataset_rank": 9,
+              "rank_by_mean_score": 11
+            },
+            {
+              "average_dataset_rank": 9.08108108108108,
+              "label": "bocpdms",
+              "mean_score": 0.7748768452026202,
+              "method": "bocpdms",
+              "rank_by_average_dataset_rank": 10,
+              "rank_by_mean_score": 8
+            },
+            {
+              "average_dataset_rank": 9.31081081081081,
+              "label": "rbocpdms",
+              "mean_score": 0.7438431048621533,
+              "method": "rbocpdms",
+              "rank_by_average_dataset_rank": 11,
+              "rank_by_mean_score": 10
+            },
+            {
+              "average_dataset_rank": 10.18918918918919,
+              "label": "kcpa",
+              "mean_score": 0.6360963022497393,
+              "method": "kcpa",
+              "rank_by_average_dataset_rank": 12,
+              "rank_by_mean_score": 12
+            },
+            {
+              "average_dataset_rank": 11.108108108108109,
+              "label": "zero",
+              "mean_score": 0.5787669555339219,
+              "method": "zero",
+              "rank_by_average_dataset_rank": 13,
+              "rank_by_mean_score": 13
+            },
+            {
+              "average_dataset_rank": 11.85135135135135,
+              "label": "prophet",
+              "mean_score": 0.5758811787394214,
+              "method": "prophet",
+              "rank_by_average_dataset_rank": 14,
+              "rank_by_mean_score": 14
+            },
+            {
+              "average_dataset_rank": 13.621621621621621,
+              "label": "wbs",
+              "mean_score": 0.4280362656974794,
+              "method": "wbs",
+              "rank_by_average_dataset_rank": 15,
+              "rank_by_mean_score": 15
+            }
+          ],
+          "saa_bootstrap": {
+            "iterations": 10000,
+            "rank_by_average_dataset_rank": 3,
+            "rank_by_average_dataset_rank_ci95_high": 6.0,
+            "rank_by_average_dataset_rank_ci95_low": 1.0,
+            "rank_by_mean_score": 6.0,
+            "rank_by_mean_score_ci95_high": 8.0,
+            "rank_by_mean_score_ci95_low": 1.0,
+            "score_ci95_high": 0.8304395029171645,
+            "score_ci95_low": 0.7512277579673196,
+            "score_mean": 0.7906145862398096,
+            "seed": 20260815
+          },
+          "status": "PUBLISHED_RESEARCH_ONLY_STATISTICAL_DOSSIER",
+          "win_tie_loss": [
+            {
+              "loss": 0,
+              "opponent": "wbs",
+              "tie": 1,
+              "win": 36
+            },
+            {
+              "loss": 0,
+              "opponent": "prophet",
+              "tie": 5,
+              "win": 32
+            },
+            {
+              "loss": 2,
+              "opponent": "zero",
+              "tie": 8,
+              "win": 27
+            },
+            {
+              "loss": 6,
+              "opponent": "kcpa",
+              "tie": 5,
+              "win": 26
+            },
+            {
+              "loss": 8,
+              "opponent": "ecp",
+              "tie": 9,
+              "win": 20
+            },
+            {
+              "loss": 7,
+              "opponent": "rbocpdms",
+              "tie": 2,
+              "win": 28
+            },
+            {
+              "loss": 9,
+              "opponent": "amoc",
+              "tie": 13,
+              "win": 15
+            },
+            {
+              "loss": 10,
+              "opponent": "bocpdms",
+              "tie": 0,
+              "win": 27
+            },
+            {
+              "loss": 9,
+              "opponent": "cpnp",
+              "tie": 7,
+              "win": 21
+            },
+            {
+              "loss": 12,
+              "opponent": "pelt",
+              "tie": 8,
+              "win": 17
+            },
+            {
+              "loss": 12,
+              "opponent": "binseg",
+              "tie": 9,
+              "win": 16
+            },
+            {
+              "loss": 13,
+              "opponent": "segneigh",
+              "tie": 9,
+              "win": 15
+            },
+            {
+              "loss": 14,
+              "opponent": "bocpd",
+              "tie": 13,
+              "win": 10
+            },
+            {
+              "loss": 13,
+              "opponent": "rfpop",
+              "tie": 8,
+              "win": 16
+            }
+          ]
+        },
+        "oracle_f_measure": {
+          "dataset_ids_sha256": "sha256:932765f0e83ed61834a2abafca352c479c7ff738bad34bf2b92e5e20ddbde62c",
+          "friedman": {
+            "dataset_count": 37,
+            "method_count": 15,
+            "null_hypothesis": "all methods have equivalent rank distributions over paired datasets",
+            "p_value": 9.062977334865093e-52,
+            "statistic": 281.34572202864894
+          },
+          "meta": {
+            "analysis_id": "oracle_f_measure",
+            "candidate_dataset_count": 42,
+            "common_dataset_count": 37,
+            "declared_scope_total": 42,
+            "excluded_dataset_count": 5,
+            "excluded_datasets": [
+              {
+                "dataset": "apple",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "bee_waggle_6",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "occupancy",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "run_log",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "uk_coal_employ",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "bocpd",
+                  "cpnp",
+                  "pelt",
+                  "rbocpdms",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              }
+            ],
+            "frame": "paired_common_dataset_only",
+            "methods": [
+              "amoc",
+              "binseg",
+              "bocpd",
+              "bocpdms",
+              "cpnp",
+              "ecp",
+              "kcpa",
+              "pelt",
+              "prophet",
+              "rbocpdms",
+              "rfpop",
+              "segneigh",
+              "wbs",
+              "zero",
+              "saa_change_point_adapter_v1"
+            ],
+            "metric": "f_measure",
+            "mode": "oracle",
+            "raw_series_exported": false,
+            "scope": "all_42",
+            "score_file": "analysis/output/scores/oracle_f1_scores.json"
+          },
+          "nemenyi": {
+            "alpha": 0.05,
+            "critical_difference": 3.52603334863759,
+            "interpretation_caveat": "Nemenyi non-separation is INCONCLUSIVE equivalence, not a superiority or equality claim.",
+            "not_separated_from_saa": [
+              "bocpd",
+              "binseg",
+              "segneigh",
+              "rfpop",
+              "pelt",
+              "saa_change_point_adapter_v1",
+              "cpnp",
+              "ecp",
+              "amoc"
+            ],
+            "q_alpha_studentized_range_over_sqrt2": 3.391230283765257,
+            "saa_average_rank": 5.6891891891891895,
+            "significantly_better_than_saa_by_cd": [],
+            "significantly_worse_than_saa_by_cd": [
+              "kcpa",
+              "rbocpdms",
+              "bocpdms",
+              "zero",
+              "wbs",
+              "prophet"
+            ]
+          },
+          "pairwise_score_differences": [
+            {
+              "bootstrap_ci95_high": 0.4253419085113411,
+              "bootstrap_ci95_low": 0.2547330916131244,
+              "loss": 0,
+              "mean_score_difference_saa_minus_opponent": 0.337136355786853,
+              "opponent": "wbs",
+              "sign": "SAA higher",
+              "tie": 4,
+              "win": 33
+            },
+            {
+              "bootstrap_ci95_high": 0.405192054184713,
+              "bootstrap_ci95_low": 0.26932425665955073,
+              "loss": 0,
+              "mean_score_difference_saa_minus_opponent": 0.3355110884114371,
+              "opponent": "prophet",
+              "sign": "SAA higher",
+              "tie": 5,
+              "win": 32
+            },
+            {
+              "bootstrap_ci95_high": 0.2701152663408459,
+              "bootstrap_ci95_low": 0.1482832515474028,
+              "loss": 6,
+              "mean_score_difference_saa_minus_opponent": 0.21047199080149176,
+              "opponent": "bocpdms",
+              "sign": "SAA higher",
+              "tie": 0,
+              "win": 31
+            },
+            {
+              "bootstrap_ci95_high": 0.26863425572066185,
+              "bootstrap_ci95_low": 0.14677235383129922,
+              "loss": 1,
+              "mean_score_difference_saa_minus_opponent": 0.20749084382829527,
+              "opponent": "zero",
+              "sign": "SAA higher",
+              "tie": 8,
+              "win": 28
+            },
+            {
+              "bootstrap_ci95_high": 0.27363678430887656,
+              "bootstrap_ci95_low": 0.1352909522333244,
+              "loss": 6,
+              "mean_score_difference_saa_minus_opponent": 0.20519751325802077,
+              "opponent": "rbocpdms",
+              "sign": "SAA higher",
+              "tie": 1,
+              "win": 30
+            },
+            {
+              "bootstrap_ci95_high": 0.2272407899342922,
+              "bootstrap_ci95_low": 0.09447299276061343,
+              "loss": 4,
+              "mean_score_difference_saa_minus_opponent": 0.15968453561442827,
+              "opponent": "kcpa",
+              "sign": "SAA higher",
+              "tie": 5,
+              "win": 28
+            },
+            {
+              "bootstrap_ci95_high": 0.14198423665630294,
+              "bootstrap_ci95_low": 0.01406601774052279,
+              "loss": 10,
+              "mean_score_difference_saa_minus_opponent": 0.07326685027574467,
+              "opponent": "ecp",
+              "sign": "SAA higher",
+              "tie": 10,
+              "win": 17
+            },
+            {
+              "bootstrap_ci95_high": 0.12378950683707494,
+              "bootstrap_ci95_low": 0.019678483994487045,
+              "loss": 6,
+              "mean_score_difference_saa_minus_opponent": 0.07095364623595525,
+              "opponent": "amoc",
+              "sign": "SAA higher",
+              "tie": 14,
+              "win": 17
+            },
+            {
+              "bootstrap_ci95_high": 0.04566343828758186,
+              "bootstrap_ci95_low": -0.029666376435230454,
+              "loss": 9,
+              "mean_score_difference_saa_minus_opponent": 0.00931779389043738,
+              "opponent": "cpnp",
+              "sign": "CI crosses 0",
+              "tie": 12,
+              "win": 16
+            },
+            {
+              "bootstrap_ci95_high": 0.02964733788178198,
+              "bootstrap_ci95_low": -0.04513982283430194,
+              "loss": 11,
+              "mean_score_difference_saa_minus_opponent": -0.007206843824409411,
+              "opponent": "pelt",
+              "sign": "CI crosses 0",
+              "tie": 17,
+              "win": 9
+            },
+            {
+              "bootstrap_ci95_high": 0.021055772243786314,
+              "bootstrap_ci95_low": -0.05087742740852486,
+              "loss": 12,
+              "mean_score_difference_saa_minus_opponent": -0.014333394177690651,
+              "opponent": "rfpop",
+              "sign": "CI crosses 0",
+              "tie": 16,
+              "win": 9
+            },
+            {
+              "bootstrap_ci95_high": 0.014554248358307318,
+              "bootstrap_ci95_low": -0.05022099616100181,
+              "loss": 13,
+              "mean_score_difference_saa_minus_opponent": -0.016682711894380545,
+              "opponent": "binseg",
+              "sign": "CI crosses 0",
+              "tie": 15,
+              "win": 9
+            },
+            {
+              "bootstrap_ci95_high": 0.016196349587319865,
+              "bootstrap_ci95_low": -0.0523349644989464,
+              "loss": 13,
+              "mean_score_difference_saa_minus_opponent": -0.01707182164865631,
+              "opponent": "segneigh",
+              "sign": "CI crosses 0",
+              "tie": 15,
+              "win": 9
+            },
+            {
+              "bootstrap_ci95_high": 0.011786838476934933,
+              "bootstrap_ci95_low": -0.06476259531354767,
+              "loss": 15,
+              "mean_score_difference_saa_minus_opponent": -0.026328427161101068,
+              "opponent": "bocpd",
+              "sign": "CI crosses 0",
+              "tie": 13,
+              "win": 9
+            }
+          ],
+          "ranking": [
+            {
+              "average_dataset_rank": 4.472972972972973,
+              "label": "bocpd",
+              "mean_score": 0.896194180858914,
+              "method": "bocpd",
+              "rank_by_average_dataset_rank": 1,
+              "rank_by_mean_score": 1
+            },
+            {
+              "average_dataset_rank": 4.702702702702703,
+              "label": "binseg",
+              "mean_score": 0.8865484655921935,
+              "method": "binseg",
+              "rank_by_average_dataset_rank": 2,
+              "rank_by_mean_score": 3
+            },
+            {
+              "average_dataset_rank": 4.851351351351352,
+              "label": "segneigh",
+              "mean_score": 0.8869375753464692,
+              "method": "segneigh",
+              "rank_by_average_dataset_rank": 3,
+              "rank_by_mean_score": 2
+            },
+            {
+              "average_dataset_rank": 4.972972972972973,
+              "label": "rfpop",
+              "mean_score": 0.8841991478755036,
+              "method": "rfpop",
+              "rank_by_average_dataset_rank": 4,
+              "rank_by_mean_score": 4
+            },
+            {
+              "average_dataset_rank": 5.405405405405405,
+              "label": "pelt",
+              "mean_score": 0.8770725975222223,
+              "method": "pelt",
+              "rank_by_average_dataset_rank": 5,
+              "rank_by_mean_score": 5
+            },
+            {
+              "average_dataset_rank": 5.6891891891891895,
+              "label": "SAA",
+              "mean_score": 0.8698657536978129,
+              "method": "saa_change_point_adapter_v1",
+              "rank_by_average_dataset_rank": 6,
+              "rank_by_mean_score": 6
+            },
+            {
+              "average_dataset_rank": 6.3108108108108105,
+              "label": "cpnp",
+              "mean_score": 0.8605479598073755,
+              "method": "cpnp",
+              "rank_by_average_dataset_rank": 7,
+              "rank_by_mean_score": 7
+            },
+            {
+              "average_dataset_rank": 7.324324324324325,
+              "label": "ecp",
+              "mean_score": 0.7965989034220683,
+              "method": "ecp",
+              "rank_by_average_dataset_rank": 8,
+              "rank_by_mean_score": 9
+            },
+            {
+              "average_dataset_rank": 7.986486486486487,
+              "label": "amoc",
+              "mean_score": 0.7989121074618577,
+              "method": "amoc",
+              "rank_by_average_dataset_rank": 9,
+              "rank_by_mean_score": 8
+            },
+            {
+              "average_dataset_rank": 9.824324324324325,
+              "label": "kcpa",
+              "mean_score": 0.7101812180833846,
+              "method": "kcpa",
+              "rank_by_average_dataset_rank": 10,
+              "rank_by_mean_score": 10
+            },
+            {
+              "average_dataset_rank": 10.743243243243244,
+              "label": "rbocpdms",
+              "mean_score": 0.6646682404397922,
+              "method": "rbocpdms",
+              "rank_by_average_dataset_rank": 11,
+              "rank_by_mean_score": 11
+            },
+            {
+              "average_dataset_rank": 10.95945945945946,
+              "label": "bocpdms",
+              "mean_score": 0.6593937628963211,
+              "method": "bocpdms",
+              "rank_by_average_dataset_rank": 12,
+              "rank_by_mean_score": 13
+            },
+            {
+              "average_dataset_rank": 11.513513513513514,
+              "label": "zero",
+              "mean_score": 0.6623749098695176,
+              "method": "zero",
+              "rank_by_average_dataset_rank": 13,
+              "rank_by_mean_score": 12
+            },
+            {
+              "average_dataset_rank": 12.094594594594595,
+              "label": "wbs",
+              "mean_score": 0.53272939791096,
+              "method": "wbs",
+              "rank_by_average_dataset_rank": 14,
+              "rank_by_mean_score": 15
+            },
+            {
+              "average_dataset_rank": 13.14864864864865,
+              "label": "prophet",
+              "mean_score": 0.5343546652863759,
+              "method": "prophet",
+              "rank_by_average_dataset_rank": 15,
+              "rank_by_mean_score": 14
+            }
+          ],
+          "saa_bootstrap": {
+            "iterations": 10000,
+            "rank_by_average_dataset_rank": 6,
+            "rank_by_average_dataset_rank_ci95_high": 7.0,
+            "rank_by_average_dataset_rank_ci95_low": 2.0,
+            "rank_by_mean_score": 6.0,
+            "rank_by_mean_score_ci95_high": 7.0,
+            "rank_by_mean_score_ci95_low": 1.0,
+            "score_ci95_high": 0.9057636035077347,
+            "score_ci95_low": 0.8317712861825288,
+            "score_mean": 0.8698657536978129,
+            "seed": 20260815
+          },
+          "status": "PUBLISHED_RESEARCH_ONLY_STATISTICAL_DOSSIER",
+          "win_tie_loss": [
+            {
+              "loss": 0,
+              "opponent": "wbs",
+              "tie": 4,
+              "win": 33
+            },
+            {
+              "loss": 0,
+              "opponent": "prophet",
+              "tie": 5,
+              "win": 32
+            },
+            {
+              "loss": 6,
+              "opponent": "bocpdms",
+              "tie": 0,
+              "win": 31
+            },
+            {
+              "loss": 1,
+              "opponent": "zero",
+              "tie": 8,
+              "win": 28
+            },
+            {
+              "loss": 6,
+              "opponent": "rbocpdms",
+              "tie": 1,
+              "win": 30
+            },
+            {
+              "loss": 4,
+              "opponent": "kcpa",
+              "tie": 5,
+              "win": 28
+            },
+            {
+              "loss": 10,
+              "opponent": "ecp",
+              "tie": 10,
+              "win": 17
+            },
+            {
+              "loss": 6,
+              "opponent": "amoc",
+              "tie": 14,
+              "win": 17
+            },
+            {
+              "loss": 9,
+              "opponent": "cpnp",
+              "tie": 12,
+              "win": 16
+            },
+            {
+              "loss": 11,
+              "opponent": "pelt",
+              "tie": 17,
+              "win": 9
+            },
+            {
+              "loss": 12,
+              "opponent": "rfpop",
+              "tie": 16,
+              "win": 9
+            },
+            {
+              "loss": 13,
+              "opponent": "binseg",
+              "tie": 15,
+              "win": 9
+            },
+            {
+              "loss": 13,
+              "opponent": "segneigh",
+              "tie": 15,
+              "win": 9
+            },
+            {
+              "loss": 15,
+              "opponent": "bocpd",
+              "tie": 13,
+              "win": 9
+            }
+          ]
+        }
+      }
+    },
+    "real_world_37": {
+      "analyses": {
+        "default_covering": {
+          "dataset_ids_sha256": "sha256:1667fd85de029595e4c2a1ce887ca3bf4d2d3495690d9b5234c15683d81be4a0",
+          "friedman": {
+            "dataset_count": 30,
+            "method_count": 15,
+            "null_hypothesis": "all methods have equivalent rank distributions over paired datasets",
+            "p_value": 1.7506707816129033e-31,
+            "statistic": 182.79883945841416
+          },
+          "meta": {
+            "analysis_id": "default_covering",
+            "candidate_dataset_count": 37,
+            "common_dataset_count": 30,
+            "declared_scope_total": 37,
+            "excluded_dataset_count": 7,
+            "excluded_datasets": [
+              {
+                "dataset": "apple",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "bee_waggle_6",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "bitcoin",
+                "missing_methods": [
+                  "rbocpdms"
+                ]
+              },
+              {
+                "dataset": "occupancy",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "run_log",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "scanline_126007",
+                "missing_methods": [
+                  "rbocpdms"
+                ]
+              },
+              {
+                "dataset": "uk_coal_employ",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "bocpd",
+                  "cpnp",
+                  "pelt",
+                  "rbocpdms",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              }
+            ],
+            "frame": "paired_common_dataset_only",
+            "methods": [
+              "amoc",
+              "binseg",
+              "bocpd",
+              "bocpdms",
+              "cpnp",
+              "ecp",
+              "kcpa",
+              "pelt",
+              "prophet",
+              "rbocpdms",
+              "rfpop",
+              "segneigh",
+              "wbs",
+              "zero",
+              "saa_change_point_adapter_v1"
+            ],
+            "metric": "covering",
+            "mode": "default",
+            "raw_series_exported": false,
+            "scope": "real_world_37",
+            "score_file": "analysis/output/scores/default_cover_scores.json"
+          },
+          "nemenyi": {
+            "alpha": 0.05,
+            "critical_difference": 3.9158554344317635,
+            "interpretation_caveat": "Nemenyi non-separation is INCONCLUSIVE equivalence, not a superiority or equality claim.",
+            "not_separated_from_saa": [
+              "binseg",
+              "pelt",
+              "amoc",
+              "segneigh",
+              "saa_change_point_adapter_v1",
+              "bocpd",
+              "bocpdms",
+              "rbocpdms",
+              "zero",
+              "prophet",
+              "ecp",
+              "cpnp"
+            ],
+            "q_alpha_studentized_range_over_sqrt2": 3.391230283765257,
+            "saa_average_rank": 5.95,
+            "significantly_better_than_saa_by_cd": [],
+            "significantly_worse_than_saa_by_cd": [
+              "rfpop",
+              "wbs",
+              "kcpa"
+            ]
+          },
+          "pairwise_score_differences": [
+            {
+              "bootstrap_ci95_high": 0.6391020293892548,
+              "bootstrap_ci95_low": 0.484414078562859,
+              "loss": 0,
+              "mean_score_difference_saa_minus_opponent": 0.5625881292960703,
+              "opponent": "kcpa",
+              "sign": "SAA higher",
+              "tie": 0,
+              "win": 30
+            },
+            {
+              "bootstrap_ci95_high": 0.46261866859051587,
+              "bootstrap_ci95_low": 0.2791797280469427,
+              "loss": 4,
+              "mean_score_difference_saa_minus_opponent": 0.3710236627304039,
+              "opponent": "wbs",
+              "sign": "SAA higher",
+              "tie": 0,
+              "win": 26
+            },
+            {
+              "bootstrap_ci95_high": 0.3721447895677686,
+              "bootstrap_ci95_low": 0.19902289889386005,
+              "loss": 5,
+              "mean_score_difference_saa_minus_opponent": 0.28543490548667194,
+              "opponent": "rfpop",
+              "sign": "SAA higher",
+              "tie": 1,
+              "win": 24
+            },
+            {
+              "bootstrap_ci95_high": 0.23529503195110552,
+              "bootstrap_ci95_low": 0.07134114701527403,
+              "loss": 3,
+              "mean_score_difference_saa_minus_opponent": 0.15025062663025965,
+              "opponent": "ecp",
+              "sign": "SAA higher",
+              "tie": 10,
+              "win": 17
+            },
+            {
+              "bootstrap_ci95_high": 0.21636771035506625,
+              "bootstrap_ci95_low": 0.06195126777503718,
+              "loss": 8,
+              "mean_score_difference_saa_minus_opponent": 0.13944937703716426,
+              "opponent": "cpnp",
+              "sign": "SAA higher",
+              "tie": 0,
+              "win": 22
+            },
+            {
+              "bootstrap_ci95_high": 0.19736280590958066,
+              "bootstrap_ci95_low": 0.04309000845796885,
+              "loss": 6,
+              "mean_score_difference_saa_minus_opponent": 0.11774919524448187,
+              "opponent": "prophet",
+              "sign": "SAA higher",
+              "tie": 7,
+              "win": 17
+            },
+            {
+              "bootstrap_ci95_high": 0.15607906329001223,
+              "bootstrap_ci95_low": -0.03126535500968383,
+              "loss": 4,
+              "mean_score_difference_saa_minus_opponent": 0.06407941485375232,
+              "opponent": "zero",
+              "sign": "CI crosses 0",
+              "tie": 15,
+              "win": 11
+            },
+            {
+              "bootstrap_ci95_high": 0.09854809674899961,
+              "bootstrap_ci95_low": -0.005545853280632257,
+              "loss": 10,
+              "mean_score_difference_saa_minus_opponent": 0.04587498219898111,
+              "opponent": "bocpdms",
+              "sign": "CI crosses 0",
+              "tie": 0,
+              "win": 20
+            },
+            {
+              "bootstrap_ci95_high": 0.11276930749118694,
+              "bootstrap_ci95_low": -0.039709089606915486,
+              "loss": 13,
+              "mean_score_difference_saa_minus_opponent": 0.035502039806882546,
+              "opponent": "bocpd",
+              "sign": "CI crosses 0",
+              "tie": 0,
+              "win": 17
+            },
+            {
+              "bootstrap_ci95_high": 0.07561053920421944,
+              "bootstrap_ci95_low": -0.00432622238178369,
+              "loss": 10,
+              "mean_score_difference_saa_minus_opponent": 0.03464727781004963,
+              "opponent": "rbocpdms",
+              "sign": "CI crosses 0",
+              "tie": 0,
+              "win": 20
+            },
+            {
+              "bootstrap_ci95_high": 0.05784948787127067,
+              "bootstrap_ci95_low": -0.0684640835424499,
+              "loss": 16,
+              "mean_score_difference_saa_minus_opponent": -0.007426662366552704,
+              "opponent": "segneigh",
+              "sign": "CI crosses 0",
+              "tie": 0,
+              "win": 14
+            },
+            {
+              "bootstrap_ci95_high": 0.0354566835783785,
+              "bootstrap_ci95_low": -0.07844513440460021,
+              "loss": 18,
+              "mean_score_difference_saa_minus_opponent": -0.02188010675346832,
+              "opponent": "pelt",
+              "sign": "CI crosses 0",
+              "tie": 0,
+              "win": 12
+            },
+            {
+              "bootstrap_ci95_high": 0.04049815863364659,
+              "bootstrap_ci95_low": -0.11507370797139121,
+              "loss": 16,
+              "mean_score_difference_saa_minus_opponent": -0.03598408050849999,
+              "opponent": "amoc",
+              "sign": "CI crosses 0",
+              "tie": 2,
+              "win": 12
+            },
+            {
+              "bootstrap_ci95_high": 0.03053619793231996,
+              "bootstrap_ci95_low": -0.12039183111626833,
+              "loss": 18,
+              "mean_score_difference_saa_minus_opponent": -0.042385415426018314,
+              "opponent": "binseg",
+              "sign": "CI crosses 0",
+              "tie": 0,
+              "win": 12
+            }
+          ],
+          "ranking": [
+            {
+              "average_dataset_rank": 4.783333333333333,
+              "label": "binseg",
+              "mean_score": 0.6758333615093761,
+              "method": "binseg",
+              "rank_by_average_dataset_rank": 1,
+              "rank_by_mean_score": 1
+            },
+            {
+              "average_dataset_rank": 4.966666666666667,
+              "label": "pelt",
+              "mean_score": 0.6553280528368262,
+              "method": "pelt",
+              "rank_by_average_dataset_rank": 2,
+              "rank_by_mean_score": 3
+            },
+            {
+              "average_dataset_rank": 5.383333333333334,
+              "label": "amoc",
+              "mean_score": 0.6694320265918579,
+              "method": "amoc",
+              "rank_by_average_dataset_rank": 3,
+              "rank_by_mean_score": 2
+            },
+            {
+              "average_dataset_rank": 5.466666666666667,
+              "label": "segneigh",
+              "mean_score": 0.6408746084499105,
+              "method": "segneigh",
+              "rank_by_average_dataset_rank": 4,
+              "rank_by_mean_score": 4
+            },
+            {
+              "average_dataset_rank": 5.95,
+              "label": "SAA",
+              "mean_score": 0.6334479460833579,
+              "method": "saa_change_point_adapter_v1",
+              "rank_by_average_dataset_rank": 5,
+              "rank_by_mean_score": 5
+            },
+            {
+              "average_dataset_rank": 6.666666666666667,
+              "label": "bocpd",
+              "mean_score": 0.5979459062764753,
+              "method": "bocpd",
+              "rank_by_average_dataset_rank": 6,
+              "rank_by_mean_score": 7
+            },
+            {
+              "average_dataset_rank": 7.283333333333333,
+              "label": "bocpdms",
+              "mean_score": 0.5875729638843767,
+              "method": "bocpdms",
+              "rank_by_average_dataset_rank": 7,
+              "rank_by_mean_score": 8
+            },
+            {
+              "average_dataset_rank": 7.35,
+              "label": "rbocpdms",
+              "mean_score": 0.5988006682733082,
+              "method": "rbocpdms",
+              "rank_by_average_dataset_rank": 8,
+              "rank_by_mean_score": 6
+            },
+            {
+              "average_dataset_rank": 7.466666666666667,
+              "label": "zero",
+              "mean_score": 0.5693685312296055,
+              "method": "zero",
+              "rank_by_average_dataset_rank": 9,
+              "rank_by_mean_score": 9
+            },
+            {
+              "average_dataset_rank": 8.15,
+              "label": "prophet",
+              "mean_score": 0.515698750838876,
+              "method": "prophet",
+              "rank_by_average_dataset_rank": 10,
+              "rank_by_mean_score": 10
+            },
+            {
+              "average_dataset_rank": 8.866666666666667,
+              "label": "ecp",
+              "mean_score": 0.4831973194530982,
+              "method": "ecp",
+              "rank_by_average_dataset_rank": 11,
+              "rank_by_mean_score": 12
+            },
+            {
+              "average_dataset_rank": 8.95,
+              "label": "cpnp",
+              "mean_score": 0.49399856904619355,
+              "method": "cpnp",
+              "rank_by_average_dataset_rank": 12,
+              "rank_by_mean_score": 11
+            },
+            {
+              "average_dataset_rank": 11.683333333333334,
+              "label": "rfpop",
+              "mean_score": 0.3480130405966859,
+              "method": "rfpop",
+              "rank_by_average_dataset_rank": 13,
+              "rank_by_mean_score": 13
+            },
+            {
+              "average_dataset_rank": 12.15,
+              "label": "wbs",
+              "mean_score": 0.2624242833529539,
+              "method": "wbs",
+              "rank_by_average_dataset_rank": 14,
+              "rank_by_mean_score": 14
+            },
+            {
+              "average_dataset_rank": 14.883333333333333,
+              "label": "kcpa",
+              "mean_score": 0.07085981678728759,
+              "method": "kcpa",
+              "rank_by_average_dataset_rank": 15,
+              "rank_by_mean_score": 15
+            }
+          ],
+          "saa_bootstrap": {
+            "iterations": 10000,
+            "rank_by_average_dataset_rank": 5,
+            "rank_by_average_dataset_rank_ci95_high": 7.0,
+            "rank_by_average_dataset_rank_ci95_low": 1.0,
+            "rank_by_mean_score": 5.0,
+            "rank_by_mean_score_ci95_high": 7.0,
+            "rank_by_mean_score_ci95_low": 1.0,
+            "score_ci95_high": 0.6948812857242709,
+            "score_ci95_low": 0.5697795594016463,
+            "score_mean": 0.6334479460833579,
+            "seed": 20260815
+          },
+          "status": "PUBLISHED_RESEARCH_ONLY_STATISTICAL_DOSSIER",
+          "win_tie_loss": [
+            {
+              "loss": 0,
+              "opponent": "kcpa",
+              "tie": 0,
+              "win": 30
+            },
+            {
+              "loss": 4,
+              "opponent": "wbs",
+              "tie": 0,
+              "win": 26
+            },
+            {
+              "loss": 5,
+              "opponent": "rfpop",
+              "tie": 1,
+              "win": 24
+            },
+            {
+              "loss": 3,
+              "opponent": "ecp",
+              "tie": 10,
+              "win": 17
+            },
+            {
+              "loss": 8,
+              "opponent": "cpnp",
+              "tie": 0,
+              "win": 22
+            },
+            {
+              "loss": 6,
+              "opponent": "prophet",
+              "tie": 7,
+              "win": 17
+            },
+            {
+              "loss": 4,
+              "opponent": "zero",
+              "tie": 15,
+              "win": 11
+            },
+            {
+              "loss": 10,
+              "opponent": "bocpdms",
+              "tie": 0,
+              "win": 20
+            },
+            {
+              "loss": 13,
+              "opponent": "bocpd",
+              "tie": 0,
+              "win": 17
+            },
+            {
+              "loss": 10,
+              "opponent": "rbocpdms",
+              "tie": 0,
+              "win": 20
+            },
+            {
+              "loss": 16,
+              "opponent": "segneigh",
+              "tie": 0,
+              "win": 14
+            },
+            {
+              "loss": 18,
+              "opponent": "pelt",
+              "tie": 0,
+              "win": 12
+            },
+            {
+              "loss": 16,
+              "opponent": "amoc",
+              "tie": 2,
+              "win": 12
+            },
+            {
+              "loss": 18,
+              "opponent": "binseg",
+              "tie": 0,
+              "win": 12
+            }
+          ]
+        },
+        "default_f_measure": {
+          "dataset_ids_sha256": "sha256:1667fd85de029595e4c2a1ce887ca3bf4d2d3495690d9b5234c15683d81be4a0",
+          "friedman": {
+            "dataset_count": 30,
+            "method_count": 15,
+            "null_hypothesis": "all methods have equivalent rank distributions over paired datasets",
+            "p_value": 4.136936943465212e-31,
+            "statistic": 180.95892594409034
+          },
+          "meta": {
+            "analysis_id": "default_f_measure",
+            "candidate_dataset_count": 37,
+            "common_dataset_count": 30,
+            "declared_scope_total": 37,
+            "excluded_dataset_count": 7,
+            "excluded_datasets": [
+              {
+                "dataset": "apple",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "bee_waggle_6",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "bitcoin",
+                "missing_methods": [
+                  "rbocpdms"
+                ]
+              },
+              {
+                "dataset": "occupancy",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "run_log",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "scanline_126007",
+                "missing_methods": [
+                  "rbocpdms"
+                ]
+              },
+              {
+                "dataset": "uk_coal_employ",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "bocpd",
+                  "cpnp",
+                  "pelt",
+                  "rbocpdms",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              }
+            ],
+            "frame": "paired_common_dataset_only",
+            "methods": [
+              "amoc",
+              "binseg",
+              "bocpd",
+              "bocpdms",
+              "cpnp",
+              "ecp",
+              "kcpa",
+              "pelt",
+              "prophet",
+              "rbocpdms",
+              "rfpop",
+              "segneigh",
+              "wbs",
+              "zero",
+              "saa_change_point_adapter_v1"
+            ],
+            "metric": "f_measure",
+            "mode": "default",
+            "raw_series_exported": false,
+            "scope": "real_world_37",
+            "score_file": "analysis/output/scores/default_f1_scores.json"
+          },
+          "nemenyi": {
+            "alpha": 0.05,
+            "critical_difference": 3.9158554344317635,
+            "interpretation_caveat": "Nemenyi non-separation is INCONCLUSIVE equivalence, not a superiority or equality claim.",
+            "not_separated_from_saa": [
+              "binseg",
+              "pelt",
+              "bocpd",
+              "saa_change_point_adapter_v1",
+              "segneigh",
+              "amoc",
+              "zero",
+              "cpnp",
+              "ecp",
+              "bocpdms"
+            ],
+            "q_alpha_studentized_range_over_sqrt2": 3.391230283765257,
+            "saa_average_rank": 5.5,
+            "significantly_better_than_saa_by_cd": [],
+            "significantly_worse_than_saa_by_cd": [
+              "rfpop",
+              "prophet",
+              "rbocpdms",
+              "wbs",
+              "kcpa"
+            ]
+          },
+          "pairwise_score_differences": [
+            {
+              "bootstrap_ci95_high": 0.6177872277927847,
+              "bootstrap_ci95_low": 0.4542246275633637,
+              "loss": 1,
+              "mean_score_difference_saa_minus_opponent": 0.5380794448374387,
+              "opponent": "kcpa",
+              "sign": "SAA higher",
+              "tie": 0,
+              "win": 29
+            },
+            {
+              "bootstrap_ci95_high": 0.4047581878417447,
+              "bootstrap_ci95_low": 0.21980343017009368,
+              "loss": 2,
+              "mean_score_difference_saa_minus_opponent": 0.31085481957323563,
+              "opponent": "wbs",
+              "sign": "SAA higher",
+              "tie": 1,
+              "win": 27
+            },
+            {
+              "bootstrap_ci95_high": 0.30760779775099434,
+              "bootstrap_ci95_low": 0.1714929360384805,
+              "loss": 4,
+              "mean_score_difference_saa_minus_opponent": 0.24026276135984648,
+              "opponent": "rbocpdms",
+              "sign": "SAA higher",
+              "tie": 0,
+              "win": 26
+            },
+            {
+              "bootstrap_ci95_high": 0.2775193727422787,
+              "bootstrap_ci95_low": 0.11910307913341538,
+              "loss": 3,
+              "mean_score_difference_saa_minus_opponent": 0.19648196595259873,
+              "opponent": "prophet",
+              "sign": "SAA higher",
+              "tie": 7,
+              "win": 20
+            },
+            {
+              "bootstrap_ci95_high": 0.27915042439370386,
+              "bootstrap_ci95_low": 0.09655232330450292,
+              "loss": 7,
+              "mean_score_difference_saa_minus_opponent": 0.18743973529193533,
+              "opponent": "rfpop",
+              "sign": "SAA higher",
+              "tie": 2,
+              "win": 21
+            },
+            {
+              "bootstrap_ci95_high": 0.2275506464829245,
+              "bootstrap_ci95_low": 0.11095395472571058,
+              "loss": 6,
+              "mean_score_difference_saa_minus_opponent": 0.16930070599184285,
+              "opponent": "bocpdms",
+              "sign": "SAA higher",
+              "tie": 1,
+              "win": 23
+            },
+            {
+              "bootstrap_ci95_high": 0.18287518338853756,
+              "bootstrap_ci95_low": 0.026169518316615528,
+              "loss": 5,
+              "mean_score_difference_saa_minus_opponent": 0.10194285624493975,
+              "opponent": "ecp",
+              "sign": "SAA higher",
+              "tie": 11,
+              "win": 14
+            },
+            {
+              "bootstrap_ci95_high": 0.17297705800305088,
+              "bootstrap_ci95_low": -1.768825550692321e-05,
+              "loss": 9,
+              "mean_score_difference_saa_minus_opponent": 0.08432356670788314,
+              "opponent": "cpnp",
+              "sign": "CI crosses 0",
+              "tie": 2,
+              "win": 19
+            },
+            {
+              "bootstrap_ci95_high": 0.11419407319661369,
+              "bootstrap_ci95_low": -0.04412567234265597,
+              "loss": 12,
+              "mean_score_difference_saa_minus_opponent": 0.033352391031519546,
+              "opponent": "segneigh",
+              "sign": "CI crosses 0",
+              "tie": 3,
+              "win": 15
+            },
+            {
+              "bootstrap_ci95_high": 0.10354667833496789,
+              "bootstrap_ci95_low": -0.08312234759423501,
+              "loss": 4,
+              "mean_score_difference_saa_minus_opponent": 0.012276118145698234,
+              "opponent": "zero",
+              "sign": "CI crosses 0",
+              "tie": 15,
+              "win": 11
+            },
+            {
+              "bootstrap_ci95_high": 0.09080249507783832,
+              "bootstrap_ci95_low": -0.06815029371295955,
+              "loss": 14,
+              "mean_score_difference_saa_minus_opponent": 0.007969743005433322,
+              "opponent": "bocpd",
+              "sign": "CI crosses 0",
+              "tie": 2,
+              "win": 14
+            },
+            {
+              "bootstrap_ci95_high": 0.09114824357665066,
+              "bootstrap_ci95_low": -0.08804590609799559,
+              "loss": 13,
+              "mean_score_difference_saa_minus_opponent": 0.003265123855942577,
+              "opponent": "amoc",
+              "sign": "CI crosses 0",
+              "tie": 4,
+              "win": 13
+            },
+            {
+              "bootstrap_ci95_high": 0.060544202857712406,
+              "bootstrap_ci95_low": -0.07506249456014319,
+              "loss": 14,
+              "mean_score_difference_saa_minus_opponent": -0.0068365843697374825,
+              "opponent": "pelt",
+              "sign": "CI crosses 0",
+              "tie": 4,
+              "win": 12
+            },
+            {
+              "bootstrap_ci95_high": 0.03484190438479065,
+              "bootstrap_ci95_low": -0.1267233613607816,
+              "loss": 13,
+              "mean_score_difference_saa_minus_opponent": -0.04209813559456865,
+              "opponent": "binseg",
+              "sign": "CI crosses 0",
+              "tie": 4,
+              "win": 13
+            }
+          ],
+          "ranking": [
+            {
+              "average_dataset_rank": 4.566666666666666,
+              "label": "binseg",
+              "mean_score": 0.7060421650071129,
+              "method": "binseg",
+              "rank_by_average_dataset_rank": 1,
+              "rank_by_mean_score": 1
+            },
+            {
+              "average_dataset_rank": 4.85,
+              "label": "pelt",
+              "mean_score": 0.6707806137822817,
+              "method": "pelt",
+              "rank_by_average_dataset_rank": 2,
+              "rank_by_mean_score": 2
+            },
+            {
+              "average_dataset_rank": 5.366666666666666,
+              "label": "bocpd",
+              "mean_score": 0.655974286407111,
+              "method": "bocpd",
+              "rank_by_average_dataset_rank": 3,
+              "rank_by_mean_score": 5
+            },
+            {
+              "average_dataset_rank": 5.5,
+              "label": "SAA",
+              "mean_score": 0.6639440294125443,
+              "method": "saa_change_point_adapter_v1",
+              "rank_by_average_dataset_rank": 4,
+              "rank_by_mean_score": 3
+            },
+            {
+              "average_dataset_rank": 6.033333333333333,
+              "label": "segneigh",
+              "mean_score": 0.6305916383810247,
+              "method": "segneigh",
+              "rank_by_average_dataset_rank": 5,
+              "rank_by_mean_score": 7
+            },
+            {
+              "average_dataset_rank": 6.333333333333333,
+              "label": "amoc",
+              "mean_score": 0.6606789055566017,
+              "method": "amoc",
+              "rank_by_average_dataset_rank": 6,
+              "rank_by_mean_score": 4
+            },
+            {
+              "average_dataset_rank": 6.9,
+              "label": "zero",
+              "mean_score": 0.651667911266846,
+              "method": "zero",
+              "rank_by_average_dataset_rank": 7,
+              "rank_by_mean_score": 6
+            },
+            {
+              "average_dataset_rank": 6.983333333333333,
+              "label": "cpnp",
+              "mean_score": 0.579620462704661,
+              "method": "cpnp",
+              "rank_by_average_dataset_rank": 8,
+              "rank_by_mean_score": 8
+            },
+            {
+              "average_dataset_rank": 7.7,
+              "label": "ecp",
+              "mean_score": 0.5620011731676045,
+              "method": "ecp",
+              "rank_by_average_dataset_rank": 9,
+              "rank_by_mean_score": 9
+            },
+            {
+              "average_dataset_rank": 9.25,
+              "label": "bocpdms",
+              "mean_score": 0.4946433234207014,
+              "method": "bocpdms",
+              "rank_by_average_dataset_rank": 10,
+              "rank_by_mean_score": 10
+            },
+            {
+              "average_dataset_rank": 9.566666666666666,
+              "label": "rfpop",
+              "mean_score": 0.4765042941206089,
+              "method": "rfpop",
+              "rank_by_average_dataset_rank": 11,
+              "rank_by_mean_score": 11
+            },
+            {
+              "average_dataset_rank": 9.866666666666667,
+              "label": "prophet",
+              "mean_score": 0.4674620634599455,
+              "method": "prophet",
+              "rank_by_average_dataset_rank": 12,
+              "rank_by_mean_score": 12
+            },
+            {
+              "average_dataset_rank": 10.983333333333333,
+              "label": "rbocpdms",
+              "mean_score": 0.4236812680526978,
+              "method": "rbocpdms",
+              "rank_by_average_dataset_rank": 13,
+              "rank_by_mean_score": 13
+            },
+            {
+              "average_dataset_rank": 11.3,
+              "label": "wbs",
+              "mean_score": 0.35308920983930864,
+              "method": "wbs",
+              "rank_by_average_dataset_rank": 14,
+              "rank_by_mean_score": 14
+            },
+            {
+              "average_dataset_rank": 14.8,
+              "label": "kcpa",
+              "mean_score": 0.12586458457510546,
+              "method": "kcpa",
+              "rank_by_average_dataset_rank": 15,
+              "rank_by_mean_score": 15
+            }
+          ],
+          "saa_bootstrap": {
+            "iterations": 10000,
+            "rank_by_average_dataset_rank": 4,
+            "rank_by_average_dataset_rank_ci95_high": 7.0,
+            "rank_by_average_dataset_rank_ci95_low": 1.0,
+            "rank_by_mean_score": 3.0,
+            "rank_by_mean_score_ci95_high": 7.0,
+            "rank_by_mean_score_ci95_low": 1.0,
+            "score_ci95_high": 0.7239822747244082,
+            "score_ci95_low": 0.6008094520947759,
+            "score_mean": 0.6639440294125443,
+            "seed": 20260815
+          },
+          "status": "PUBLISHED_RESEARCH_ONLY_STATISTICAL_DOSSIER",
+          "win_tie_loss": [
+            {
+              "loss": 1,
+              "opponent": "kcpa",
+              "tie": 0,
+              "win": 29
+            },
+            {
+              "loss": 2,
+              "opponent": "wbs",
+              "tie": 1,
+              "win": 27
+            },
+            {
+              "loss": 4,
+              "opponent": "rbocpdms",
+              "tie": 0,
+              "win": 26
+            },
+            {
+              "loss": 3,
+              "opponent": "prophet",
+              "tie": 7,
+              "win": 20
+            },
+            {
+              "loss": 7,
+              "opponent": "rfpop",
+              "tie": 2,
+              "win": 21
+            },
+            {
+              "loss": 6,
+              "opponent": "bocpdms",
+              "tie": 1,
+              "win": 23
+            },
+            {
+              "loss": 5,
+              "opponent": "ecp",
+              "tie": 11,
+              "win": 14
+            },
+            {
+              "loss": 9,
+              "opponent": "cpnp",
+              "tie": 2,
+              "win": 19
+            },
+            {
+              "loss": 12,
+              "opponent": "segneigh",
+              "tie": 3,
+              "win": 15
+            },
+            {
+              "loss": 4,
+              "opponent": "zero",
+              "tie": 15,
+              "win": 11
+            },
+            {
+              "loss": 14,
+              "opponent": "bocpd",
+              "tie": 2,
+              "win": 14
+            },
+            {
+              "loss": 13,
+              "opponent": "amoc",
+              "tie": 4,
+              "win": 13
+            },
+            {
+              "loss": 14,
+              "opponent": "pelt",
+              "tie": 4,
+              "win": 12
+            },
+            {
+              "loss": 13,
+              "opponent": "binseg",
+              "tie": 4,
+              "win": 13
+            }
+          ]
+        },
+        "oracle_covering": {
+          "dataset_ids_sha256": "sha256:acedd556c092a4015254bf23d23e15864699c0a45a384b4467851db07de9922f",
+          "friedman": {
+            "dataset_count": 32,
+            "method_count": 15,
+            "null_hypothesis": "all methods have equivalent rank distributions over paired datasets",
+            "p_value": 2.070455618063832e-35,
+            "statistic": 202.07389342763096
+          },
+          "meta": {
+            "analysis_id": "oracle_covering",
+            "candidate_dataset_count": 37,
+            "common_dataset_count": 32,
+            "declared_scope_total": 37,
+            "excluded_dataset_count": 5,
+            "excluded_datasets": [
+              {
+                "dataset": "apple",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "bee_waggle_6",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "occupancy",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "run_log",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "uk_coal_employ",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "bocpd",
+                  "cpnp",
+                  "pelt",
+                  "rbocpdms",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              }
+            ],
+            "frame": "paired_common_dataset_only",
+            "methods": [
+              "amoc",
+              "binseg",
+              "bocpd",
+              "bocpdms",
+              "cpnp",
+              "ecp",
+              "kcpa",
+              "pelt",
+              "prophet",
+              "rbocpdms",
+              "rfpop",
+              "segneigh",
+              "wbs",
+              "zero",
+              "saa_change_point_adapter_v1"
+            ],
+            "metric": "covering",
+            "mode": "oracle",
+            "raw_series_exported": false,
+            "scope": "real_world_37",
+            "score_file": "analysis/output/scores/oracle_cover_scores.json"
+          },
+          "nemenyi": {
+            "alpha": 0.05,
+            "critical_difference": 3.791510720927508,
+            "interpretation_caveat": "Nemenyi non-separation is INCONCLUSIVE equivalence, not a superiority or equality claim.",
+            "not_separated_from_saa": [
+              "bocpd",
+              "rfpop",
+              "segneigh",
+              "binseg",
+              "saa_change_point_adapter_v1",
+              "pelt",
+              "cpnp",
+              "amoc",
+              "ecp",
+              "bocpdms",
+              "rbocpdms"
+            ],
+            "q_alpha_studentized_range_over_sqrt2": 3.391230283765257,
+            "saa_average_rank": 5.765625,
+            "significantly_better_than_saa_by_cd": [],
+            "significantly_worse_than_saa_by_cd": [
+              "kcpa",
+              "zero",
+              "prophet",
+              "wbs"
+            ]
+          },
+          "pairwise_score_differences": [
+            {
+              "bootstrap_ci95_high": 0.4735072413476173,
+              "bootstrap_ci95_low": 0.3294100711700425,
+              "loss": 0,
+              "mean_score_difference_saa_minus_opponent": 0.40139914803781174,
+              "opponent": "wbs",
+              "sign": "SAA higher",
+              "tie": 0,
+              "win": 32
+            },
+            {
+              "bootstrap_ci95_high": 0.27663025045814627,
+              "bootstrap_ci95_low": 0.15493984308411626,
+              "loss": 0,
+              "mean_score_difference_saa_minus_opponent": 0.21416080201349819,
+              "opponent": "prophet",
+              "sign": "SAA higher",
+              "tie": 4,
+              "win": 28
+            },
+            {
+              "bootstrap_ci95_high": 0.27316173040958536,
+              "bootstrap_ci95_low": 0.13297628073261505,
+              "loss": 2,
+              "mean_score_difference_saa_minus_opponent": 0.20223329981261684,
+              "opponent": "zero",
+              "sign": "SAA higher",
+              "tie": 7,
+              "win": 23
+            },
+            {
+              "bootstrap_ci95_high": 0.2193462849260101,
+              "bootstrap_ci95_low": 0.10040772144699835,
+              "loss": 6,
+              "mean_score_difference_saa_minus_opponent": 0.15983491261148344,
+              "opponent": "kcpa",
+              "sign": "SAA higher",
+              "tie": 2,
+              "win": 24
+            },
+            {
+              "bootstrap_ci95_high": 0.14231657133299944,
+              "bootstrap_ci95_low": 0.017343602946122562,
+              "loss": 8,
+              "mean_score_difference_saa_minus_opponent": 0.0743594602678419,
+              "opponent": "ecp",
+              "sign": "SAA higher",
+              "tie": 7,
+              "win": 17
+            },
+            {
+              "bootstrap_ci95_high": 0.09882443215945003,
+              "bootstrap_ci95_low": 0.007665155122074936,
+              "loss": 9,
+              "mean_score_difference_saa_minus_opponent": 0.050981756290933676,
+              "opponent": "amoc",
+              "sign": "SAA higher",
+              "tie": 10,
+              "win": 13
+            },
+            {
+              "bootstrap_ci95_high": 0.0969844044573898,
+              "bootstrap_ci95_low": 0.01355543059110998,
+              "loss": 7,
+              "mean_score_difference_saa_minus_opponent": 0.0504954693259004,
+              "opponent": "rbocpdms",
+              "sign": "SAA higher",
+              "tie": 2,
+              "win": 23
+            },
+            {
+              "bootstrap_ci95_high": 0.05273010212402938,
+              "bootstrap_ci95_low": -0.024078013188094504,
+              "loss": 10,
+              "mean_score_difference_saa_minus_opponent": 0.01461270705723551,
+              "opponent": "bocpdms",
+              "sign": "CI crosses 0",
+              "tie": 0,
+              "win": 22
+            },
+            {
+              "bootstrap_ci95_high": 0.03862882428349933,
+              "bootstrap_ci95_low": -0.023559523439787743,
+              "loss": 9,
+              "mean_score_difference_saa_minus_opponent": 0.008710739271434929,
+              "opponent": "cpnp",
+              "sign": "CI crosses 0",
+              "tie": 6,
+              "win": 17
+            },
+            {
+              "bootstrap_ci95_high": 0.025866972974148576,
+              "bootstrap_ci95_low": -0.036295792399207064,
+              "loss": 12,
+              "mean_score_difference_saa_minus_opponent": -0.00452370969890379,
+              "opponent": "pelt",
+              "sign": "CI crosses 0",
+              "tie": 7,
+              "win": 13
+            },
+            {
+              "bootstrap_ci95_high": 0.02291511933758996,
+              "bootstrap_ci95_low": -0.03984421057730436,
+              "loss": 12,
+              "mean_score_difference_saa_minus_opponent": -0.00628083596958923,
+              "opponent": "binseg",
+              "sign": "CI crosses 0",
+              "tie": 7,
+              "win": 13
+            },
+            {
+              "bootstrap_ci95_high": 0.02108154145683805,
+              "bootstrap_ci95_low": -0.04223280976967267,
+              "loss": 13,
+              "mean_score_difference_saa_minus_opponent": -0.00902216963677692,
+              "opponent": "segneigh",
+              "sign": "CI crosses 0",
+              "tie": 7,
+              "win": 12
+            },
+            {
+              "bootstrap_ci95_high": 0.014227274592754706,
+              "bootstrap_ci95_low": -0.046467299392407437,
+              "loss": 14,
+              "mean_score_difference_saa_minus_opponent": -0.014853230229230723,
+              "opponent": "bocpd",
+              "sign": "CI crosses 0",
+              "tie": 9,
+              "win": 9
+            },
+            {
+              "bootstrap_ci95_high": 0.009502938470689094,
+              "bootstrap_ci95_low": -0.0471945624507756,
+              "loss": 13,
+              "mean_score_difference_saa_minus_opponent": -0.016239431251243674,
+              "opponent": "rfpop",
+              "sign": "CI crosses 0",
+              "tie": 7,
+              "win": 12
+            }
+          ],
+          "ranking": [
+            {
+              "average_dataset_rank": 4.4375,
+              "label": "bocpd",
+              "mean_score": 0.7827116629650728,
+              "method": "bocpd",
+              "rank_by_average_dataset_rank": 1,
+              "rank_by_mean_score": 2
+            },
+            {
+              "average_dataset_rank": 4.984375,
+              "label": "rfpop",
+              "mean_score": 0.7840978639870857,
+              "method": "rfpop",
+              "rank_by_average_dataset_rank": 2,
+              "rank_by_mean_score": 1
+            },
+            {
+              "average_dataset_rank": 5.390625,
+              "label": "segneigh",
+              "mean_score": 0.776880602372619,
+              "method": "segneigh",
+              "rank_by_average_dataset_rank": 3,
+              "rank_by_mean_score": 3
+            },
+            {
+              "average_dataset_rank": 5.59375,
+              "label": "binseg",
+              "mean_score": 0.7741392687054313,
+              "method": "binseg",
+              "rank_by_average_dataset_rank": 4,
+              "rank_by_mean_score": 4
+            },
+            {
+              "average_dataset_rank": 5.765625,
+              "label": "SAA",
+              "mean_score": 0.7678584327358421,
+              "method": "saa_change_point_adapter_v1",
+              "rank_by_average_dataset_rank": 5,
+              "rank_by_mean_score": 6
+            },
+            {
+              "average_dataset_rank": 5.875,
+              "label": "pelt",
+              "mean_score": 0.7723821424347459,
+              "method": "pelt",
+              "rank_by_average_dataset_rank": 6,
+              "rank_by_mean_score": 5
+            },
+            {
+              "average_dataset_rank": 7.0625,
+              "label": "cpnp",
+              "mean_score": 0.7591476934644071,
+              "method": "cpnp",
+              "rank_by_average_dataset_rank": 7,
+              "rank_by_mean_score": 7
+            },
+            {
+              "average_dataset_rank": 7.75,
+              "label": "amoc",
+              "mean_score": 0.7168766764449084,
+              "method": "amoc",
+              "rank_by_average_dataset_rank": 8,
+              "rank_by_mean_score": 10
+            },
+            {
+              "average_dataset_rank": 8.015625,
+              "label": "ecp",
+              "mean_score": 0.6934989724680002,
+              "method": "ecp",
+              "rank_by_average_dataset_rank": 9,
+              "rank_by_mean_score": 11
+            },
+            {
+              "average_dataset_rank": 8.609375,
+              "label": "bocpdms",
+              "mean_score": 0.7532457256786066,
+              "method": "bocpdms",
+              "rank_by_average_dataset_rank": 10,
+              "rank_by_mean_score": 8
+            },
+            {
+              "average_dataset_rank": 8.875,
+              "label": "rbocpdms",
+              "mean_score": 0.7173629634099417,
+              "method": "rbocpdms",
+              "rank_by_average_dataset_rank": 11,
+              "rank_by_mean_score": 9
+            },
+            {
+              "average_dataset_rank": 10.5,
+              "label": "kcpa",
+              "mean_score": 0.6080235201243587,
+              "method": "kcpa",
+              "rank_by_average_dataset_rank": 12,
+              "rank_by_mean_score": 12
+            },
+            {
+              "average_dataset_rank": 11.03125,
+              "label": "zero",
+              "mean_score": 0.5656251329232252,
+              "method": "zero",
+              "rank_by_average_dataset_rank": 13,
+              "rank_by_mean_score": 13
+            },
+            {
+              "average_dataset_rank": 12.015625,
+              "label": "prophet",
+              "mean_score": 0.5536976307223439,
+              "method": "prophet",
+              "rank_by_average_dataset_rank": 14,
+              "rank_by_mean_score": 14
+            },
+            {
+              "average_dataset_rank": 14.09375,
+              "label": "wbs",
+              "mean_score": 0.36645928469803035,
+              "method": "wbs",
+              "rank_by_average_dataset_rank": 15,
+              "rank_by_mean_score": 15
+            }
+          ],
+          "saa_bootstrap": {
+            "iterations": 10000,
+            "rank_by_average_dataset_rank": 5,
+            "rank_by_average_dataset_rank_ci95_high": 7.0,
+            "rank_by_average_dataset_rank_ci95_low": 2.0,
+            "rank_by_mean_score": 6.0,
+            "rank_by_mean_score_ci95_high": 8.0,
+            "rank_by_mean_score_ci95_low": 1.0,
+            "score_ci95_high": 0.8066454480139799,
+            "score_ci95_low": 0.7304255270620296,
+            "score_mean": 0.7678584327358421,
+            "seed": 20260815
+          },
+          "status": "PUBLISHED_RESEARCH_ONLY_STATISTICAL_DOSSIER",
+          "win_tie_loss": [
+            {
+              "loss": 0,
+              "opponent": "wbs",
+              "tie": 0,
+              "win": 32
+            },
+            {
+              "loss": 0,
+              "opponent": "prophet",
+              "tie": 4,
+              "win": 28
+            },
+            {
+              "loss": 2,
+              "opponent": "zero",
+              "tie": 7,
+              "win": 23
+            },
+            {
+              "loss": 6,
+              "opponent": "kcpa",
+              "tie": 2,
+              "win": 24
+            },
+            {
+              "loss": 8,
+              "opponent": "ecp",
+              "tie": 7,
+              "win": 17
+            },
+            {
+              "loss": 9,
+              "opponent": "amoc",
+              "tie": 10,
+              "win": 13
+            },
+            {
+              "loss": 7,
+              "opponent": "rbocpdms",
+              "tie": 2,
+              "win": 23
+            },
+            {
+              "loss": 10,
+              "opponent": "bocpdms",
+              "tie": 0,
+              "win": 22
+            },
+            {
+              "loss": 9,
+              "opponent": "cpnp",
+              "tie": 6,
+              "win": 17
+            },
+            {
+              "loss": 12,
+              "opponent": "pelt",
+              "tie": 7,
+              "win": 13
+            },
+            {
+              "loss": 12,
+              "opponent": "binseg",
+              "tie": 7,
+              "win": 13
+            },
+            {
+              "loss": 13,
+              "opponent": "segneigh",
+              "tie": 7,
+              "win": 12
+            },
+            {
+              "loss": 14,
+              "opponent": "bocpd",
+              "tie": 9,
+              "win": 9
+            },
+            {
+              "loss": 13,
+              "opponent": "rfpop",
+              "tie": 7,
+              "win": 12
+            }
+          ]
+        },
+        "oracle_f_measure": {
+          "dataset_ids_sha256": "sha256:acedd556c092a4015254bf23d23e15864699c0a45a384b4467851db07de9922f",
+          "friedman": {
+            "dataset_count": 32,
+            "method_count": 15,
+            "null_hypothesis": "all methods have equivalent rank distributions over paired datasets",
+            "p_value": 1.4365420697712796e-44,
+            "statistic": 246.61982403248646
+          },
+          "meta": {
+            "analysis_id": "oracle_f_measure",
+            "candidate_dataset_count": 37,
+            "common_dataset_count": 32,
+            "declared_scope_total": 37,
+            "excluded_dataset_count": 5,
+            "excluded_datasets": [
+              {
+                "dataset": "apple",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "bee_waggle_6",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "occupancy",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "run_log",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "cpnp",
+                  "pelt",
+                  "prophet",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              },
+              {
+                "dataset": "uk_coal_employ",
+                "missing_methods": [
+                  "amoc",
+                  "binseg",
+                  "bocpd",
+                  "cpnp",
+                  "pelt",
+                  "rbocpdms",
+                  "rfpop",
+                  "segneigh",
+                  "wbs"
+                ]
+              }
+            ],
+            "frame": "paired_common_dataset_only",
+            "methods": [
+              "amoc",
+              "binseg",
+              "bocpd",
+              "bocpdms",
+              "cpnp",
+              "ecp",
+              "kcpa",
+              "pelt",
+              "prophet",
+              "rbocpdms",
+              "rfpop",
+              "segneigh",
+              "wbs",
+              "zero",
+              "saa_change_point_adapter_v1"
+            ],
+            "metric": "f_measure",
+            "mode": "oracle",
+            "raw_series_exported": false,
+            "scope": "real_world_37",
+            "score_file": "analysis/output/scores/oracle_f1_scores.json"
+          },
+          "nemenyi": {
+            "alpha": 0.05,
+            "critical_difference": 3.791510720927508,
+            "interpretation_caveat": "Nemenyi non-separation is INCONCLUSIVE equivalence, not a superiority or equality claim.",
+            "not_separated_from_saa": [
+              "bocpd",
+              "binseg",
+              "segneigh",
+              "rfpop",
+              "pelt",
+              "saa_change_point_adapter_v1",
+              "cpnp",
+              "ecp",
+              "amoc"
+            ],
+            "q_alpha_studentized_range_over_sqrt2": 3.391230283765257,
+            "saa_average_rank": 5.796875,
+            "significantly_better_than_saa_by_cd": [],
+            "significantly_worse_than_saa_by_cd": [
+              "kcpa",
+              "rbocpdms",
+              "bocpdms",
+              "zero",
+              "wbs",
+              "prophet"
+            ]
+          },
+          "pairwise_score_differences": [
+            {
+              "bootstrap_ci95_high": 0.4610199680723053,
+              "bootstrap_ci95_low": 0.27959120322718883,
+              "loss": 0,
+              "mean_score_difference_saa_minus_opponent": 0.36843666981736733,
+              "opponent": "wbs",
+              "sign": "SAA higher",
+              "tie": 1,
+              "win": 31
+            },
+            {
+              "bootstrap_ci95_high": 0.42259000083044246,
+              "bootstrap_ci95_low": 0.27633200548094056,
+              "loss": 0,
+              "mean_score_difference_saa_minus_opponent": 0.3485228565448299,
+              "opponent": "prophet",
+              "sign": "SAA higher",
+              "tie": 4,
+              "win": 28
+            },
+            {
+              "bootstrap_ci95_high": 0.2755038375047254,
+              "bootstrap_ci95_low": 0.13878965384564226,
+              "loss": 1,
+              "mean_score_difference_saa_minus_opponent": 0.20570778207890542,
+              "opponent": "zero",
+              "sign": "SAA higher",
+              "tie": 7,
+              "win": 24
+            },
+            {
+              "bootstrap_ci95_high": 0.2578348725767441,
+              "bootstrap_ci95_low": 0.12220342915019075,
+              "loss": 6,
+              "mean_score_difference_saa_minus_opponent": 0.1913486858927803,
+              "opponent": "bocpdms",
+              "sign": "SAA higher",
+              "tie": 0,
+              "win": 26
+            },
+            {
+              "bootstrap_ci95_high": 0.24522755778098526,
+              "bootstrap_ci95_low": 0.10131273996323142,
+              "loss": 6,
+              "mean_score_difference_saa_minus_opponent": 0.17413533817490615,
+              "opponent": "rbocpdms",
+              "sign": "SAA higher",
+              "tie": 1,
+              "win": 25
+            },
+            {
+              "bootstrap_ci95_high": 0.23906682103831867,
+              "bootstrap_ci95_low": 0.09143546478543939,
+              "loss": 4,
+              "mean_score_difference_saa_minus_opponent": 0.16481860617632882,
+              "opponent": "kcpa",
+              "sign": "SAA higher",
+              "tie": 2,
+              "win": 26
+            },
+            {
+              "bootstrap_ci95_high": 0.1521913018697045,
+              "bootstrap_ci95_low": 0.009917164524217195,
+              "loss": 10,
+              "mean_score_difference_saa_minus_opponent": 0.07746424738571575,
+              "opponent": "ecp",
+              "sign": "SAA higher",
+              "tie": 6,
+              "win": 16
+            },
+            {
+              "bootstrap_ci95_high": 0.13805205390341438,
+              "bootstrap_ci95_low": 0.01920359943017421,
+              "loss": 6,
+              "mean_score_difference_saa_minus_opponent": 0.07738985584127564,
+              "opponent": "amoc",
+              "sign": "SAA higher",
+              "tie": 10,
+              "win": 16
+            },
+            {
+              "bootstrap_ci95_high": 0.04799875485604269,
+              "bootstrap_ci95_low": -0.036547259772658464,
+              "loss": 9,
+              "mean_score_difference_saa_minus_opponent": 0.006123401566770603,
+              "opponent": "cpnp",
+              "sign": "CI crosses 0",
+              "tie": 8,
+              "win": 15
+            },
+            {
+              "bootstrap_ci95_high": 0.029180778081540824,
+              "bootstrap_ci95_low": -0.05551861738421016,
+              "loss": 11,
+              "mean_score_difference_saa_minus_opponent": -0.012983210791020997,
+              "opponent": "pelt",
+              "sign": "CI crosses 0",
+              "tie": 13,
+              "win": 8
+            },
+            {
+              "bootstrap_ci95_high": 0.02365160062079483,
+              "bootstrap_ci95_low": -0.06125505437084449,
+              "loss": 12,
+              "mean_score_difference_saa_minus_opponent": -0.019248176411894205,
+              "opponent": "rfpop",
+              "sign": "CI crosses 0",
+              "tie": 12,
+              "win": 8
+            },
+            {
+              "bootstrap_ci95_high": 0.013954513749960077,
+              "bootstrap_ci95_low": -0.05992507821587427,
+              "loss": 13,
+              "mean_score_difference_saa_minus_opponent": -0.021964575021816896,
+              "opponent": "binseg",
+              "sign": "CI crosses 0",
+              "tie": 11,
+              "win": 8
+            },
+            {
+              "bootstrap_ci95_high": 0.013047424577269427,
+              "bootstrap_ci95_low": -0.06378512272225491,
+              "loss": 13,
+              "mean_score_difference_saa_minus_opponent": -0.024389591400306474,
+              "opponent": "segneigh",
+              "sign": "CI crosses 0",
+              "tie": 11,
+              "win": 8
+            },
+            {
+              "bootstrap_ci95_high": 0.008769888372537659,
+              "bootstrap_ci95_low": -0.07787512410831524,
+              "loss": 15,
+              "mean_score_difference_saa_minus_opponent": -0.03509254152407072,
+              "opponent": "bocpd",
+              "sign": "CI crosses 0",
+              "tie": 9,
+              "win": 8
+            }
+          ],
+          "ranking": [
+            {
+              "average_dataset_rank": 4.234375,
+              "label": "bocpd",
+              "mean_score": 0.8859269025705003,
+              "method": "bocpd",
+              "rank_by_average_dataset_rank": 1,
+              "rank_by_mean_score": 1
+            },
+            {
+              "average_dataset_rank": 4.609375,
+              "label": "binseg",
+              "mean_score": 0.8727989360682464,
+              "method": "binseg",
+              "rank_by_average_dataset_rank": 2,
+              "rank_by_mean_score": 3
+            },
+            {
+              "average_dataset_rank": 4.671875,
+              "label": "segneigh",
+              "mean_score": 0.875223952446736,
+              "method": "segneigh",
+              "rank_by_average_dataset_rank": 3,
+              "rank_by_mean_score": 2
+            },
+            {
+              "average_dataset_rank": 4.921875,
+              "label": "rfpop",
+              "mean_score": 0.8700825374583238,
+              "method": "rfpop",
+              "rank_by_average_dataset_rank": 4,
+              "rank_by_mean_score": 4
+            },
+            {
+              "average_dataset_rank": 5.3125,
+              "label": "pelt",
+              "mean_score": 0.8638175718374506,
+              "method": "pelt",
+              "rank_by_average_dataset_rank": 5,
+              "rank_by_mean_score": 5
+            },
+            {
+              "average_dataset_rank": 5.796875,
+              "label": "SAA",
+              "mean_score": 0.8508343610464295,
+              "method": "saa_change_point_adapter_v1",
+              "rank_by_average_dataset_rank": 6,
+              "rank_by_mean_score": 6
+            },
+            {
+              "average_dataset_rank": 6.359375,
+              "label": "cpnp",
+              "mean_score": 0.8447109594796589,
+              "method": "cpnp",
+              "rank_by_average_dataset_rank": 7,
+              "rank_by_mean_score": 7
+            },
+            {
+              "average_dataset_rank": 7.375,
+              "label": "ecp",
+              "mean_score": 0.7733701136607138,
+              "method": "ecp",
+              "rank_by_average_dataset_rank": 8,
+              "rank_by_mean_score": 9
+            },
+            {
+              "average_dataset_rank": 8.296875,
+              "label": "amoc",
+              "mean_score": 0.773444505205154,
+              "method": "amoc",
+              "rank_by_average_dataset_rank": 9,
+              "rank_by_mean_score": 8
+            },
+            {
+              "average_dataset_rank": 10.015625,
+              "label": "kcpa",
+              "mean_score": 0.6860157548701007,
+              "method": "kcpa",
+              "rank_by_average_dataset_rank": 10,
+              "rank_by_mean_score": 10
+            },
+            {
+              "average_dataset_rank": 10.21875,
+              "label": "rbocpdms",
+              "mean_score": 0.6766990228715234,
+              "method": "rbocpdms",
+              "rank_by_average_dataset_rank": 11,
+              "rank_by_mean_score": 11
+            },
+            {
+              "average_dataset_rank": 10.65625,
+              "label": "bocpdms",
+              "mean_score": 0.6594856751536493,
+              "method": "bocpdms",
+              "rank_by_average_dataset_rank": 12,
+              "rank_by_mean_score": 12
+            },
+            {
+              "average_dataset_rank": 11.5625,
+              "label": "zero",
+              "mean_score": 0.6451265789675241,
+              "method": "zero",
+              "rank_by_average_dataset_rank": 13,
+              "rank_by_mean_score": 13
+            },
+            {
+              "average_dataset_rank": 12.609375,
+              "label": "wbs",
+              "mean_score": 0.48239769122906223,
+              "method": "wbs",
+              "rank_by_average_dataset_rank": 14,
+              "rank_by_mean_score": 15
+            },
+            {
+              "average_dataset_rank": 13.359375,
+              "label": "prophet",
+              "mean_score": 0.5023115045015997,
+              "method": "prophet",
+              "rank_by_average_dataset_rank": 15,
+              "rank_by_mean_score": 14
+            }
+          ],
+          "saa_bootstrap": {
+            "iterations": 10000,
+            "rank_by_average_dataset_rank": 6,
+            "rank_by_average_dataset_rank_ci95_high": 7.0,
+            "rank_by_average_dataset_rank_ci95_low": 3.0,
+            "rank_by_mean_score": 6.0,
+            "rank_by_mean_score_ci95_high": 7.0,
+            "rank_by_mean_score_ci95_low": 1.0,
+            "score_ci95_high": 0.8892456864755137,
+            "score_ci95_low": 0.8110182402728171,
+            "score_mean": 0.8508343610464295,
+            "seed": 20260815
+          },
+          "status": "PUBLISHED_RESEARCH_ONLY_STATISTICAL_DOSSIER",
+          "win_tie_loss": [
+            {
+              "loss": 0,
+              "opponent": "wbs",
+              "tie": 1,
+              "win": 31
+            },
+            {
+              "loss": 0,
+              "opponent": "prophet",
+              "tie": 4,
+              "win": 28
+            },
+            {
+              "loss": 1,
+              "opponent": "zero",
+              "tie": 7,
+              "win": 24
+            },
+            {
+              "loss": 6,
+              "opponent": "bocpdms",
+              "tie": 0,
+              "win": 26
+            },
+            {
+              "loss": 6,
+              "opponent": "rbocpdms",
+              "tie": 1,
+              "win": 25
+            },
+            {
+              "loss": 4,
+              "opponent": "kcpa",
+              "tie": 2,
+              "win": 26
+            },
+            {
+              "loss": 10,
+              "opponent": "ecp",
+              "tie": 6,
+              "win": 16
+            },
+            {
+              "loss": 6,
+              "opponent": "amoc",
+              "tie": 10,
+              "win": 16
+            },
+            {
+              "loss": 9,
+              "opponent": "cpnp",
+              "tie": 8,
+              "win": 15
+            },
+            {
+              "loss": 11,
+              "opponent": "pelt",
+              "tie": 13,
+              "win": 8
+            },
+            {
+              "loss": 12,
+              "opponent": "rfpop",
+              "tie": 12,
+              "win": 8
+            },
+            {
+              "loss": 13,
+              "opponent": "binseg",
+              "tie": 11,
+              "win": 8
+            },
+            {
+              "loss": 13,
+              "opponent": "segneigh",
+              "tie": 11,
+              "win": 8
+            },
+            {
+              "loss": 15,
+              "opponent": "bocpd",
+              "tie": 9,
+              "win": 8
+            }
+          ]
+        }
+      }
+    }
+  },
+  "seed": 20260815,
+  "sha256": "sha256:5f9f2fb45c8a03f90720e1dd9abd7c313397add955a23532f28bbc8a35d11e32",
+  "source_result_canonical_sha256": "sha256:74a3cb1c150ed3a0c06177f1dec2fef69f9385d0c95b7c9345dcd78c85934222",
+  "source_result_path": "server-sync/frontend-dist/tcpd-external-benchmark-result-v1.json",
+  "status": "PUBLISHED_RESEARCH_ONLY_STATISTICAL_DOSSIER",
+  "tcpdbench_root": "pinned TCPDBench repository; score_file values are repo-relative"
+}

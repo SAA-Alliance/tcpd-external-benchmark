@@ -1,74 +1,81 @@
-# SAA TCPD/TCPDBench External Benchmark Evidence
+# SAA Risk Analyzer TCPD Benchmark Dossier V1
 
-This repository publishes the SAA change-point adapter v1 benchmark evidence for TCPD/TCPDBench.
+This repository publishes the hash-bound statistical dossier for the SAA Risk Analyzer TCPD external benchmark adapter.
 
-The purpose is external replayability: reviewers can download the pinned upstream TCPD/TCPDBench repositories, take the detected change-point positions published here, and rerun the authors' `metrics.py` scoring code without using SAA infrastructure or SAA production code.
+## Status
 
-## Claim Boundary
+`PUBLISHED_RESEARCH_ONLY_STATISTICAL_DOSSIER`
 
-This is research-only external benchmark evidence for `saa_change_point_adapter_v1`.
+This is a research-only benchmark dossier. It is not a production detector superiority claim, not investment advice, and not an execution or allocation instruction.
 
-It is not a production Risk Analyzer regime-detector claim. It is not a production-detector superiority claim. TCPD is not a financial risk dataset. This does not provide market-risk regime validation, Decision Grade, trading advice, or execution authority.
+## What Is Included
 
-No raw TCPD time-series data is redistributed in this repository. Download source data from the pinned upstream repositories.
+- Paired common-dataset rankings.
+- Bootstrap confidence intervals with 10,000 resamples.
+- Pairwise score differences and win/tie/loss tables.
+- Friedman/Nemenyi multi-method comparison.
+- Separate all-series and real-world-only TCPD scopes.
+- Critical-difference SVG diagrams.
+- Hash-bound JSON and CSV evidence artifacts.
 
-## Published Artifacts
+## Canonical Evidence
 
-| File | Purpose |
-|---|---|
-| `tcpd-external-benchmark-result-v1.json` | Service-owned benchmark result, claim boundary, scores, rank frames, repository pins, harness validation, and canonical result hash. |
-| `tcpd-external-benchmark-predictions-v1.json` | Public answer sheet: 0-indexed detected change-point positions for all 42 TCPD series. |
-| `run_tcpd_external_benchmark.py` | Research adapter runner used to generate the artifact. This is adapter v1, not the production Risk Analyzer detector. |
-| `SHA256SUMS` | Byte-level hashes for repository artifacts. |
-| `artifact-manifest.json` | Human-readable artifact inventory with canonical and byte hashes. |
+Prod evidence URL:
 
-## Result Summary
+https://analyzer.saa-alliance.com/tcpd-benchmark-dossier-v1/TCPD_BENCHMARK_DOSSIER_V1.json
 
-Primary fair-ranking frame: `successful_rows_only`.
+Dossier SHA-256:
 
-| Mode | F-measure | F rank | Covering | Covering rank | Basis |
-|---|---:|---:|---:|---:|---|
-| default | 0.6698418264688435 | 6 / 15 | 0.6223783853774185 | 6 / 15 | Adapter default research row. |
-| oracle | 0.8644621329403449 | 6 / 15 | 0.7764204479263613 | 7 / 15 | Secondary upper-bound from deterministic parameter grid. |
+`sha256:5f9f2fb45c8a03f90720e1dd9abd7c313397add955a23532f28bbc8a35d11e32`
 
-Sensitivity frame: `all_series_null_as_zero` is published only as sensitivity. It must not be used as the headline result.
+Source result canonical SHA-256:
 
-## Dataset Wording
+`sha256:74a3cb1c150ed3a0c06177f1dec2fef69f9385d0c95b7c9345dcd78c85934222`
 
-TCPD contains 42 series in this run: 37 real-world series plus 5 synthetic quality-control series.
+## Boundaries
 
-The repository does not include raw TCPD files and does not include pointwise charts for restricted series. Published values are detected change-point positions only.
+- No raw TCPD time series are redistributed here.
+- No claim is made that non-separation under Nemenyi means equality or superiority.
+- `INCONCLUSIVE_NOT_EQUIVALENCE` is the required interpretation of non-separated groups.
+- The dossier is an evidence artifact for audit and reproducibility, not a live trading signal.
 
-## Pinned Upstream Inputs
+## Headline Claim Discipline
 
-| Repository | Commit |
-|---|---|
-| TCPD | `e8f19a3635e3b7f1a8aff59ce7f4d9bea17525c0` |
-| TCPDBench | `167210005c09d2c44f9b2083b95f989a64be4b6b` |
+The only permitted headline is:
 
-## Canonical Hashes
+`default F-measure paired common-set mean-score rank 4/15 (CI95 1-7) on 35 of 42 paired datasets`
 
-| Object | SHA256 |
-|---|---|
-| Result canonical hash | `sha256:74a3cb1c150ed3a0c06177f1dec2fef69f9385d0c95b7c9345dcd78c85934222` |
-| Predictions canonical hash | `sha256:10d8a913c9bcfc5a0a00a82fbc736013d712c066ceecbba4e39ea9318a7658b2` |
+That headline must be printed with:
 
-`SHA256SUMS` records byte-level file hashes. Canonical hashes are hashes of normalized objects declared inside the artifacts.
+- score `0.6941 CI95 [0.6310, 0.7542]`;
+- rank-scale disclosure: headline rank `4/15` is a mean-score ranking; Friedman/Nemenyi is a separate mean-rank basis over per-dataset ranks and must not be described as proving the headline rank;
+- earlier successful-rows frame rank `6/15` lies inside the paired-frame rank CI `[1,7]`, so the frames are consistent;
+- pairwise SAA-minus-binseg difference `-0.0503 CI95 [-0.1264, 0.0210]`, W/T/L `14/6/15`;
+- full pairwise table covers all 14 opponents;
+- Friedman/Nemenyi result on mean-rank basis: SAA mean rank `5.6143`, best `binseg` mean rank `4.5000`, delta `1.1143 < CD95 3.6254`, interpretation `INCONCLUSIVE_NOT_EQUIVALENCE`;
+- real-world 37 stability check: default F rank `4/15` on `30 of 37`, default covering rank `5/15` on `30 of 37`;
+- oracle ranks as secondary only. `oracle_covering rank 3/15` is explicitly forbidden as a headline.
 
-## External Replay Procedure
+## Dossier Change Log
 
-1. Clone the pinned upstream TCPD and TCPDBench repositories.
-2. Read `tcpd-external-benchmark-predictions-v1.json`.
-3. For each dataset, use the relevant `cplocations` array as the predicted change-point list.
-4. Use TCPDBench `analysis/scripts/metrics.py` to compute F-measure and covering against the TCPDBench annotations.
-5. Aggregate under the `successful_rows_only` ranking frame and compare against the result artifact.
+- `sha256:91b38e1f` -> `sha256:bdf16c21688b9c9e661b2b94f7e928a1aa568847139a5e155517ff22883bca08`: headline discipline wrapper added; numeric fields unchanged.
+- `sha256:bdf16c21688b9c9e661b2b94f7e928a1aa568847139a5e155517ff22883bca08` -> `sha256:b19ff223b7e7cf42def70dd5d9bedb70a01f9ce01411c55093bceb3fa1e2410a`: self-contained headline, pairwise table, frame reconciliation and Friedman/Nemenyi result surfaced; score `0.6941`, rank `4/15` and rank CI `[1,7]` unchanged.
+- `sha256:b19ff223b7e7cf42def70dd5d9bedb70a01f9ce01411c55093bceb3fa1e2410a` -> `sha256:5f9f2fb45c8a03f90720e1dd9abd7c313397add955a23532f28bbc8a35d11e32`: rank-scale disclosure and explicit Nemenyi mean-rank delta surfaced; score `0.6941`, mean-score rank `4/15`, rank CI `[1,7]`, W/T/L `14/6/15` and Friedman p-value unchanged.
 
-Modes:
+## Source Pins
 
-- `default`: one prediction list per dataset for both F-measure and covering.
-- `oracle_f_measure`: oracle upper-bound list for F-measure.
-- `oracle_covering`: oracle upper-bound list for covering.
+The dossier was generated from pinned upstream sources recorded inside the JSON artifact:
 
-## License
+- TCPDBench commit: `167210005c09d2c44f9b2083b95f989a64be4b6b`
+- TCPD commit: `e8f19a3635e3b7f1a8aff59ce7f4d9bea17525c0`
 
-Repository contents are MIT licensed. Upstream TCPD/TCPDBench data and code are not redistributed here and remain under their own licenses.
+## Main Files
+
+- `artifacts/TCPD_BENCHMARK_DOSSIER_V1.json` - canonical statistical dossier object.
+- `artifacts/TCPD_BENCHMARK_DOSSIER_REF_V1.json` - compact reference embedded by Risk Analyzer/Fabric.
+- `artifacts/TCPD_BENCHMARK_DOSSIER_V1.md` - human-readable dossier.
+- `artifacts/paired_common_dataset_rankings.csv` - method rankings by scope/metric.
+- `artifacts/pairwise_score_differences.csv` - pairwise deltas and W/T/L rows.
+- `artifacts/cd_*.svg` - critical-difference diagrams.
+- `artifacts/SHA256SUMS.json` - artifact checksums.
+- `scripts/build_tcpd_benchmark_dossier.py` - generator used to produce the dossier.
