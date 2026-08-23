@@ -810,8 +810,8 @@ def build_superseded_claim_register(root: Path, dossier: Dict[str, Any]) -> Dict
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--tcpdbench-root", default="/tmp/saa-tcpd-benchmark-rehydrate/TCPDBench")
-    parser.add_argument("--result", default="server-sync/frontend-dist/tcpd-external-benchmark-result-v1.json")
+    parser.add_argument("--tcpdbench-root", default="external/TCPDBench")
+    parser.add_argument("--result", default="tcpd-external-benchmark-result-v1.json")
     parser.add_argument("--out-dir", default="outputs/tcpd_benchmark_dossier_v1_local")
     parser.add_argument("--bootstrap-iters", type=int, default=10000)
     parser.add_argument("--seed", type=int, default=20260815)

@@ -4484,7 +4484,7 @@
   "seed": 20260815,
   "sha256": "sha256:222a1ba33ae20214efaa407de98d824031cf04b980d25c43cbdd76008bc9d43b",
   "source_result_canonical_sha256": "sha256:74a3cb1c150ed3a0c06177f1dec2fef69f9385d0c95b7c9345dcd78c85934222",
-  "source_result_path": "server-sync/frontend-dist/tcpd-external-benchmark-result-v1.json",
+  "source_result_path": "tcpd-external-benchmark-result-v1.json",
   "status": "PUBLISHED_RESEARCH_ONLY_STATISTICAL_DOSSIER",
   "tcpdbench_root": "pinned TCPDBench repository; score_file values are repo-relative"
 }
